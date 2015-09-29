@@ -21,7 +21,7 @@
 				<div>
 
 					<div class="col col-1">
-						<p>101</p>
+						<p><span class="count-to" data-count-to="102"></span></p>
 					</div>
 					<div class="col col-2">
 						<p>dias presos</p>
@@ -36,7 +36,7 @@
 				<div>
 
 					<div class="col col-1">
-						<p>9</p>
+						<p><span class="count-to" data-count-to="10"></span></p>						
 					</div>
 
 					<div class="col col-2">
@@ -64,6 +64,7 @@
 
 	</div>
 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
 	<script src="js/app.js"></script>
 
 </body>

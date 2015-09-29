@@ -15,6 +15,11 @@
 
 			this.photoBoxes = document.querySelectorAll('.photo-box');
 			this.setPhotoBoxesSize();
+
+			this.counters = document.querySelectorAll('.count-to');
+
+			this.appealGridModule = document.querySelectorAll('.appeal-grid-module');
+
 		},
 
 		setPhotoBoxesSize: function () {
@@ -33,11 +38,54 @@
 
 		setListeners: function () {
 
+			document.addEventListener("DOMContentLoaded", function(event) { 
+
+				this.triggerEvent({
+					name: 'startCounter'
+				});
+
+			}.bind(this));
+
+			imagesLoaded(this.appealGridModule).on('always', function () {
+				console.log('images preloaded');
+			});
+
 			window.addEventListener('resize', function () {
 
 				this.setPhotoBoxesSize.call(this);
 
 			}.bind(this));
+
+			window.addEventListener('startCounter', function () {
+
+				this.startCounter.call(this);
+
+			}.bind(this));
+
+		},
+
+		triggerEvent: function (params) {
+
+			// Create the event.
+			var event = document.createEvent('Event');;
+
+			// Define that the event name is 'build'.
+			event.initEvent(params.name, true, true);
+
+			// target can be any Element or other EventTarget.
+			window.dispatchEvent(event);
+
+		},
+
+		startCounter: function () {
+
+			console.log('startCounter()');
+
+			for (var el in this.counters) {
+
+				console.log(this.counters[el]);
+
+			}
 
 		}
 	};
