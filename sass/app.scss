@@ -5,17 +5,29 @@
 	font-family: 'Open Sans', sans-serif;
 	background: $black;
 
-	.clock {
+	.clock-module {
 		width: 100vw;
 		height: 100vh;
 
 		.row {
 			height: 50vh;
 			text-transform: uppercase;
+			position: relative;
+
+			> div {
+				margin-left: 20px;
+				padding: 20px 0;
+			}
 
 			&.r1 {
 				color: $black;
 				background: $blue;
+
+				> div {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+				}
 			}
 
 			&.r2 {
@@ -24,6 +36,13 @@
 
 				.col-1 {
 					color: $white;
+
+					p {
+						font-size: 148px;
+						position: relative;
+						top: -15px;
+						line-height: 148px;
+					}
 				}
 			}
 
@@ -31,8 +50,25 @@
 				float: left;
 			}
 
+			.col-1 {
+				font-weight: 900;
+				margin-right: 20px;
+			}
+
 			p {
-				font-size: 48px;
+				font-size: 60px;
+			}
+		}
+	}
+
+	.appeal-grid-module {
+		.photo-box {
+			float: left;
+			width: 10vw;
+
+			img {
+				width: auto;
+				height: 100%;
 			}
 		}
 	}

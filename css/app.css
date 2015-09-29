@@ -8,21 +8,43 @@
 .freedomnow {
   font-family: 'Open Sans', sans-serif;
   background: #000000; }
-  .freedomnow .clock {
+  .freedomnow .clock-module {
     width: 100vw;
     height: 100vh; }
-    .freedomnow .clock .row {
+    .freedomnow .clock-module .row {
       height: 50vh;
-      text-transform: uppercase; }
-      .freedomnow .clock .row.r1 {
+      text-transform: uppercase;
+      position: relative; }
+      .freedomnow .clock-module .row > div {
+        margin-left: 20px;
+        padding: 20px 0; }
+      .freedomnow .clock-module .row.r1 {
         color: #000000;
         background: #0097C9; }
-      .freedomnow .clock .row.r2 {
+        .freedomnow .clock-module .row.r1 > div {
+          position: absolute;
+          bottom: 0;
+          left: 0; }
+      .freedomnow .clock-module .row.r2 {
         color: #0097C9;
         background: #000000; }
-        .freedomnow .clock .row.r2 .col-1 {
+        .freedomnow .clock-module .row.r2 .col-1 {
           color: #fff; }
-      .freedomnow .clock .row .col {
+          .freedomnow .clock-module .row.r2 .col-1 p {
+            font-size: 148px;
+            position: relative;
+            top: -15px;
+            line-height: 148px; }
+      .freedomnow .clock-module .row .col {
         float: left; }
-      .freedomnow .clock .row p {
-        font-size: 48px; }
+      .freedomnow .clock-module .row .col-1 {
+        font-weight: 900;
+        margin-right: 20px; }
+      .freedomnow .clock-module .row p {
+        font-size: 60px; }
+  .freedomnow .appeal-grid-module .photo-box {
+    float: left;
+    width: 10vw; }
+    .freedomnow .appeal-grid-module .photo-box img {
+      width: auto;
+      height: 100%; }
