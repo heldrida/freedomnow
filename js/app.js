@@ -8,6 +8,7 @@
 		init: function () {
 			console.log('init!');
 			this.setVars();
+			this.setListeners();
 		},
 
 		setVars: function () {
@@ -17,15 +18,28 @@
 		},
 
 		setPhotoBoxesSize: function () {
-			var docWidth = window.innerWidth,
+
+			console.log('setPhotoBoxesSize');
+
+			var docWidth = document.body.clientWidth,
 				w = docWidth / 4;
 
-
+				console.log(w);
 			for (var i = 0; i < this.photoBoxes.length; i++) {
 
 				this.photoBoxes[i].style.width = w + 'px';
 				this.photoBoxes[i].style.height = w + 'px';
 			}
+
+		},
+
+		setListeners: function () {
+
+			window.addEventListener('resize', function () {
+
+				this.setPhotoBoxesSize.call(this);
+
+			}.bind(this));
 
 		}
 	};

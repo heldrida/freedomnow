@@ -44,7 +44,8 @@
         font-size: 60px; }
   .freedomnow .appeal-grid-module .photo-box {
     float: left;
-    width: 10vw; }
+    width: 10vw;
+    overflow: hidden; }
     .freedomnow .appeal-grid-module .photo-box img {
       width: auto;
       height: 100%; }
