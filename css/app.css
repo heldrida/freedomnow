@@ -1,0 +1,28 @@
+/*
+ * Usage:
+ *
+ *  font-family: 'Open Sans Condensed', sans-serif;
+ * 	options:family=Open+Sans+Condensed:300|Open+Sans:400,300,300italic,700
+ */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,300,300italic,700);
+.freedomnow {
+  font-family: 'Open Sans', sans-serif;
+  background: #000000; }
+  .freedomnow .clock {
+    width: 100vw;
+    height: 100vh; }
+    .freedomnow .clock .row {
+      height: 50vh;
+      text-transform: uppercase; }
+      .freedomnow .clock .row.r1 {
+        color: #000000;
+        background: #0097C9; }
+      .freedomnow .clock .row.r2 {
+        color: #0097C9;
+        background: #000000; }
+        .freedomnow .clock .row.r2 .col-1 {
+          color: #fff; }
+      .freedomnow .clock .row .col {
+        float: left; }
+      .freedomnow .clock .row p {
+        font-size: 48px; }

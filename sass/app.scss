@@ -1,0 +1,39 @@
+@import "colours";
+@import "fonts";
+
+.freedomnow {
+	font-family: 'Open Sans', sans-serif;
+	background: $black;
+
+	.clock {
+		width: 100vw;
+		height: 100vh;
+
+		.row {
+			height: 50vh;
+			text-transform: uppercase;
+
+			&.r1 {
+				color: $black;
+				background: $blue;
+			}
+
+			&.r2 {
+				color: $blue;
+				background: $black;
+
+				.col-1 {
+					color: $white;
+				}
+			}
+
+			.col {
+				float: left;
+			}
+
+			p {
+				font-size: 48px;
+			}
+		}
+	}
+}
