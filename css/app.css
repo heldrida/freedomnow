@@ -193,6 +193,14 @@
     z-index: 2;
     padding: 30px;
     max-width: 130px; }
+    @media only screen and (max-width: 768px) {
+      .freedomnow .logo-freedomnow {
+        padding: 22.5px;
+        max-width: 100px; } }
+    @media only screen and (max-width: 480px) {
+      .freedomnow .logo-freedomnow {
+        padding: 15px;
+        max-width: 80px; } }
   .freedomnow .arrow-down {
     position: absolute;
     bottom: 50px;
