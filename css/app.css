@@ -53,7 +53,6 @@
  * 	options:family=Open+Sans+Condensed:300|Open+Sans:400,300,300italic,700
  */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:400,300,300italic,700);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -63,49 +62,25 @@
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite; }
 
-@-webkit-keyframes bounce {
-  from, 20%, 53%, 80%, to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); }
-  40%, 43% {
-    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    -webkit-transform: translate3d(0, -30px, 0);
-    transform: translate3d(0, -30px, 0); }
-  70% {
-    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    -webkit-transform: translate3d(0, -15px, 0);
-    transform: translate3d(0, -15px, 0); }
-  90% {
-    -webkit-transform: translate3d(0, -4px, 0);
-    transform: translate3d(0, -4px, 0); } }
+@keyframes floating {
+  0% {
+    transform: translateY(0%); }
+  50% {
+    transform: translateY(8%); }
+  100% {
+    transform: translateY(0%); } }
 
-@keyframes bounce {
-  from, 20%, 53%, 80%, to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); }
-  40%, 43% {
-    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    -webkit-transform: translate3d(0, -30px, 0);
-    transform: translate3d(0, -30px, 0); }
-  70% {
-    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    -webkit-transform: translate3d(0, -15px, 0);
-    transform: translate3d(0, -15px, 0); }
-  90% {
-    -webkit-transform: translate3d(0, -4px, 0);
-    transform: translate3d(0, -4px, 0); } }
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0%); }
+  50% {
+    -webkit-transform: translateY(20%); }
+  100% {
+    -webkit-transform: translateY(0%); } }
 
-.bounce {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
+.floating {
+  -webkit-animation-name: floating;
+  animation-name: floating;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom; }
 
@@ -132,30 +107,30 @@
         padding: 20px 0; }
       .freedomnow .clock-module .row.r1 {
         color: #000000;
-        background: #0097C9; }
+        background: #5785b9; }
         .freedomnow .clock-module .row.r1 > div {
           position: absolute;
           bottom: 0;
           left: 0; }
       .freedomnow .clock-module .row.r2 {
-        color: #0097C9;
+        color: #5785b9;
         background: #000000; }
         .freedomnow .clock-module .row.r2 .col-1 {
           color: #fff; }
           .freedomnow .clock-module .row.r2 .col-1 p {
-            font-size: 250px;
+            font-size: 145px;
             position: relative;
-            top: 25px;
+            top: -18px;
             line-height: 148px; }
       .freedomnow .clock-module .row .col {
         float: left; }
       .freedomnow .clock-module .row .col-1 {
         font-weight: 900;
         margin-right: 30px;
-        width: 375px;
+        width: 200px;
         text-align: right; }
       .freedomnow .clock-module .row p {
-        font-size: 100px; }
+        font-size: 60px; }
   .freedomnow .appeal-grid-module {
     position: relative;
     z-index: 1; }
@@ -171,14 +146,26 @@
     right: 0;
     bottom: 0;
     z-index: 2;
-    padding: 30px; }
+    padding: 30px;
+    max-width: 130px; }
   .freedomnow .arrow-down {
     position: absolute;
-    bottom: 60px;
+    bottom: 50px;
     left: calc(50% - 15px);
     z-index: 2;
     color: #fff;
-    padding: 30px;
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    opacity: 0.2; }
+    padding: 0px;
+    animation-duration: 1.6s;
+    -webkit-animation-duration: 1.6s;
+    opacity: 0.8;
+    cursor: pointer;
+    -webkit-transition: opacity 0.3s;
+    -khtml-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+    .freedomnow .arrow-down:hover {
+      opacity: 0.5; }
+  .freedomnow .npe {
+    pointer-events: none; }

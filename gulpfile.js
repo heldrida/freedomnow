@@ -22,7 +22,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
 
     // Watch `html`
-    gulp.watch(['*.php', 'css/*.css', 'js/*.js']).on('change', livereload.changed);
+    gulp.watch(['**/*.php', 'css/*.css', 'js/*.js']).on('change', livereload.changed);
 
     // Watch `scss` files
     gulp.watch('sass/*.scss', ['sass']);

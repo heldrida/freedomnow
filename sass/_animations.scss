@@ -1,0 +1,43 @@
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  &.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+}
+
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%);  
+  }
+  50% {
+    transform: translateY(8%);  
+  } 
+  100% {
+    transform: translateY(0%);
+  }     
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translateY(0%);  
+  }
+  50% {
+    -webkit-transform: translateY(20%);  
+  } 
+  100% {
+    -webkit-transform: translateY(0%);
+  }     
+}
+
+.floating {
+  -webkit-animation-name: floating;
+  animation-name: floating;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}

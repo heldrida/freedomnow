@@ -43,9 +43,9 @@
 					color: $white;
 
 					p {
-						font-size: 250px;
+						font-size: 145px;
 						position: relative;
-						top: 25px;
+						top: -18px;
 						line-height: 148px;
 					}
 				}
@@ -58,12 +58,12 @@
 			.col-1 {
 				font-weight: 900;
 				margin-right: 30px;
-				width: 375px;
+				width: 200px;
 				text-align: right;
 			}
 
 			p {
-				font-size: 100px;
+				font-size: 60px;
 			}
 		}
 	}
@@ -90,16 +90,26 @@
 		bottom: 0;
 		z-index: 2;
 		padding: 30px;
+		max-width: 130px;
 	}
 	.arrow-down {
 		position: absolute;
-		bottom: 60px;
+		bottom: 50px;
 		left: calc(50% - 15px);
 		z-index: 2;
 		color: #fff;
-		padding: 30px;
-		animation-duration: 2s;
-		-webkit-animation-duration: 2s;
-		opacity: 0.2;
+		padding: 0px;
+		animation-duration: 1.6s;
+		-webkit-animation-duration: 1.6s;
+		opacity: 0.8;
+		cursor: pointer;
+		@include transition(opacity 0.3s);
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+	.npe {
+		pointer-events: none;
 	}
 }

@@ -1,3 +1,9 @@
+<?php 
+
+	include_once('includes/helperFns.php')
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +20,14 @@
 	<div class="freedomnow">
 
 		<!-- start: clock -->
-		<div class="clock-module">
+		<div class="clock-module npe">
 
 			<div class="row r1">
 
 				<div>
 
 					<div class="col col-1">
-						<p><span class="count-to" data-count-to="102">0</span></p>
+						<p><span class="count-to" data-count-to="<?php echo getTheDate('diasPresos'); ?>">0</span></p>
 					</div>
 					<div class="col col-2">
 						<p>dias presos</p>
@@ -36,7 +42,7 @@
 				<div>
 
 					<div class="col col-1">
-						<p><span class="count-to" data-count-to="10">0</span></p>						
+						<p><span class="count-to" data-count-to="<?php echo getTheDate('greveFome'); ?>">0</span></p>						
 					</div>
 
 					<div class="col col-2">
@@ -63,11 +69,11 @@
 		<!-- end: appeal grid -->
 
 
-		<div class="arrow-down animated infinite bounce">
-			<i class="fa fa-arrow-circle-o-down fa-5x"></i>
+		<div class="arrow-down animated infinite floating">
+			<img src="images/icon-arrow-down.svg" alt="">
 		</div>
 
-		<img class="logo-freedomnow" src="images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
+		<img class="logo-freedomnow npe" src="images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
 	
 	</div>
 

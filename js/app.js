@@ -20,6 +20,9 @@
 
 			this.appealGridModule = document.querySelectorAll('.appeal-grid-module');
 
+			this.arrowDown = document.querySelector('.arrow-down');
+			this.clockModule = document.querySelector('.clock-module');
+			
 		},
 
 		setPhotoBoxesSize: function () {
@@ -62,6 +65,13 @@
 
 			}.bind(this));
 
+			this.arrowDown.addEventListener('click', function () {
+
+				var to = this.clockModule.offsetHeight;
+				this.scrollTo.call(this, document.body, to, 1250);
+
+			}.bind(this));
+
 		},
 
 		triggerEvent: function (params) {
@@ -94,11 +104,40 @@
 			interval = setInterval(function () {
 				el.innerHTML = i++;
 
-				if (i === total) {
+				if (i > total) {
 					clearInterval(interval);
 				}
 			}, 200);
 
+		},
+
+		scrollTo: function(element, to, duration) {
+		    var context = this,
+		    	start = element.scrollTop,
+		        change = to - start,
+		        increment = 20;
+
+		    var animateScroll = function(elapsedTime) {        
+		        elapsedTime += increment;
+		        var position = context.easeInOut(elapsedTime, start, change, duration);                        
+		        element.scrollTop = position; 
+		        if (elapsedTime < duration) {
+		            setTimeout(function() {
+		                animateScroll(elapsedTime);
+		            }, increment);
+		        }
+		    };
+
+		    animateScroll(0);
+		},
+
+		easeInOut: function(currentTime, start, change, duration) {
+		    currentTime /= duration / 2;
+		    if (currentTime < 1) {
+		        return change / 2 * currentTime * currentTime + start;
+		    }
+		    currentTime -= 1;
+		    return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
 		}
 
 	};
