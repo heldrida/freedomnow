@@ -79,7 +79,7 @@
 
 			this.appealPopupModule.addEventListener('click', function (e) {
 
-				if (e.target.className.indexOf('img-container') === -1) {
+				if (e.target.className.indexOf('appeal-popup-module') > -1) {
 					this.closePopup.call(this);
 				}
 
