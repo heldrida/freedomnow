@@ -133,11 +133,32 @@
         font-size: 60px; }
   .freedomnow .appeal-grid-module {
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+    background-color: #000000; }
     .freedomnow .appeal-grid-module .photo-box {
       float: left;
       width: 10vw;
-      overflow: hidden; }
+      overflow: hidden;
+      cursor: pointer;
+      position: relative; }
+      .freedomnow .appeal-grid-module .photo-box:before {
+        content: " ";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        opacity: 0;
+        background-color: #000000;
+        -webkit-transition: opacity 0.3s ease-in-out;
+        -khtml-transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -ms-transition: opacity 0.3s ease-in-out;
+        -o-transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out; }
+      .freedomnow .appeal-grid-module .photo-box:hover:before {
+        opacity: 0.3; }
       .freedomnow .appeal-grid-module .photo-box img {
         width: auto;
         height: 100%; }
