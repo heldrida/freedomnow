@@ -204,13 +204,35 @@
 			@include box-shadow(0px, 20px, 80px, #181818);
 			@include transform(translateY(-50%));
 
+			.close {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				background-image: url(../images/icon-close.png);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+				width: 30px;
+				height: 30px;
+				background-color: transparent;
+				border: none;
+				text-indent: -9999px;
+				font-size: 0px;
+				@include transition(opacity 0.3s);
+
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+
 			.nav-ctrl {
 				position: absolute;
 				bottom: 0;
 				left: 0;
 				width: 100%;
 				padding: 10px 0;
-				background-color: rgba(0, 0, 0, 0.2);
+				//background-color: rgba(0, 0, 0, 0.2);
+				text-align: center;
 
 				button {
 					margin: 10px 0px;
@@ -221,22 +243,17 @@
 					cursor: pointer;
 					@include transition(opacity 0.3s);
 
+					&:nth-child(1) {
+						margin-right: 10px;
+					}
+
 					&:hover {
 						opacity: 0.8;
 					}
 
-					&:nth-child(1) {
-						margin-left: 20px;
-					}
-
-					&.close {
-						background-color: $black;
-						color: $blue;
-					}
-
 					&.next {
 						background-color: $blue;
-						color: $black;
+						color: #fff;
 					}
 
 					&.how-to-appeal {

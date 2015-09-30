@@ -262,13 +262,35 @@
       -ms-transform: translateY(-50%);
       -o-transform: translateY(-50%);
       transform: translateY(-50%); }
+      .freedomnow .appeal-popup-module .img-container .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-image: url(../images/icon-close.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        text-indent: -9999px;
+        font-size: 0px;
+        -webkit-transition: opacity 0.3s;
+        -khtml-transition: opacity 0.3s;
+        -moz-transition: opacity 0.3s;
+        -ms-transition: opacity 0.3s;
+        -o-transition: opacity 0.3s;
+        transition: opacity 0.3s; }
+        .freedomnow .appeal-popup-module .img-container .close:hover {
+          opacity: 0.8; }
       .freedomnow .appeal-popup-module .img-container .nav-ctrl {
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
         padding: 10px 0;
-        background-color: rgba(0, 0, 0, 0.2); }
+        text-align: center; }
         .freedomnow .appeal-popup-module .img-container .nav-ctrl button {
           margin: 10px 0px;
           border: none;
@@ -282,16 +304,13 @@
           -ms-transition: opacity 0.3s;
           -o-transition: opacity 0.3s;
           transition: opacity 0.3s; }
+          .freedomnow .appeal-popup-module .img-container .nav-ctrl button:nth-child(1) {
+            margin-right: 10px; }
           .freedomnow .appeal-popup-module .img-container .nav-ctrl button:hover {
             opacity: 0.8; }
-          .freedomnow .appeal-popup-module .img-container .nav-ctrl button:nth-child(1) {
-            margin-left: 20px; }
-          .freedomnow .appeal-popup-module .img-container .nav-ctrl button.close {
-            background-color: #000000;
-            color: #5785b9; }
           .freedomnow .appeal-popup-module .img-container .nav-ctrl button.next {
             background-color: #5785b9;
-            color: #000000; }
+            color: #fff; }
           .freedomnow .appeal-popup-module .img-container .nav-ctrl button.how-to-appeal {
             background: #fff;
             color: #5785b9; }

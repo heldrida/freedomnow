@@ -88,8 +88,8 @@
 				<div class="nav-ctrl">
 					<button class="next">ver proximo</button>
 					<button class="how-to-appeal">como apoiar ?</button>
-					<button class="close">fechar</button>
 				</div>
+				<button class="close">fechar</button>
 			</div>
 
 		</div>
