@@ -88,13 +88,29 @@
 
 				<div class="nav-ctrl">
 					<button class="next">ver proximo</button>
-					<button class="how-to-appeal">como apoiar ?</button>
+					<button class="cta-appeal how-to-appeal">Participar!</button>
 				</div>
 				<button class="close">fechar</button>
 			</div>
 
 		</div>
 		<!-- end: appeal popup -->
+
+		<!-- start: form -->
+		<div class="form-file-module">
+
+			<form class="myForm" action="" method="post" enctype="multipart/form-data">
+				<div>
+					<label for="file">Enviar foto:</label>
+					<input type="file" name="file">
+				</div>
+				<div>
+					<button type="submit" form="form" value="Submit">Submit</button>
+				</div>
+			</form>
+
+		</div>
+		<!-- end: form -->
 
 	</div>
 

@@ -279,4 +279,58 @@
 			}
 		}
 	}
+
+	.form-file-module {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		background: rgba(0, 0, 0, 0.3);
+		font-size: 12px;
+		display: none;
+		opacity: 0;
+
+		form {
+			text-transform: uppercase;
+			background-color: #fff;
+			color: $blue;
+			height: auto;
+			width: 80%;
+			max-width: 320px;
+			text-align: center;
+			padding: 30px 0;
+			margin: 0 auto;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			@include transform(translateX(-50%) translateY(-50%));
+			@include box-shadow(0px, 5px, 60px, #181818);
+
+			> div {
+				margin-bottom: 10px;
+
+				label {
+					padding: 10px;
+					display: block;
+				}
+			}
+
+			input,
+			button {
+				color: $blue;
+				background: transparent;
+				vertical-align: middle;
+				border: 1px solid $blue;
+				padding: 8px 15px;
+				text-transform: uppercase;
+				cursor: pointer;
+			}
+
+			button {
+				margin-top: 50px;
+			}
+		}
+	}
 }

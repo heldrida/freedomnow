@@ -31,7 +31,9 @@
 			this.photoBoxPopupMs = 100;
 			this.counterMs = 200;
 			this.counterEasingAmount = 0.0125;
-
+			this.ctaAppeal = document.querySelector('.cta-appeal');
+			this.formFileModule = document.querySelector('.form-file-module');
+			this.ctaAppealTransitionMs = 1000;
 		},
 
 		setPhotoBoxesSize: function () {
@@ -83,6 +85,27 @@
 
 				if (e.target.className.indexOf('appeal-popup-module') > -1) {
 					this.closePopup.call(this);
+				}
+
+			}.bind(this));
+
+			this.ctaAppeal.addEventListener('click', function () {
+				this.closePopup.call(this);
+
+				setTimeout(function () {
+					this.formFileModule.style.display = 'block';
+					this.formFileModule.style.opacity = 1;
+				}.bind(this), this.ctaAppealTransitionMs);
+
+			}.bind(this));
+
+			this.formFileModule.addEventListener('click', function (e) {
+
+				if (e.target.className.indexOf('-module') > -1) {
+					this.formFileModule.style.opacity = 0;
+					setTimeout(function () {
+						this.formFileModule.style.display = '';
+					}.bind(this), 800);
 				}
 
 			}.bind(this));
