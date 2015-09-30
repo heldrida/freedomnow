@@ -214,6 +214,9 @@
       background-size: cover;
       width: calc(100% - 40px);
       height: calc(100% - 40px);
+      max-width: 500px;
+      max-height: 500px;
+      margin: auto;
       top: 20px;
       left: 20px;
       -webkit-box-shadow: 0px 20px 80px #181818;
