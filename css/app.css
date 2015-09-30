@@ -206,6 +206,16 @@
         -ms-transition: transform 0.3s;
         -o-transition: transform 0.3s;
         transition: transform 0.3s; }
+    .freedomnow .appeal-grid-module .photo-box-submit-cta {
+      width: 100%;
+      height: 100%;
+      background-color: #5785b9; }
+      .freedomnow .appeal-grid-module .photo-box-submit-cta p {
+        font-size: 36px;
+        color: #fff;
+        padding: 10px;
+        text-transform: uppercase;
+        line-height: normal; }
   .freedomnow .logo-freedomnow {
     position: absolute;
     right: 0;

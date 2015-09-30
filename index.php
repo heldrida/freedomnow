@@ -73,9 +73,17 @@
 		<div class="appeal-grid-module">
 
 			<?php for ($i = 0; $i < 30; $i++) : ?>
-			<div class="photo-box" data-name="foo bar" data-index="<?php echo $i; ?>">
-				<img src="https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg" alt="">
-			</div>
+
+				<div class="photo-box" data-name="foo bar" data-index="<?php echo $i; ?>">
+					<img src="https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg" alt="">
+				</div>
+
+				<?php if ($i === 4) : ?>
+				<div class="photo-box photo-box-submit-cta" data-cta="photo-submit">
+					<p>Quero Participar!</p>
+				</div>
+				<?php endif; ?>
+
 			<?php endfor; ?>
 
 		</div>

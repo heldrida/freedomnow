@@ -36,6 +36,7 @@
 			this.formFile = document.querySelector('.myFileForm');
 			this.formFileCloseBtn = document.querySelector('.form-file-module .close');
 			this.ctaAppealTransitionMs = 1000;
+			this.photoBoxSubmitCta = document.querySelector('.photo-box-submit-cta');
 		},
 
 		setPhotoBoxesSize: function () {
@@ -118,6 +119,11 @@
 			this.formFileCloseBtn.addEventListener('click', function () {
 				this.formFileClose.call(this);
 			}.bind(this), false);
+
+			this.photoBoxSubmitCta.addEventListener('click', function () {
+				this.formFileModule.style.display = 'block';
+				this.formFileModule.style.opacity = 1;
+			}.bind(this));
 
 		},
 
@@ -233,6 +239,10 @@
 		setPhotoBoxEvents: function (el) {
 
 			el.addEventListener('click', function (e) {
+
+				if (e.target.className.indexOf('photo-box-submit-cta') > -1) {
+					return false;
+				}
 
 				this.setPopupData.call(this, el);
 
