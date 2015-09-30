@@ -27,6 +27,9 @@
 			this.resizeThrottleMs = 30;
 			this.scrollToMs = 800;
 
+			this.appealPopupModule = document.querySelector('.appeal-popup-module');
+			this.photoBoxPopupMs = 100;
+
 		},
 
 		setPhotoBoxesSize: function () {
@@ -39,6 +42,8 @@
 
 				this.photoBoxes[i].style.width = w + 'px';
 				this.photoBoxes[i].style.height = w + 'px';
+
+				this.setPhotoBoxEvents(this.photoBoxes[i]);
 
 			}
 
@@ -158,6 +163,31 @@
 				js.src = "//connect.facebook.net/en_US/sdk.js";
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
+
+		},
+
+		setPhotoBoxEvents: function (el) {
+
+			el.addEventListener('click', function () {
+
+				this.appealPopupModule.style.display = "block";
+
+				setTimeout(function () {
+					this.appealPopupModule.style.opacity = 1;
+				}.bind(this), this.photoBoxPopupMs);
+
+				document.querySelector('.appeal-popup-module .close').addEventListener('click', function () {
+
+					this.appealPopupModule.style.opacity = 0;
+
+					setTimeout(function () {
+						this.appealPopupModule.style.opacity = '';
+						this.appealPopupModule.style.display = '';
+					}.bind(this), this.photoBoxPopupMs);
+
+				}.bind(this));
+
+			}.bind(this));
 
 		}
 

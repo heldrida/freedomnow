@@ -80,6 +80,20 @@
 		</div>
 		<!-- end: appeal grid -->
 
+		<!-- start: appeal popup -->
+		<div class="appeal-popup-module">
+
+			<div class="img-container" data-photo="https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg">
+
+				<div class="nav-ctrl">
+					<button class="next">proximo</button>
+					<button class="close">fechar</button>
+				</div>
+			</div>
+
+		</div>
+		<!-- end: appeal popup -->
+
 	</div>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
