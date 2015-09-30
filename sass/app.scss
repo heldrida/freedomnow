@@ -201,9 +201,8 @@
 			max-height: 500px;
 			margin: auto;
 			top: 50%;
-			left: 50%;
 			@include box-shadow(0px, 20px, 80px, #181818);
-			@include transform(translateX(-50%) translateY(-50%));
+			@include transform(translateY(-50%));
 
 			.nav-ctrl {
 				position: absolute;
