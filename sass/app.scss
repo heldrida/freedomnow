@@ -127,11 +127,16 @@
 				&:before {
 					opacity: 0.3;
 				}
+
+				img {
+					@include transform(scale(1.1));
+				}
 			}
 
 			img {
 				width: auto;
 				height: 100%;
+				@include transition(transform 12s);
 			}
 		}
 	}
