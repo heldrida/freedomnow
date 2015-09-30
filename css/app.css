@@ -93,12 +93,12 @@
     height: 100vh;
     position: relative;
     z-index: 2;
-    -webkit-box-shadow: 0px 20px 80px #181818;
-    -khtml-box-shadow: 0px 20px 80px #181818;
-    -moz-box-shadow: 0px 20px 80px #181818;
-    -ms-box-shadow: 0px 20px 80px #181818;
-    -o-box-shadow: 0px 20px 80px #181818;
-    box-shadow: 0px 20px 80px #181818; }
+    -webkit-box-shadow: 0px 5px 60px #181818;
+    -khtml-box-shadow: 0px 5px 60px #181818;
+    -moz-box-shadow: 0px 5px 60px #181818;
+    -ms-box-shadow: 0px 5px 60px #181818;
+    -o-box-shadow: 0px 5px 60px #181818;
+    box-shadow: 0px 5px 60px #181818; }
     .freedomnow .clock-module .row {
       height: 50vh;
       text-transform: uppercase;
@@ -189,16 +189,19 @@
         -moz-transform: scale(1.1);
         -ms-transform: scale(1.1);
         -o-transform: scale(1.1);
-        transform: scale(1.1); }
+        transform: scale(1.1);
+        -webkit-transition-duration: 12s;
+        /* Safari */
+        transition-duration: 12s; }
       .freedomnow .appeal-grid-module .photo-box img {
         width: auto;
         height: 100%;
-        -webkit-transition: transform 12s;
-        -khtml-transition: transform 12s;
-        -moz-transition: transform 12s;
-        -ms-transition: transform 12s;
-        -o-transition: transform 12s;
-        transition: transform 12s; }
+        -webkit-transition: transform 0.3s;
+        -khtml-transition: transform 0.3s;
+        -moz-transition: transform 0.3s;
+        -ms-transition: transform 0.3s;
+        -o-transition: transform 0.3s;
+        transition: transform 0.3s; }
   .freedomnow .logo-freedomnow {
     position: absolute;
     right: 0;
