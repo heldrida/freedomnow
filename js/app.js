@@ -33,6 +33,7 @@
 			this.counterEasingAmount = 0.0125;
 			this.ctaAppeal = document.querySelector('.cta-appeal');
 			this.formFileModule = document.querySelector('.form-file-module');
+			this.formFile = document.querySelector('.myFileForm');
 			this.ctaAppealTransitionMs = 1000;
 		},
 
@@ -109,6 +110,12 @@
 				}
 
 			}.bind(this));
+
+			this.formFile.addEventListener('submit', function (e) {
+				e.preventDefault();
+				console.log('form event submit');
+				alert('todo: request facebook auth, fb permissions, save file server side, grab destination file url, post to fb');
+			}, false);
 
 		},
 

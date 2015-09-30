@@ -99,13 +99,13 @@
 		<!-- start: form -->
 		<div class="form-file-module">
 
-			<form class="myForm" action="" method="post" enctype="multipart/form-data">
+			<form name="myFileForm" class="myFileForm" action="" method="post" enctype="multipart/form-data">
 				<div>
 					<label for="file">Enviar foto:</label>
 					<input type="file" name="file">
 				</div>
 				<div>
-					<button type="submit" form="form" value="Submit">Submit</button>
+				<input type="submit" value="submit">
 				</div>
 			</form>
 

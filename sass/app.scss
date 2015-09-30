@@ -317,8 +317,7 @@
 				}
 			}
 
-			input,
-			button {
+			input {
 				color: $blue;
 				background: transparent;
 				vertical-align: middle;
@@ -326,10 +325,7 @@
 				padding: 8px 15px;
 				text-transform: uppercase;
 				cursor: pointer;
-			}
-
-			button {
-				margin-top: 50px;
+				margin-bottom: 20px;
 			}
 		}
 	}
