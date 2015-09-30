@@ -213,9 +213,14 @@
       .freedomnow .appeal-grid-module .photo-box-submit-cta p {
         font-size: 36px;
         color: #fff;
-        padding: 10px;
+        padding: 10px 20px;
         text-transform: uppercase;
         line-height: normal; }
+      .freedomnow .appeal-grid-module .photo-box-submit-cta > img {
+        width: 40%;
+        display: inline-block;
+        height: auto;
+        margin-left: 20px; }
   .freedomnow .logo-freedomnow {
     position: absolute;
     right: 0;
