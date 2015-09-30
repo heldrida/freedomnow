@@ -6,7 +6,6 @@
 
 	FreedomNow.prototype = {
 		init: function () {
-			console.log('init!');
 			this.setVars();
 			this.setListeners();
 		},
@@ -22,7 +21,8 @@
 
 			this.arrowDown = document.querySelector('.arrow-down');
 			this.clockModule = document.querySelector('.clock-module');
-			
+
+			this.fbSdkLoader();
 		},
 
 		setPhotoBoxesSize: function () {
@@ -34,14 +34,14 @@
 
 				this.photoBoxes[i].style.width = w + 'px';
 				this.photoBoxes[i].style.height = w + 'px';
-			
+
 			}
 
 		},
 
 		setListeners: function () {
 
-			document.addEventListener("DOMContentLoaded", function(event) { 
+			document.addEventListener("DOMContentLoaded", function(event) {
 
 				this.triggerEvent({
 					name: 'startCounter'
@@ -71,6 +71,8 @@
 				this.scrollTo.call(this, document.body, to, 1250);
 
 			}.bind(this));
+
+			();
 
 		},
 
@@ -117,10 +119,10 @@
 		        change = to - start,
 		        increment = 20;
 
-		    var animateScroll = function(elapsedTime) {        
+		    var animateScroll = function(elapsedTime) {
 		        elapsedTime += increment;
-		        var position = context.easeInOut(elapsedTime, start, change, duration);                        
-		        element.scrollTop = position; 
+		        var position = context.easeInOut(elapsedTime, start, change, duration);
+		        element.scrollTop = position;
 		        if (elapsedTime < duration) {
 		            setTimeout(function() {
 		                animateScroll(elapsedTime);
@@ -138,6 +140,26 @@
 		    }
 		    currentTime -= 1;
 		    return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
+		},
+
+		fbSdkLoader: function () {
+
+			window.fbAsyncInit = function() {
+				FB.init({
+				  appId      : 'your-app-id',
+				  xfbml      : true,
+				  version    : 'v2.4'
+				});
+			};
+
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
 		}
 
 	};
