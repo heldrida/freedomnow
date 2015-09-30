@@ -83,9 +83,14 @@
 					<p>
 						<span>Eu</span>
 						Quero<br>Participar!
+					</p>
+					<div class="arrow">
+						<img class="animated infinite floating" src="images/icon-arrow-down.svg" alt="">
+					</div>
+					<div class="hashtags">
 						<span class="hashtag">#liberdadeja</span>
 						<span class="hashtag">#freedomnow</span>
-					</p>
+					</div>
 				</div>
 				<?php endif; ?>
 

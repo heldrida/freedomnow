@@ -160,10 +160,6 @@
 				color: #fff;
 				display: block;
 				font-weight: normal;
-
-				&.hashtag {
-					font-size: 12px;
-				}
 			}
 
 			p {
@@ -173,8 +169,33 @@
 				line-height: normal;
 			}
 
+			.hashtags {
+				font-size: 10px;
+				position: absolute;
+				bottom: 20px;
+				left: 20px;
+				line-height: normal;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				opacity: 0.8;
+			}
+
+			.arrow {
+				margin-top: 10px;
+				margin-left: 10px;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				@include transform(rotate(-90deg));
+			}
+
 			@media only screen and (max-width: 480px) {
 				font-size: 20px;
+
+				.arrow {
+					width: 20px;
+					height: 20px;
+				}
 			}
 		}
 	}

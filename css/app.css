@@ -66,7 +66,7 @@
   0% {
     transform: translateY(0%); }
   50% {
-    transform: translateY(8%); }
+    transform: translateY(20%); }
   100% {
     transform: translateY(0%); } }
 
@@ -216,16 +216,38 @@
         color: #fff;
         display: block;
         font-weight: normal; }
-        .freedomnow .appeal-grid-module .photo-box-submit-cta span.hashtag {
-          font-size: 12px; }
       .freedomnow .appeal-grid-module .photo-box-submit-cta p {
         color: #5785b9;
         padding: 10px 20px;
         text-transform: uppercase;
         line-height: normal; }
+      .freedomnow .appeal-grid-module .photo-box-submit-cta .hashtags {
+        font-size: 10px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.8; }
+      .freedomnow .appeal-grid-module .photo-box-submit-cta .arrow {
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        -webkit-transform: rotate(-90deg);
+        -khtml-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg); }
       @media only screen and (max-width: 480px) {
         .freedomnow .appeal-grid-module .photo-box-submit-cta {
-          font-size: 20px; } }
+          font-size: 20px; }
+          .freedomnow .appeal-grid-module .photo-box-submit-cta .arrow {
+            width: 20px;
+            height: 20px; } }
   .freedomnow .logo-freedomnow {
     position: absolute;
     right: 0;
