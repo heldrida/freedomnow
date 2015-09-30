@@ -56,6 +56,18 @@
 		</div>
 		<!-- end: clock -->
 
+		<!-- topbox bottom bar -->
+		<div class="topbox-bot-bar">
+
+			<div class="arrow-down animated infinite floating">
+				<img src="images/icon-arrow-down.svg" alt="">
+			</div>
+
+			<img class="logo-freedomnow npe" src="images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
+
+		</div>
+		<!-- topbox bottom bar -->
+
 		<!-- start: appeal grid -->
 		<div class="appeal-grid-module">
 
@@ -67,13 +79,6 @@
 
 		</div>
 		<!-- end: appeal grid -->
-
-
-		<div class="arrow-down animated infinite floating">
-			<img src="images/icon-arrow-down.svg" alt="">
-		</div>
-
-		<img class="logo-freedomnow npe" src="images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
 
 	</div>
 
