@@ -29,6 +29,8 @@
 
 			this.appealPopupModule = document.querySelector('.appeal-popup-module');
 			this.photoBoxPopupMs = 100;
+			this.counterMs = 200;
+			this.counterEasingAmount = 0.0125;
 
 		},
 
@@ -114,13 +116,36 @@
 				i = 0,
 				interval;
 
+			/*
 			interval = setInterval(function () {
 				el.innerHTML = i++;
 
 				if (i > total) {
 					clearInterval(interval);
 				}
-			}, 200);
+
+				this.counterMs = this.counterMs > 10 ? this.counterMs - (this.counterMs * 0.01) : 10;
+
+			}.bind(this), this.counterMs);
+			*/
+
+			function loop() {
+					return setTimeout(function () {
+
+						el.innerHTML = i++;
+
+						if (i <= total) {
+							interval = loop.call(this);
+						} else {
+							clearTimeout(interval);
+						}
+
+						this.counterMs = this.counterMs - (this.counterMs * this.counterEasingAmount);
+
+				}.bind(this), this.counterMs);
+			}
+
+			interval = loop.call(this);
 
 		},
 
