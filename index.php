@@ -71,7 +71,7 @@
 		<!-- start: appeal grid -->
 		<div class="appeal-grid-module">
 
-			<?php for ($i = 0; $i < 100; $i++) : ?>
+			<?php for ($i = 0; $i < 30; $i++) : ?>
 			<div class="photo-box">
 				<img src="https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg" alt="">
 			</div>

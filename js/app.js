@@ -44,7 +44,6 @@
 				this.photoBoxes[i].style.height = w + 'px';
 
 				this.setPhotoBoxEvents(this.photoBoxes[i]);
-
 			}
 
 		},
@@ -170,6 +169,8 @@
 
 			el.addEventListener('click', function () {
 
+				this.setPopupData.call(this, el);
+
 				this.appealPopupModule.style.display = "block";
 
 				setTimeout(function () {
@@ -188,6 +189,12 @@
 				}.bind(this));
 
 			}.bind(this));
+
+		},
+
+		setPopupData: function (el) {
+
+			console.log(el.querySelector('img'));
 
 		}
 
