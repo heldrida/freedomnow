@@ -25,6 +25,7 @@
 			this.fbSdkLoader();
 
 			this.resizeThrottleMs = 30;
+			this.scrollToMs = 800;
 
 		},
 
@@ -68,7 +69,7 @@
 			this.arrowDown.addEventListener('click', function () {
 
 				var to = this.clockModule.offsetHeight;
-				this.scrollTo.call(this, document.body, to, 1250);
+				this.scrollTo.call(this, document.body, to, this.scrollToMs);
 
 			}.bind(this));
 
