@@ -80,7 +80,12 @@
 
 				<?php if ($i === 4) : ?>
 				<div class="photo-box photo-box-submit-cta" data-cta="photo-submit">
-					<p>Quero Participar!</p>
+					<p>
+						<span>Eu</span>
+						Quero<br>Participar!
+						<span class="hashtag">#liberdadeja</span>
+						<span class="hashtag">#freedomnow</span>
+					</p>
 				</div>
 				<?php endif; ?>
 

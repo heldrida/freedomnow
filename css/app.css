@@ -209,18 +209,21 @@
     .freedomnow .appeal-grid-module .photo-box-submit-cta {
       width: 100%;
       height: 100%;
-      background-color: #5785b9; }
-      .freedomnow .appeal-grid-module .photo-box-submit-cta p {
-        font-size: 36px;
+      background-color: #000000;
+      font-size: 38px; }
+      .freedomnow .appeal-grid-module .photo-box-submit-cta span {
         color: #fff;
+        display: block; }
+        .freedomnow .appeal-grid-module .photo-box-submit-cta span.hashtag {
+          font-size: 12px; }
+      .freedomnow .appeal-grid-module .photo-box-submit-cta p {
+        color: #5785b9;
         padding: 10px 20px;
         text-transform: uppercase;
         line-height: normal; }
-      .freedomnow .appeal-grid-module .photo-box-submit-cta > img {
-        width: 40%;
-        display: inline-block;
-        height: auto;
-        margin-left: 20px; }
+      @media only screen and (max-width: 480px) {
+        .freedomnow .appeal-grid-module .photo-box-submit-cta {
+          font-size: 20px; } }
   .freedomnow .logo-freedomnow {
     position: absolute;
     right: 0;
