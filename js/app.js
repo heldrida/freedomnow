@@ -16,7 +16,7 @@
 			this.setPhotoBoxesSize();
 
 			this.counters = document.querySelectorAll('.count-to');
-
+			this.setInitialDays();
 			this.appealGridModule = document.querySelectorAll('.appeal-grid-module');
 
 			this.arrowDown = document.querySelector('.arrow-down');
@@ -282,6 +282,34 @@
 			setTimeout(function () {
 				this.formFileModule.style.display = '';
 			}.bind(this), 800);
+		},
+
+		getDays: function (name) {
+
+			var start,
+				now = moment();
+
+			if (name === 'greveFome') {
+
+				start = moment("2015-09-20");
+
+			} else if (name === 'diasPresos') {
+
+				start = moment("2015-06-20");
+
+			}
+
+			return	now.diff(start, "days");
+		},
+
+		setInitialDays: function () {
+
+			for (var i = 0; i < this.counters.length; i++) {
+				var name = this.counters[i].getAttribute('data-count-to'),
+					days = this.getDays(name);
+				this.counters[i].setAttribute('data-count-to', days);
+			}
+
 		}
 
 	};

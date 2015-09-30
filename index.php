@@ -27,7 +27,7 @@
 				<div>
 
 					<div class="col col-1">
-						<p><span class="count-to" data-count-to="<?php echo getTheDate('diasPresos'); ?>">0</span></p>
+						<p><span class="count-to" data-count-to="diasPresos">0</span></p>
 					</div>
 					<div class="col col-2">
 						<p>dias presos</p>
@@ -42,7 +42,7 @@
 				<div>
 
 					<div class="col col-1">
-						<p><span class="count-to" data-count-to="<?php echo getTheDate('greveFome'); ?>">0</span></p>
+						<p><span class="count-to" data-count-to="greveFome">0</span></p>
 					</div>
 
 					<div class="col col-2">
@@ -135,6 +135,7 @@
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 	<script src="js/app.js"></script>
 
 </body>
