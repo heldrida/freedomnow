@@ -79,15 +79,28 @@
 
 		startCounter: function () {
 
-			console.log('startCounter()');
-
-			for (var el in this.counters) {
-
-				console.log(this.counters[el]);
-
+			for (var i = 0; i < this.counters.length; i++) {
+				this.countTimer(this.counters[i]);
 			}
 
+		},
+
+		countTimer: function (el) {
+
+			var total = parseInt(el.getAttribute('data-count-to')),
+				i = 0,
+				interval;
+
+			interval = setInterval(function () {
+				el.innerHTML = i++;
+
+				if (i === total) {
+					clearInterval(interval);
+				}
+			}, 200);
+
 		}
+
 	};
 
 	window.FreedomNow = new FreedomNow();

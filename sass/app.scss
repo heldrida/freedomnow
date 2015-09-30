@@ -1,10 +1,12 @@
 @import "css3MixinLibrary";
 @import "colours";
 @import "fonts";
+@import "animations";
 
 .freedomnow {
 	font-family: 'Open Sans', sans-serif;
 	background: $black;
+	position: relative;
 
 	.clock-module {
 		width: 100%;
@@ -80,5 +82,24 @@
 				height: 100%;
 			}
 		}
+	}
+
+	.logo-freedomnow {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+		padding: 30px;
+	}
+	.arrow-down {
+		position: absolute;
+		bottom: 60px;
+		left: calc(50% - 15px);
+		z-index: 2;
+		color: #fff;
+		padding: 30px;
+		animation-duration: 2s;
+		-webkit-animation-duration: 2s;
+		opacity: 0.2;
 	}
 }

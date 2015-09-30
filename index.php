@@ -21,7 +21,7 @@
 				<div>
 
 					<div class="col col-1">
-						<p><span class="count-to" data-count-to="102"></span></p>
+						<p><span class="count-to" data-count-to="102">0</span></p>
 					</div>
 					<div class="col col-2">
 						<p>dias presos</p>
@@ -36,7 +36,7 @@
 				<div>
 
 					<div class="col col-1">
-						<p><span class="count-to" data-count-to="10"></span></p>						
+						<p><span class="count-to" data-count-to="10">0</span></p>						
 					</div>
 
 					<div class="col col-2">
@@ -62,6 +62,13 @@
 		</div>
 		<!-- end: appeal grid -->
 
+
+		<div class="arrow-down animated infinite bounce">
+			<i class="fa fa-arrow-circle-o-down fa-5x"></i>
+		</div>
+
+		<img class="logo-freedomnow" src="images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
+	
 	</div>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
