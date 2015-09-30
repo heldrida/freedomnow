@@ -208,10 +208,41 @@
 				position: absolute;
 				bottom: 0;
 				left: 0;
+				width: 100%;
+				padding: 10px 0;
+				background-color: rgba(0, 0, 0, 0.2);
 
 				button {
-					&.next {}
-					&.close {}
+					margin: 10px 0px;
+					border: none;
+					font-size: 16px;
+					text-transform: uppercase;
+					padding: 8px 15px;
+					cursor: pointer;
+					@include transition(opacity 0.3s);
+
+					&:hover {
+						opacity: 0.8;
+					}
+
+					&:nth-child(1) {
+						margin-left: 20px;
+					}
+
+					&.close {
+						background-color: $black;
+						color: $blue;
+					}
+
+					&.next {
+						background-color: $blue;
+						color: $black;
+					}
+
+					&.how-to-appeal {
+						background: #fff;
+						color: $blue;
+					}
 				}
 			}
 		}

@@ -86,7 +86,8 @@
 			<div class="img-container" data-photo="https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg">
 
 				<div class="nav-ctrl">
-					<button class="next">proximo</button>
+					<button class="next">ver proximo</button>
+					<button class="how-to-appeal">como apoiar ?</button>
 					<button class="close">fechar</button>
 				</div>
 			</div>
