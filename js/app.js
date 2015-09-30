@@ -23,12 +23,16 @@
 			this.clockModule = document.querySelector('.clock-module');
 
 			this.fbSdkLoader();
+
+			this.resizeThrottleMs = 30;
+
 		},
 
 		setPhotoBoxesSize: function () {
 
 			var docWidth = document.body.clientWidth,
-				w = docWidth / 4;
+				factor = docWidth > 767 ? (docWidth > 1024 ? 4 : 3) : 2, // mobile, tablet & desktop nr columns
+				w = docWidth / factor;
 
 			for (var i = 0; i < this.photoBoxes.length; i++) {
 
@@ -53,11 +57,7 @@
 				console.log('images preloaded');
 			});
 
-			window.addEventListener('resize', function () {
-
-				this.setPhotoBoxesSize.call(this);
-
-			}.bind(this));
+			window.addEventListener('resize', _.throttle(this.setPhotoBoxesSize.bind(this), this.resizeThrottleMs));
 
 			window.addEventListener('startCounter', function () {
 
@@ -71,8 +71,6 @@
 				this.scrollTo.call(this, document.body, to, 1250);
 
 			}.bind(this));
-
-			();
 
 		},
 
