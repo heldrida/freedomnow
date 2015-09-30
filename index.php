@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	include_once('includes/helperFns.php')
 
@@ -42,7 +42,7 @@
 				<div>
 
 					<div class="col col-1">
-						<p><span class="count-to" data-count-to="<?php echo getTheDate('greveFome'); ?>">0</span></p>						
+						<p><span class="count-to" data-count-to="<?php echo getTheDate('greveFome'); ?>">0</span></p>
 					</div>
 
 					<div class="col col-2">
@@ -74,10 +74,11 @@
 		</div>
 
 		<img class="logo-freedomnow npe" src="images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
-	
+
 	</div>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 	<script src="js/app.js"></script>
 
 </body>
