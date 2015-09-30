@@ -122,6 +122,16 @@
             position: relative;
             top: -18px;
             line-height: 148px; }
+            @media only screen and (max-width: 768px) {
+              .freedomnow .clock-module .row.r2 .col-1 p {
+                font-size: 108.75px;
+                top: -13.5px;
+                line-height: 111px; } }
+            @media only screen and (max-width: 480px) {
+              .freedomnow .clock-module .row.r2 .col-1 p {
+                font-size: 72.5px;
+                top: -9px;
+                line-height: 74px; } }
       .freedomnow .clock-module .row .col {
         float: left; }
       .freedomnow .clock-module .row .col-1 {
@@ -129,8 +139,22 @@
         margin-right: 30px;
         width: 200px;
         text-align: right; }
+        @media only screen and (max-width: 768px) {
+          .freedomnow .clock-module .row .col-1 {
+            margin-right: 22.5px;
+            width: 150px; } }
+        @media only screen and (max-width: 480px) {
+          .freedomnow .clock-module .row .col-1 {
+            margin-right: 15px;
+            width: 100px; } }
       .freedomnow .clock-module .row p {
         font-size: 60px; }
+        @media only screen and (max-width: 768px) {
+          .freedomnow .clock-module .row p {
+            font-size: 45px; } }
+        @media only screen and (max-width: 480px) {
+          .freedomnow .clock-module .row p {
+            font-size: 30px; } }
   .freedomnow .appeal-grid-module {
     position: relative;
     z-index: 1;
@@ -212,19 +236,25 @@
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      width: calc(100% - 40px);
-      height: calc(100% - 40px);
+      width: 100%;
+      height: 100%;
       max-width: 500px;
       max-height: 500px;
       margin: auto;
-      top: 20px;
-      left: 20px;
+      top: 50%;
+      left: 50%;
       -webkit-box-shadow: 0px 20px 80px #181818;
       -khtml-box-shadow: 0px 20px 80px #181818;
       -moz-box-shadow: 0px 20px 80px #181818;
       -ms-box-shadow: 0px 20px 80px #181818;
       -o-box-shadow: 0px 20px 80px #181818;
-      box-shadow: 0px 20px 80px #181818; }
+      box-shadow: 0px 20px 80px #181818;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      -khtml-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -o-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%); }
       .freedomnow .appeal-popup-module .img-container .nav-ctrl {
         position: absolute;
         bottom: 0;

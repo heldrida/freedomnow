@@ -47,6 +47,18 @@
 						position: relative;
 						top: -18px;
 						line-height: 148px;
+
+						@media only screen and (max-width: 768px) {
+							font-size: 145px * 0.75;
+							top: -18px * 0.75;
+							line-height: 148px * 0.75;
+						}
+
+						@media only screen and (max-width: 480px) {
+							font-size: 145px * 0.5;
+							top: -18px * 0.5;
+							line-height: 148px * 0.5;
+						}
 					}
 				}
 			}
@@ -60,10 +72,28 @@
 				margin-right: 30px;
 				width: 200px;
 				text-align: right;
+
+				@media only screen and (max-width: 768px) {
+					margin-right: 30px * 0.75;
+					width: 200px * 0.75;
+				}
+
+				@media only screen and (max-width: 480px) {
+					margin-right: 30px * 0.5;
+					width: 200px * 0.5;
+				}
 			}
 
 			p {
 				font-size: 60px;
+
+				@media only screen and (max-width: 768px) {
+					font-size: 60px * 0.75;
+				}
+
+				@media only screen and (max-width: 480px) {
+					font-size: 60px * 0.5;
+				}
 			}
 		}
 	}
@@ -163,7 +193,7 @@
 			top: 50%;
 			left: 50%;
 			@include box-shadow(0px, 20px, 80px, #181818);
-			@include transform(translateX(-50%), translateY(-50%));
+			@include transform(translateX(-50%) translateY(-50%));
 
 			.nav-ctrl {
 				position: absolute;
