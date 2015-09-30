@@ -34,6 +34,7 @@
 			this.ctaAppeal = document.querySelector('.cta-appeal');
 			this.formFileModule = document.querySelector('.form-file-module');
 			this.formFile = document.querySelector('.myFileForm');
+			this.formFileCloseBtn = document.querySelector('.form-file-module .close');
 			this.ctaAppealTransitionMs = 1000;
 		},
 
@@ -103,10 +104,7 @@
 			this.formFileModule.addEventListener('click', function (e) {
 
 				if (e.target.className.indexOf('-module') > -1) {
-					this.formFileModule.style.opacity = 0;
-					setTimeout(function () {
-						this.formFileModule.style.display = '';
-					}.bind(this), 800);
+					this.formFileClose.call(this);
 				}
 
 			}.bind(this));
@@ -116,6 +114,10 @@
 				console.log('form event submit');
 				alert('todo: request facebook auth, fb permissions, save file server side, grab destination file url, post to fb');
 			}, false);
+
+			this.formFileCloseBtn.addEventListener('click', function () {
+				this.formFileClose.call(this);
+			}.bind(this), false);
 
 		},
 
@@ -263,6 +265,13 @@
 
 			console.log(el.querySelector('img'));
 
+		},
+
+		formFileClose: function () {
+			this.formFileModule.style.opacity = 0;
+			setTimeout(function () {
+				this.formFileModule.style.display = '';
+			}.bind(this), 800);
 		}
 
 	};

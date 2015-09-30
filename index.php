@@ -100,6 +100,7 @@
 		<div class="form-file-module">
 
 			<form name="myFileForm" class="myFileForm" action="" method="post" enctype="multipart/form-data">
+				<button class="close"></button>
 				<div>
 					<label for="file">Enviar foto:</label>
 					<input type="file" name="file">

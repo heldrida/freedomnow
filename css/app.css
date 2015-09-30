@@ -385,3 +385,15 @@
         text-transform: uppercase;
         cursor: pointer;
         margin-bottom: 20px; }
+      .freedomnow .form-file-module form .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/icon-close-black.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        border: none;
+        background-color: transparent; }
