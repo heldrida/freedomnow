@@ -53,26 +53,27 @@
 
 			</div>
 
+			<!-- topbox bottom bar -->
+			<div class="topbox-bot-bar">
+
+				<div class="arrow-down animated infinite floating">
+					<img src="images/icon-arrow-down.svg" alt="">
+				</div>
+
+				<img class="logo-freedomnow npe" src="images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
+
+			</div>
+			<!-- topbox bottom bar -->
+
+
 		</div>
 		<!-- end: clock -->
-
-		<!-- topbox bottom bar -->
-		<div class="topbox-bot-bar">
-
-			<div class="arrow-down animated infinite floating">
-				<img src="images/icon-arrow-down.svg" alt="">
-			</div>
-
-			<img class="logo-freedomnow npe" src="images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
-
-		</div>
-		<!-- topbox bottom bar -->
 
 		<!-- start: appeal grid -->
 		<div class="appeal-grid-module">
 
 			<?php for ($i = 0; $i < 30; $i++) : ?>
-			<div class="photo-box">
+			<div class="photo-box" data-name="foo bar" data-index="<?php echo $i; ?>">
 				<img src="https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg" alt="">
 			</div>
 			<?php endfor; ?>

@@ -92,7 +92,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    z-index: 2;
+    z-index: 5;
     -webkit-box-shadow: 0px 5px 60px #181818;
     -khtml-box-shadow: 0px 5px 60px #181818;
     -moz-box-shadow: 0px 5px 60px #181818;
@@ -155,6 +155,10 @@
         @media only screen and (max-width: 480px) {
           .freedomnow .clock-module .row p {
             font-size: 30px; } }
+    .freedomnow .clock-module .topbox-bot-bar {
+      position: relative;
+      z-index: 2;
+      pointer-events: visible; }
   .freedomnow .appeal-grid-module {
     position: relative;
     z-index: 1;
