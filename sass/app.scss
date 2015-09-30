@@ -154,10 +154,12 @@
 			height: 100%;
 			background-color: $black;
 			font-size: 38px;
+			font-weight: bold;
 
 			span {
 				color: #fff;
 				display: block;
+				font-weight: normal;
 
 				&.hashtag {
 					font-size: 12px;
