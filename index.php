@@ -118,14 +118,24 @@
 		<div class="form-file-module">
 
 			<form name="myFileForm" class="myFileForm" action="" method="post" enctype="multipart/form-data">
-				<button class="close"></button>
-				<div>
-					<label for="file">Enviar foto:</label>
-					<input type="file" name="file">
+
+				<div class="user-data">
+					<button class="close"></button>
+					<div>
+						<label for="file">Enviar foto:</label>
+						<input type="file" name="file">
+					</div>
+					<div>
+					<input type="submit" value="submit">
+					</div>
 				</div>
-				<div>
-				<input type="submit" value="submit">
+
+				<!-- start: success message -->
+				<div class="form-success-message">
+					<p>Mensagem sucesso!</p>
 				</div>
+				<!-- end: success message -->
+
 			</form>
 
 		</div>

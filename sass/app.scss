@@ -357,6 +357,8 @@
 			left: 50%;
 			@include transform(translateX(-50%) translateY(-50%));
 			@include box-shadow(0px, 5px, 60px, #181818);
+			@include transition(opacity 0.3s);
+			opacity: 1;
 
 			> div {
 				margin-bottom: 10px;
@@ -390,6 +392,12 @@
 				background-size: cover;
 				border: none;
 				background-color: transparent;
+			}
+
+			.form-success-message {
+				opacity: 0;
+				display: none;
+				@include transition(opacity 0.3s);
 			}
 		}
 	}

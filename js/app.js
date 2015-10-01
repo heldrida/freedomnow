@@ -37,6 +37,11 @@
 			this.formFileCloseBtn = document.querySelector('.form-file-module .close');
 			this.ctaAppealTransitionMs = 1000;
 			this.photoBoxSubmitCta = document.querySelector('.photo-box-submit-cta');
+			this.formSuccessMessage = document.querySelector('.form-success-message');
+			this.formUserData = document.querySelector('.form-file-module .user-data')
+			this.formSuccessMessageStartMs = 800;
+			this.formSuccessMessageEndMs = 5000;
+
 		},
 
 		setPhotoBoxesSize: function () {
@@ -284,6 +289,15 @@
 			}.bind(this), 800);
 		},
 
+		formReset: function () {
+
+			this.formUserData.style.opacity = '';
+			this.formUserData.style.display = '';
+			this.formSuccessMessage.style.display = '';
+			this.formSuccessMessage.style.opacity = '';
+
+		},
+
 		getDays: function (name) {
 
 			var start,
@@ -382,8 +396,23 @@
 		},
 
 		postedSuccessHandler: function () {
-			this.formFileClose.call(this);
-			// todo: show success message
+
+			this.formUserData.style.opacity = 0;
+
+			setTimeout(function () {
+
+				this.formUserData.style.display = 'none';
+				this.formSuccessMessage.style.display = 'block';
+				this.formSuccessMessage.style.opacity = 1;
+
+
+				// close
+				setTimeout(function () {
+					this.formFileClose.call(this);
+				}.bind(this), this.formSuccessMessageEndMs);
+
+			}.bind(this), this.formSuccessMessageStartMs);
+
 		}
 
 	};
