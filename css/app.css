@@ -271,7 +271,15 @@ html {
     .freedomnow .appeal-grid-module .amnistia-internacional-portugal {
       background: #F3EB1A;
       text-align: center;
-      position: relative; }
+      position: relative;
+      -webkit-transition: opacity 0.3s;
+      -khtml-transition: opacity 0.3s;
+      -moz-transition: opacity 0.3s;
+      -ms-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
+      .freedomnow .appeal-grid-module .amnistia-internacional-portugal:hover:before {
+        opacity: 0.3; }
       .freedomnow .appeal-grid-module .amnistia-internacional-portugal h3 {
         padding: 20px;
         color: #000;

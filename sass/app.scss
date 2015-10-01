@@ -232,6 +232,13 @@ html {
 			background: $yellow;
 			text-align: center;
 			position: relative;
+			@include transition(opacity 0.3s);
+
+			&:hover {
+				&:before {
+					opacity: 0.3;
+				}
+			}
 
 			h3 {
 				padding: 20px;
