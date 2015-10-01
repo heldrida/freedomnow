@@ -113,8 +113,8 @@
 			this.formFile.addEventListener('submit', function (e) {
 				e.preventDefault();
 				console.log('form event submit');
-				alert('todo: request facebook auth, fb permissions, save file server side, grab destination file url, post to fb');
-			}, false);
+				this.formHandler.call(this);
+			}.bind(this), false);
 
 			this.formFileCloseBtn.addEventListener('click', function () {
 				this.formFileClose.call(this);
@@ -309,6 +309,43 @@
 					days = this.getDays(name);
 				this.counters[i].setAttribute('data-count-to', days);
 			}
+
+		},
+
+		formHandler: function () {
+
+			// This variables will be used to store the form data
+			var file = document.querySelector('input[name="file"]').files[0],
+				fd = new FormData();
+
+			fd.append("file", file);
+
+			console.log(file);
+
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('POST', 'cms/wp-json/media', true);
+
+			xhr.setRequestHeader("Authorization", "Basic " + btoa("admin:admin"));
+
+			xhr.addEventListener('load', function () {
+				if (this.status >= 200 && this.status <= 300) {
+					var resp = JSON.parse(this.response);
+					console.log(resp);
+				} else {
+					alert('Error: wp logout please!');
+				}
+				console.log(this.status);
+			});
+
+			xhr.addEventListener('progress', function (e) {
+				if (e.lengthComputable) {
+					var percentComplete = (e.loaded / e.total) * 100;
+					console.log(percentComplete + '% uploaded');
+				}
+			});
+
+			xhr.send(fd);
 
 		}
 

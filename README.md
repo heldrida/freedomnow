@@ -29,3 +29,7 @@
 		https://wordpress.org/plugins/wp-oauth/
 
 		http://wp-api.org/guides/authentication.html
+
+		https://developer.tizen.org/dev-guide/web/2.3.0/org.tizen.mobile.web.appprogramming/html/tutorials/w3c_tutorial/comm_tutorial/upload_ajax.htm
+
+		https://mobiarch.wordpress.com/2013/01/02/uploading-file-using-xmlhttprequest-level-2/
