@@ -41,7 +41,8 @@
 			this.formUserData = document.querySelector('.form-file-module .user-data')
 			this.formSuccessMessageStartMs = 800;
 			this.formSuccessMessageEndMs = 5000;
-
+			this.contactEmailCta = document.querySelector('.contact-email');
+			this.signPetitionCta = document.querySelector('.amnistia-internacional-portugal');
 		},
 
 		setPhotoBoxesSize: function () {
@@ -128,6 +129,19 @@
 			this.photoBoxSubmitCta.addEventListener('click', function () {
 				this.formFileModule.style.display = 'block';
 				this.formFileModule.style.opacity = 1;
+			}.bind(this));
+
+			this.contactEmailCta.addEventListener('click', function () {
+
+				window.location.href = "mailto: mail@example.org";
+
+			}.bind(this));
+
+			this.signPetitionCta.addEventListener('click', function () {
+
+				var url = 'http://www.amnistia-internacional.pt/index.php?option=com_wrapper&view=wrapper&Itemid=40&sf_pid=a077000000TcpJGAAZ';
+				window.open(url, '_blank', '');
+
 			}.bind(this));
 
 		},
@@ -245,7 +259,7 @@
 
 			el.addEventListener('click', function (e) {
 
-				if (e.target.className.indexOf('photo-box-submit-cta') > -1) {
+				if (e.target.className.indexOf('photo-popup') === -1) {
 					return false;
 				}
 

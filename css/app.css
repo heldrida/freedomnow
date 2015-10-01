@@ -87,7 +87,8 @@
 .freedomnow {
   font-family: 'Open Sans', sans-serif;
   background: #000000;
-  position: relative; }
+  position: relative;
+  background-color: #000; }
   .freedomnow .clock-module {
     width: 100%;
     height: 100vh;
@@ -185,9 +186,9 @@
         -ms-transition: opacity 0.3s ease-in-out;
         -o-transition: opacity 0.3s ease-in-out;
         transition: opacity 0.3s ease-in-out; }
-      .freedomnow .appeal-grid-module .photo-box:hover:before {
+      .freedomnow .appeal-grid-module .photo-box.anim-hover:hover:before {
         opacity: 0.3; }
-      .freedomnow .appeal-grid-module .photo-box:hover img {
+      .freedomnow .appeal-grid-module .photo-box.anim-hover:hover img {
         -webkit-transform: scale(1.1);
         -khtml-transform: scale(1.1);
         -moz-transform: scale(1.1);
@@ -200,6 +201,7 @@
       .freedomnow .appeal-grid-module .photo-box img {
         width: auto;
         height: 100%;
+        transform-origin: center center;
         -webkit-transition: transform 0.3s;
         -khtml-transition: transform 0.3s;
         -moz-transition: transform 0.3s;
@@ -248,6 +250,49 @@
           .freedomnow .appeal-grid-module .photo-box-submit-cta .arrow {
             width: 20px;
             height: 20px; } }
+    .freedomnow .appeal-grid-module .general-tile {
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: normal; }
+      .freedomnow .appeal-grid-module .general-tile span {
+        color: #fff;
+        display: block;
+        font-weight: normal; }
+      .freedomnow .appeal-grid-module .general-tile p {
+        color: #5785b9;
+        padding: 10px 20px;
+        text-transform: uppercase; }
+    .freedomnow .appeal-grid-module .amnistia-internacional-portugal {
+      background: #F3EB1A;
+      text-align: center;
+      position: relative; }
+      .freedomnow .appeal-grid-module .amnistia-internacional-portugal h3 {
+        padding: 20px;
+        color: #000;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100; }
+      .freedomnow .appeal-grid-module .amnistia-internacional-portugal:hover img {
+        -webkit-transition: none;
+        -khtml-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        transition: none; }
+      .freedomnow .appeal-grid-module .amnistia-internacional-portugal img {
+        width: 65%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        -khtml-transform: translateY(-50%) translateX(-50%);
+        -moz-transform: translateY(-50%) translateX(-50%);
+        -ms-transform: translateY(-50%) translateX(-50%);
+        -o-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%); }
   .freedomnow .logo-freedomnow {
     position: absolute;
     right: 0;
