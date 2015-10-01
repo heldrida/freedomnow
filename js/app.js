@@ -314,24 +314,31 @@
 
 		formHandler: function () {
 
+			this.saveFile();
+
+		},
+
+		saveFile: function () {
+
+			console.log('saveFile');
+
 			// This variables will be used to store the form data
-			var file = document.querySelector('input[name="file"]').files[0],
+			var context = this,
+				file = document.querySelector('input[name="file"]').files[0],
 				fd = new FormData();
 
 			fd.append("file", file);
-
-			console.log(file);
 
 			var xhr = new XMLHttpRequest();
 
 			xhr.open('POST', 'cms/wp-json/media', true);
 
-			xhr.setRequestHeader("Authorization", "Basic " + btoa("admin:admin"));
+			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
 			xhr.addEventListener('load', function () {
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
-					console.log(resp);
+					context.savePost(resp);
 				} else {
 					alert('Error: wp logout please!');
 				}
@@ -347,6 +354,36 @@
 
 			xhr.send(fd);
 
+		},
+
+		savePost: function (data) {
+
+			console.log('savePost');
+			var context = this;
+			var xhr = new XMLHttpRequest();
+			var params = "title=foobar&content_raw=" + data.content;
+
+			xhr.open('POST', 'cms/wp-json/posts', true);
+
+			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
+			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			xhr.addEventListener('load', function () {
+				if (this.status >= 200 && this.status <= 300) {
+					var resp = JSON.parse(this.response);
+					console.log(resp);
+					context.postedSuccessHandler.call(context);
+				}
+
+				console.log(this.status);
+			});
+
+			xhr.send(params);
+		},
+
+		postedSuccessHandler: function () {
+			this.formFileClose.call(this);
+			// todo: show success message
 		}
 
 	};
