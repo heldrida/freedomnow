@@ -198,11 +198,12 @@ html {
 			}
 
 			@media only screen and (max-width: 480px) {
-				font-size: 20px;
+				font-size: 12px;
 
 				.arrow {
-					width: 20px;
-					height: 20px;
+					width: 12px;
+					height: 12px;
+					margin-left: 20px;
 				}
 			}
 		}
@@ -214,6 +215,10 @@ html {
 			font-size: 18px;
 			font-weight: bold;
 			line-height: normal;
+
+			@media only screen and (max-width: 480px) {
+				font-size: 12px;
+			}
 
 			span {
 				color: #fff;
