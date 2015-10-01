@@ -30,6 +30,9 @@ if (stristr($_SERVER['SERVER_NAME'], 'magnolia')) {
 	/** MySQL database password */
 	define('DB_PASSWORD', 'root');
 
+	define('WP_HOME','http://magnolia/freedomnow/cms/');
+	define('WP_SITEURL','http://magnolia/freedomnow/cms/');
+
 } else if (stristr($_SERVER['SERVER_NAME'], 'punkbit')) {
 
 	// ** MySQL settings - You can get this info from your web host ** //
@@ -41,6 +44,9 @@ if (stristr($_SERVER['SERVER_NAME'], 'magnolia')) {
 
 	/** MySQL database password */
 	define('DB_PASSWORD', '');
+
+	define('WP_HOME','http://freedomnow.punkbit.com/cms/');
+	define('WP_SITEURL','http://freedomnow.punkbit.com/cms/');
 
 }
 
