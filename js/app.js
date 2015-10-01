@@ -43,6 +43,8 @@
 			this.formSuccessMessageEndMs = 5000;
 			this.contactEmailCta = document.querySelector('.contact-email');
 			this.signPetitionCta = document.querySelector('.amnistia-internacional-portugal');
+			this.popupImgContainer = document.querySelector('.appeal-popup-module .img-container');
+
 		},
 
 		setPhotoBoxesSize: function () {
@@ -56,7 +58,8 @@
 				this.photoBoxes[i].style.width = w + 'px';
 				this.photoBoxes[i].style.height = w + 'px';
 
-				this.setPhotoBoxEvents(this.photoBoxes[i]);
+				this.setPhotoBoxEvents.call(this, this.photoBoxes[i]);
+
 			}
 
 		},
@@ -256,7 +259,7 @@
 		},
 
 		setPhotoBoxEvents: function (el) {
-
+			// todo: the next event is triggered > 1, for some reason ?!
 			el.addEventListener('click', function (e) {
 
 				if (e.target.className.indexOf('photo-popup') === -1) {
@@ -292,7 +295,9 @@
 
 		setPopupData: function (el) {
 
-			console.log(el.querySelector('img'));
+			var src = el.querySelector('img').getAttribute('src');
+
+			this.popupImgContainer.style.backgroundImage = 'url(' + src + ')';
 
 		},
 

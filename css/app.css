@@ -84,6 +84,9 @@
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom; }
 
+html {
+  background-color: #000; }
+
 .freedomnow {
   font-family: 'Open Sans', sans-serif;
   background: #000000;
@@ -347,7 +350,6 @@
     transition: opacity 0.8s; }
     .freedomnow .appeal-popup-module .img-container {
       position: relative;
-      background-image: url(https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg);
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;

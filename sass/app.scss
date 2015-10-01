@@ -3,6 +3,10 @@
 @import "fonts";
 @import "animations";
 
+html {
+	background-color: #000;
+}
+
 .freedomnow {
 	font-family: 'Open Sans', sans-serif;
 	background: $black;
@@ -308,7 +312,7 @@
 
 		.img-container {
 			position: relative;
-			background-image: url(https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg);
+			//background-image: url(../images/assange-example.jpg);
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: cover;

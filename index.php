@@ -76,7 +76,7 @@
 			<?php for ($i = 0; $i < 30; $i++) : ?>
 
 				<div class="photo-box anim-hover photo-popup" data-name="foo bar" data-index="<?php echo $i; ?>">
-					<img src="https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg" alt="">
+					<img src="images/assange-example.jpg" alt="">
 				</div>
 
 				<!-- start: photo submit tile -->
@@ -98,7 +98,7 @@
 				<!-- end: photo submit tile -->
 
 				<!-- start: contact info tile -->
-				<?php if ($i === 7) : ?>
+				<?php if ($i === 9) : ?>
 				<div class="photo-box general-tile contact-email" data-cta="contact-email">
 					<p>
 						<span>Contacto</span>
@@ -125,7 +125,7 @@
 		<!-- start: appeal popup -->
 		<div class="appeal-popup-module">
 
-			<div class="img-container" data-photo="https://leakypedia.files.wordpress.com/2013/01/keep-fighting-cropped1.jpg">
+			<div class="img-container">
 
 				<div class="nav-ctrl">
 					<button class="next">ver proximo</button>
