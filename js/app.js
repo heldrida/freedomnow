@@ -305,6 +305,7 @@
 			this.formFileModule.style.opacity = 0;
 			setTimeout(function () {
 				this.formFileModule.style.display = '';
+				this.formReset.call(this);
 			}.bind(this), 800);
 		},
 
