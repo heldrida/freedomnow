@@ -18,15 +18,31 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'wp_freedomnow');
+if (stristr($_SERVER['SERVER_NAME'], 'magnolia')) {
 
-/** MySQL database username */
-define('DB_USER', 'root');
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'wp_freedomnow');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'root');
+	/** MySQL database username */
+	define('DB_USER', 'root');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', 'root');
+
+} else if (stristr($_SERVER['SERVER_NAME'], 'punkbit')) {
+
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'wp_freedomnow');
+
+	/** MySQL database username */
+	define('DB_USER', 'wp_freedomnow');
+
+	/** MySQL database password */
+	define('DB_PASSWORD', '');
+
+}
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
