@@ -73,10 +73,12 @@
 		<!-- start: appeal grid -->
 		<div class="appeal-grid-module">
 
-			<?php for ($i = 0; $i < 30; $i++) : ?>
+			<?php $data = getPhotos(); $i = 0; ?>
 
+			<?php foreach ($data As $k => $obj) : ?>
+				<?php $i++; ?>
 				<div class="photo-box anim-hover photo-popup" data-name="foo bar" data-index="<?php echo $i; ?>">
-					<img src="images/assange-example.jpg" alt="">
+					<img src="<?php echo $obj['image_src']; ?>" alt="">
 				</div>
 
 				<!-- start: photo submit tile -->
@@ -117,7 +119,7 @@
 				<?php endif; ?>
 				<!-- end: contact info tile -->
 
-			<?php endfor; ?>
+			<?php endforeach; ?>
 
 		</div>
 		<!-- end: appeal grid -->
