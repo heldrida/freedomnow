@@ -122,7 +122,6 @@
 
 			this.formFile.addEventListener('submit', function (e) {
 				e.preventDefault();
-				console.log('form event submit');
 				this.formHandler.call(this);
 			}.bind(this), false);
 
