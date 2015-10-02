@@ -472,6 +472,7 @@ html {
 				@include transition(opacity 0.3s);
 				p {
 					padding-bottom: 20px;
+					line-height: normal;
 				}
 			}
 

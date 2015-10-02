@@ -138,10 +138,13 @@
 
 			this.formFile.addEventListener('submit', function (e) {
 				e.preventDefault();
+				console.log('e.target', e.target);
+				console.log('formFile event submit()');
 				this.formHandler.call(this);
 			}.bind(this), false);
 
 			this.formFileCloseBtn.addEventListener('click', function () {
+				console.log('formFileCloseBtn event click!');
 				this.formFileClose.call(this);
 			}.bind(this), false);
 
@@ -336,6 +339,7 @@
 		},
 
 		formFileClose: function () {
+			console.log('formFileClose()');
 			this.formFileModule.style.opacity = 0;
 			setTimeout(function () {
 				this.formFileModule.style.display = '';
@@ -344,7 +348,7 @@
 		},
 
 		formReset: function () {
-
+			console.log('formReset()');
 			this.formUserData.style.opacity = '';
 			this.formUserData.style.display = '';
 			this.formSuccessMessage.style.display = '';
@@ -382,6 +386,7 @@
 
 		formHandler: function () {
 
+			console.log('formHandler!');
 			this.saveFile();
 
 		},
@@ -408,7 +413,7 @@
 					var resp = JSON.parse(this.response);
 					context.savePost(resp);
 				} else {
-					alert('Error: wp logout please!');
+					alert('Error: Are you logged in the system ? Logout and try again please, thank you!');
 				}
 				console.log(this.status);
 			});
