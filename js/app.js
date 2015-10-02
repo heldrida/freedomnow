@@ -30,7 +30,7 @@
 			this.appealPopupModule = document.querySelector('.appeal-popup-module');
 			this.photoBoxPopupMs = 100;
 			this.counterMs = 200;
-			this.counterEasingAmount = 0.0125;
+			this.counterEasingAmount = 0.0400;
 			this.ctaAppeal = document.querySelector('.cta-appeal');
 			this.formFileModule = document.querySelector('.form-file-module');
 			this.formFile = document.querySelector('.myFileForm');
