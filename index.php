@@ -158,7 +158,7 @@
 						</label>
 						<label>
 							<input class="permission-checkbox" type="checkbox" name="tick-email-publish" value="email_entities">
-							<span>Enviar o apelo por email para as entidades</span>
+							<span>Enviar o apelo por email para as entidades competentes</span>
 						</label>
 					</div>
 					<div>
@@ -168,7 +168,7 @@
 
 				<!-- start: success message -->
 				<div class="form-success-message">
-					<p>Mensagem sucesso!</p>
+					<p>O seu apelo foi registado com sucesso.<br>Obrigado!</p>
 				</div>
 				<!-- end: success message -->
 

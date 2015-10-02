@@ -465,9 +465,14 @@ html {
 			}
 
 			.form-success-message {
+				width: 90%;
+				margin: 0 5%;
 				opacity: 0;
 				display: none;
 				@include transition(opacity 0.3s);
+				p {
+					padding-bottom: 20px;
+				}
 			}
 
 			.confirm {

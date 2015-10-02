@@ -507,6 +507,8 @@ html {
         border: none;
         background-color: transparent; }
       .freedomnow .form-file-module form .form-success-message {
+        width: 90%;
+        margin: 0 5%;
         opacity: 0;
         display: none;
         -webkit-transition: opacity 0.3s;
@@ -515,6 +517,8 @@ html {
         -ms-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s; }
+        .freedomnow .form-file-module form .form-success-message p {
+          padding-bottom: 20px; }
       .freedomnow .form-file-module form .confirm {
         background-color: #5785b9;
         color: #fff;
