@@ -45,14 +45,25 @@
 			this.signPetitionCta = document.querySelector('.amnistia-internacional-portugal');
 			this.popupImgContainer = document.querySelector('.appeal-popup-module .img-container');
 			this.popupNextBtn = document.querySelector('.nav-ctrl .next');
+			this.userPermissions = {
+				facebook: true, // todo: remove default to 'true' during development
+				email_send: false
+			};
+		},
+
+		calcBoxWidth: function () {
+
+			var docWidth = document.body.clientWidth,
+				factor = docWidth > 767 ? (docWidth > 1024 ? 4 : 3) : 2, // mobile, tablet & desktop nr columns
+				w = docWidth / factor;
+
+			return w;
 
 		},
 
 		setPhotoBoxesSize: function () {
 
-			var docWidth = document.body.clientWidth,
-				factor = docWidth > 767 ? (docWidth > 1024 ? 4 : 3) : 2, // mobile, tablet & desktop nr columns
-				w = docWidth / factor;
+			var w = this.calcBoxWidth();
 
 			for (var i = 0; i < this.photoBoxes.length; i++) {
 
@@ -62,6 +73,8 @@
 				this.setPhotoBoxEvents.call(this, this.photoBoxes[i]);
 
 			}
+
+			this.photoBoxWidth = w;
 
 		},
 
@@ -400,7 +413,7 @@
 			console.log('savePost');
 			var context = this;
 			var xhr = new XMLHttpRequest();
-			var params = "title=foobar&content_raw=" + data.content;
+			var params = "title=foobar&content_raw=" + data.content + (this.userPermissions.facebook ? "&status=publish" : null);
 
 			xhr.open('POST', 'cms/wp-json/posts', true);
 
@@ -411,7 +424,7 @@
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
 					console.log(resp);
-					context.postedSuccessHandler.call(context);
+					context.postedSuccessHandler.call(context, resp);
 				}
 
 				console.log(this.status);
@@ -420,7 +433,7 @@
 			xhr.send(params);
 		},
 
-		postedSuccessHandler: function () {
+		postedSuccessHandler: function (data) {
 
 			this.formUserData.style.opacity = 0;
 
@@ -430,11 +443,19 @@
 				this.formSuccessMessage.style.display = 'block';
 				this.formSuccessMessage.style.opacity = 1;
 
+				// todo: if user accepted sharing on facebook
+				if (this.userPermissions.facebook) {
+					// todo: request facebook permissions
+
+					var src = this.extractSrc(data.content);
+					this.createPhotoBox(src);
+				}
 
 				// close
 				setTimeout(function () {
 					this.formFileClose.call(this);
 				}.bind(this), this.formSuccessMessageEndMs);
+
 
 			}.bind(this), this.formSuccessMessageStartMs);
 
@@ -456,6 +477,36 @@
 				this.popupNextBtn.style.display = 'none';
 
 			}
+
+		},
+
+		extractSrc: function (html) {
+
+			var myRegex = /<img[^>]+src="(http:\/\/[^">]+)"/g;
+
+			return myRegex.exec(html)[1];
+
+		},
+
+		createPhotoBox: function (src) {
+
+			var div = document.createElement('div');
+			var img = document.createElement('img');
+			var w = this.calcBoxWidth();
+
+			div.setAttribute('class', "photo-box anim-hover photo-popup");
+			img.setAttribute('src', src);
+
+			div.appendChild(img);
+
+			div.style.width = w + 'px';
+			div.style.height = w + 'px';
+
+			console.log(div);
+
+			this.photoBoxes[0].parentNode.insertBefore(div, this.photoBoxes[0]);
+
+			// todo: update the `data-index` of all photoboxes
 
 		}
 
