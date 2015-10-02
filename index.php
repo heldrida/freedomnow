@@ -125,7 +125,7 @@
 		<!-- end: appeal grid -->
 
 		<!-- start: appeal popup -->
-		<div class="appeal-popup-module">
+		<div class="appeal-popup-module" data-current-index="-1">
 
 			<div class="img-container">
 

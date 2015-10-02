@@ -44,6 +44,7 @@
 			this.contactEmailCta = document.querySelector('.contact-email');
 			this.signPetitionCta = document.querySelector('.amnistia-internacional-portugal');
 			this.popupImgContainer = document.querySelector('.appeal-popup-module .img-container');
+			this.popupNextBtn = document.querySelector('.nav-ctrl .next');
 
 		},
 
@@ -145,6 +146,10 @@
 				var url = 'http://www.amnistia-internacional.pt/index.php?option=com_wrapper&view=wrapper&Itemid=40&sf_pid=a077000000TcpJGAAZ';
 				window.open(url, '_blank', '');
 
+			}.bind(this));
+
+			this.popupNextBtn.addEventListener('click', function () {
+				this.nextBtnHandler.call(this);
 			}.bind(this));
 
 		},
@@ -285,6 +290,7 @@
 		},
 
 		closePopup: function () {
+			this.popupNextBtn.style.display = '';
 			this.appealPopupModule.style.opacity = 0;
 
 			setTimeout(function () {
@@ -298,7 +304,7 @@
 			var src = el.querySelector('img').getAttribute('src');
 
 			this.popupImgContainer.style.backgroundImage = 'url(' + src + ')';
-
+			this.appealPopupModule.setAttribute('data-current-index', el.getAttribute('data-index'));
 		},
 
 		formFileClose: function () {
@@ -432,6 +438,25 @@
 				}.bind(this), this.formSuccessMessageEndMs);
 
 			}.bind(this), this.formSuccessMessageStartMs);
+
+		},
+
+		nextBtnHandler: function () {
+
+			var currentIndex = this.appealPopupModule.getAttribute('data-current-index'),
+				nextIndex = (parseInt(currentIndex) + 1),
+				image_src = document.querySelectorAll('.photo-popup')[nextIndex] ? document.querySelectorAll('.photo-popup')[nextIndex].querySelector('img').getAttribute('src') : false;
+
+			if (image_src) {
+
+				this.appealPopupModule.querySelector('.img-container').style.backgroundImage = "url(" + image_src + ")";
+				this.appealPopupModule.setAttribute('data-current-index', nextIndex);
+
+			} else {
+
+				this.popupNextBtn.style.display = 'none';
+
+			}
 
 		}
 
