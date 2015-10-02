@@ -456,6 +456,7 @@ html {
       max-width: 320px;
       text-align: center;
       padding: 30px 0;
+      padding-bottom: 0px;
       margin: 0 auto;
       position: absolute;
       top: 50%;
@@ -514,3 +515,52 @@ html {
         -ms-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s; }
+      .freedomnow .form-file-module form .confirm {
+        background-color: #5785b9;
+        color: #fff;
+        cursor: pointer;
+        -webkit-transition: all 0.3s;
+        -khtml-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s; }
+        .freedomnow .form-file-module form .confirm:hover {
+          background-color: #fff;
+          color: #5785b9; }
+    .freedomnow .form-file-module .inp-photo-wrap {
+      width: 90%;
+      margin: 0 5%;
+      text-align: left;
+      border-bottom: 1px dashed #5785b9;
+      margin-bottom: 20px;
+      padding-bottom: 20px; }
+      .freedomnow .form-file-module .inp-photo-wrap h3 {
+        font-weight: 900;
+        margin-bottom: 20px; }
+      .freedomnow .form-file-module .inp-photo-wrap input[type="file"] {
+        width: 90%;
+        margin: 0; }
+    .freedomnow .form-file-module .permission-options {
+      width: 90%;
+      margin: 0 5%;
+      margin-bottom: 20px;
+      text-align: left; }
+      .freedomnow .form-file-module .permission-options h3 {
+        font-weight: 900;
+        text-indent: 10px;
+        margin-bottom: 10px; }
+      .freedomnow .form-file-module .permission-options label {
+        cursor: pointer;
+        line-height: normal;
+        display: inline-block;
+        -webkit-transition: opacity 0.3s;
+        -khtml-transition: opacity 0.3s;
+        -moz-transition: opacity 0.3s;
+        -ms-transition: opacity 0.3s;
+        -o-transition: opacity 0.3s;
+        transition: opacity 0.3s; }
+        .freedomnow .form-file-module .permission-options label:hover {
+          opacity: 0.7; }
+        .freedomnow .form-file-module .permission-options label input[type="checkbox"] {
+          margin: 0 5px 0 0; }

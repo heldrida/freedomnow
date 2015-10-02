@@ -146,12 +146,23 @@
 
 				<div class="user-data">
 					<button class="close"></button>
-					<div>
-						<label for="file">Enviar foto:</label>
+					<div class="inp-photo-wrap">
+						<h3>Enviar foto com apelo:</h3>
 						<input type="file" name="file">
 					</div>
+					<div class="permission-options">
+						<h3>Agradecemos permissao para:</h3>
+						<label>
+							<input class="permission-checkbox" type="checkbox" name="tick-facebook" value="facebook">
+							<span>Partilhar este apelo no facebook</span>
+						</label>
+						<label>
+							<input class="permission-checkbox" type="checkbox" name="tick-email-publish" value="email_entities">
+							<span>Enviar o apelo por email para as entidades</span>
+						</label>
+					</div>
 					<div>
-					<input type="submit" value="submit">
+						<input class="confirm" type="submit" value="confirmar">
 					</div>
 				</div>
 

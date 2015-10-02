@@ -47,8 +47,11 @@
 			this.popupNextBtn = document.querySelector('.nav-ctrl .next');
 			this.userPermissions = {
 				facebook: true, // todo: remove default to 'true' during development
-				email_send: false
+				email_entities: false
 			};
+			this.checkboxFacebook = document.querySelector('input[name="tick-facebook"]');
+			this.checkboxEmailPublish = document.querySelector('input[name="tick-email-publish"]');
+			this.permissionCheckboxes = document.querySelectorAll('.permission-checkbox');
 		},
 
 		calcBoxWidth: function () {
@@ -163,6 +166,19 @@
 			this.popupNextBtn.addEventListener('click', function () {
 				this.nextBtnHandler.call(this);
 			}.bind(this));
+
+			// permission checkboxes
+			for (var i = 0; i < this.permissionCheckboxes.length; i++) {
+				
+				this.permissionCheckboxes[i].addEventListener('click', function (e) {
+
+					this.userPermissions[e.target.value.toLowerCase()] = e.target.checked;
+
+					console.log('this.userPermissions', this.userPermissions);
+
+				}.bind(this));
+
+			}
 
 		},
 
