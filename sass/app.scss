@@ -498,10 +498,39 @@ html {
 				background-color: $blue;
 				color: #fff;
 				cursor: pointer;
+				margin-top: 10px;
 				@include transition(all 0.3s);
 				&:hover {
 					background-color: #fff;
 					color: $blue;
+				}
+			}
+
+			.email-only-permissions-data {
+				width: 90%;
+				text-align: left;
+				margin-left: 5%;
+				margin-top: 0px;
+				padding-top: 10px;
+				display: none;
+
+				h3 {
+					font-weight: 900;
+					margin-bottom: 20px;
+				}
+				
+				label {
+					margin: 0 0 0 0px;
+					padding: 0;
+				}
+
+				span {
+					display: block;
+					margin-bottom: 5px;
+				}
+
+				input {
+					width: 90%;
 				}
 			}
 		}
@@ -526,11 +555,10 @@ html {
 		.permission-options {
 			width: 90%;
 			margin: 0 5%;
-			margin-bottom: 20px;
+			margin-bottom: 0px;
 
 			h3 {
 				font-weight: 900;
-				text-indent: 10px;
 				margin-bottom: 10px;
 			}
 			text-align: left;
@@ -539,6 +567,7 @@ html {
 				line-height: normal;
 				display: inline-block;
 				@include transition(opacity 0.3s);
+				padding-left: 0;
 
 				&:hover {
 					opacity: 0.7;

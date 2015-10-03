@@ -161,6 +161,17 @@
 							<span>Enviar o apelo por email para as entidades competentes</span>
 						</label>
 					</div>
+					<div class="email-only-permissions-data">
+						<h3>Qual o teu nome e email ?</h3>
+						<label>
+							<span>Nome</span>
+							<input type="text" name="fullname" value="" placeholder="Name here...">
+						</label>
+						<label>
+							<span>Email</span>
+							<input type="text" name="email" value="" placeholder="Your e-mail...">
+						</label>
+					</div>
 					<div>
 						<input class="confirm" type="submit" value="confirmar">
 						<span class="loading animated infinite loading">&#9679;</span>

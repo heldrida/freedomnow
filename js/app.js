@@ -47,7 +47,7 @@
 			this.popupImgContainer = document.querySelector('.appeal-popup-module .img-container');
 			this.popupNextBtn = document.querySelector('.nav-ctrl .next');
 			this.userPermissions = {
-				facebook: true, // todo: remove default to 'true' during development
+				facebook: false, // todo: remove default to 'true' during development
 				email_entities: false
 			};
 			this.checkboxFacebook = document.querySelector('input[name="tick-facebook"]');
@@ -56,6 +56,8 @@
 			this.formSubmitLockedMs = 10000;
 
 			this.mandrillApiKey = 'RBG5r0gp1Fd4zylgpkIZFQ';
+
+			this.emailOnlyPermissionsData = document.querySelector('.email-only-permissions-data');
 
 		},
 
@@ -183,6 +185,8 @@
 					this.userPermissions[e.target.value.toLowerCase()] = e.target.checked;
 
 					console.log('this.userPermissions', this.userPermissions);
+					// todo: check if 'this.emailOnlyPermissionsData' show be displayed
+					this.displayEmailOnlyPermissionsData();
 
 				}.bind(this));
 
@@ -725,6 +729,20 @@
 				console.log('todo: show error message');
 
 			});
+
+		},
+
+		displayEmailOnlyPermissionsData: function () {
+
+			if (!this.userPermissions.facebook && this.userPermissions.email_entities) {
+
+				this.emailOnlyPermissionsData.style.display = "block";
+
+			} else {
+
+				this.emailOnlyPermissionsData.style.display = "";				
+
+			}
 
 		}
 

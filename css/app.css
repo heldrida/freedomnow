@@ -557,6 +557,7 @@ html {
         background-color: #5785b9;
         color: #fff;
         cursor: pointer;
+        margin-top: 10px;
         -webkit-transition: all 0.3s;
         -khtml-transition: all 0.3s;
         -moz-transition: all 0.3s;
@@ -566,6 +567,24 @@ html {
         .freedomnow .form-file-module form .confirm:hover {
           background-color: #fff;
           color: #5785b9; }
+      .freedomnow .form-file-module form .email-only-permissions-data {
+        width: 90%;
+        text-align: left;
+        margin-left: 5%;
+        margin-top: 0px;
+        padding-top: 10px;
+        display: none; }
+        .freedomnow .form-file-module form .email-only-permissions-data h3 {
+          font-weight: 900;
+          margin-bottom: 20px; }
+        .freedomnow .form-file-module form .email-only-permissions-data label {
+          margin: 0 0 0 0px;
+          padding: 0; }
+        .freedomnow .form-file-module form .email-only-permissions-data span {
+          display: block;
+          margin-bottom: 5px; }
+        .freedomnow .form-file-module form .email-only-permissions-data input {
+          width: 90%; }
     .freedomnow .form-file-module .inp-photo-wrap {
       width: 90%;
       margin: 0 5%;
@@ -582,11 +601,10 @@ html {
     .freedomnow .form-file-module .permission-options {
       width: 90%;
       margin: 0 5%;
-      margin-bottom: 20px;
+      margin-bottom: 0px;
       text-align: left; }
       .freedomnow .form-file-module .permission-options h3 {
         font-weight: 900;
-        text-indent: 10px;
         margin-bottom: 10px; }
       .freedomnow .form-file-module .permission-options label {
         cursor: pointer;
@@ -597,7 +615,8 @@ html {
         -moz-transition: opacity 0.3s;
         -ms-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
-        transition: opacity 0.3s; }
+        transition: opacity 0.3s;
+        padding-left: 0; }
         .freedomnow .form-file-module .permission-options label:hover {
           opacity: 0.7; }
         .freedomnow .form-file-module .permission-options label input[type="checkbox"] {
