@@ -225,7 +225,7 @@ html {
         color: #5785b9;
         padding: 10px 20px;
         text-transform: uppercase;
-        line-height: normal; }
+        line-height: 42px; }
       .freedomnow .appeal-grid-module .photo-box-submit-cta .hashtags {
         font-size: 10px;
         position: absolute;
@@ -253,7 +253,9 @@ html {
           .freedomnow .appeal-grid-module .photo-box-submit-cta .arrow {
             width: 12px;
             height: 12px;
-            margin-left: 20px; } }
+            margin-left: 20px; }
+          .freedomnow .appeal-grid-module .photo-box-submit-cta p {
+            line-height: normal; } }
     .freedomnow .appeal-grid-module .general-tile {
       width: 100%;
       height: 100%;

@@ -18,7 +18,8 @@
  * @package WordPress
  */
 
-if (stristr($_SERVER['SERVER_NAME'], 'magnolia')) {
+if (stristr($_SERVER['SERVER_NAME'], 'magnolia') ||
+	stristr($_SERVER['SERVER_NAME'], 'localtunnel')) {
 
 	// ** MySQL settings - You can get this info from your web host ** //
 	/** The name of the database for WordPress */
@@ -30,8 +31,8 @@ if (stristr($_SERVER['SERVER_NAME'], 'magnolia')) {
 	/** MySQL database password */
 	define('DB_PASSWORD', 'root');
 
-	define('WP_HOME','http://magnolia/freedomnow/cms/');
-	define('WP_SITEURL','http://magnolia/freedomnow/cms/');
+	define('WP_HOME','http://freedomnow.magnolia/cms/');
+	define('WP_SITEURL','http://freedomnow.magnolia/cms/');
 
 } else if (stristr($_SERVER['SERVER_NAME'], 'punkbit')) {
 

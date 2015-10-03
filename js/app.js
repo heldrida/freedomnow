@@ -30,7 +30,7 @@
 			this.appealPopupModule = document.querySelector('.appeal-popup-module');
 			this.photoBoxPopupMs = 100;
 			this.counterMs = 200;
-			this.counterEasingAmount = 0.0400;
+			this.counterEasingAmount = 0.0500;
 			this.ctaAppeal = document.querySelector('.cta-appeal');
 			this.formFileModule = document.querySelector('.form-file-module');
 			this.formFile = document.querySelector('.myFileForm');
@@ -278,7 +278,7 @@
 
 			window.fbAsyncInit = function() {
 				FB.init({
-				  appId      : 'your-app-id',
+				  appId      : '982790748442723',
 				  xfbml      : true,
 				  version    : 'v2.4'
 				});
@@ -444,14 +444,76 @@
 			xhr.addEventListener('load', function () {
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
-					console.log(resp);
-					context.postedSuccessHandler.call(context, resp);
+
+					// if facebook accepted, get permissions, share
+					// only after, proceed to display success message
+					/*
+					if (context.userPermissions.facebook) {
+						context.facebookShare.call(context, context.postedSuccessHandler.call(context, resp));
+					} else {
+						context.postedSuccessHandler.call(context, resp);
+					}
+					*/
+					context.facebookShare();
 				}
 
 				console.log(this.status);
 			});
 
 			xhr.send(params);
+		},
+
+		facebookShare: function (callback) {
+
+			var context = this;
+
+			// request facebook auth
+			window.FB.getLoginStatus(function (response) {
+				
+				console.log(response);
+
+				if (response.status === 'connected') {
+				
+					context.sharePhotoToFacebookWall();
+				
+				} else {
+
+					FB.login(function(response) {
+
+						// todo: check if correct permissions
+						context.sharePhotoToFacebookWall();
+
+					},{ scope: 'email,publish_actions' });  
+				
+				}
+
+			});
+
+			return; // todo: disable
+
+			if (typeof callback === "function") {
+				callback.call(this);
+			}
+
+		},
+
+		sharePhotoToFacebookWall: function () {
+
+			window.FB.api('/me/feed', 'post', {
+				message : "message goes here",
+				name : 'Post Title goes here',
+				link : 'www.postlinkgoeshere.com',
+				description : 'post description',
+				picture : 'http://freedomnow.punkbit.com/cms/wp-content/uploads/2015/10/assange-example2-300x225.jpg'
+			}, function (response) {
+				if (!response || response.error) {
+					console.log('Posting error occured');
+				}
+				else {
+					console.log('Success - Post ID: ' + response.id);
+				}
+			});
+
 		},
 
 		postedSuccessHandler: function (data) {

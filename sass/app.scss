@@ -174,7 +174,7 @@ html {
 				color: $blue;
 				padding: 10px 20px;
 				text-transform: uppercase;
-				line-height: normal;
+				line-height: 42px;
 			}
 
 			.hashtags {
@@ -204,6 +204,10 @@ html {
 					width: 12px;
 					height: 12px;
 					margin-left: 20px;
+				}
+
+				p {
+					line-height: normal;
 				}
 			}
 		}
