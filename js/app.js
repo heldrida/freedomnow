@@ -447,14 +447,12 @@
 
 					// if facebook accepted, get permissions, share
 					// only after, proceed to display success message
-					/*
 					if (context.userPermissions.facebook) {
-						context.facebookShare.call(context, context.postedSuccessHandler.call(context, resp));
+						context.facebookShare.call(context, resp, context.postedSuccessHandler.call(context, resp));
 					} else {
 						context.postedSuccessHandler.call(context, resp);
 					}
-					*/
-					context.facebookShare();
+
 				}
 
 				console.log(this.status);
@@ -463,7 +461,7 @@
 			xhr.send(params);
 		},
 
-		facebookShare: function (callback) {
+		facebookShare: function (data, callback) {
 
 			var context = this;
 
@@ -474,14 +472,14 @@
 
 				if (response.status === 'connected') {
 				
-					context.sharePhotoToFacebookWall();
+					context.sharePhotoToFacebookWall(data, callback);
 				
 				} else {
 
 					FB.login(function(response) {
 
 						// todo: check if correct permissions
-						context.sharePhotoToFacebookWall();
+						context.sharePhotoToFacebookWall(data, callback);
 
 					},{ scope: 'email,publish_actions' });  
 				
@@ -489,28 +487,27 @@
 
 			});
 
-			return; // todo: disable
-
-			if (typeof callback === "function") {
-				callback.call(this);
-			}
-
 		},
 
-		sharePhotoToFacebookWall: function () {
+		sharePhotoToFacebookWall: function (data, callback) {
 
 			window.FB.api('/me/feed', 'post', {
-				message : "message goes here",
-				name : 'Post Title goes here',
-				link : 'www.postlinkgoeshere.com',
-				description : 'post description',
-				picture : 'http://freedomnow.punkbit.com/cms/wp-content/uploads/2015/10/assange-example2-300x225.jpg'
+				message : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate sunt explicabo similique inventore magni dolorum laboriosam distinctio est incidunt harum autem laborum earum quisquam tempore quae reiciendis alias natus, placeat. http://www.bbc.co.uk http://www.rt.com",
+				name : 'Liberdade ja!',
+				link : 'http://freedomnow.punkbit.com',
+				description : 'Lorem ipsum dolorem shortium soloriam freedomnow site description here',
+				picture : this.extractSrc(data.content)
 			}, function (response) {
 				if (!response || response.error) {
 					console.log('Posting error occured');
 				}
 				else {
 					console.log('Success - Post ID: ' + response.id);
+
+					if (typeof callback === "function") {
+						callback.call(this);
+					}
+
 				}
 			});
 
