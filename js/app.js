@@ -739,13 +739,24 @@
 				console.log('params', params);
 
 				if (this.userPermissions.facebook) {
-	
-					FB.api('/me', { fields: 'name, email' }, function (response) {
-	
-						params.from_email = response.email;
-						this.sendEmail.call(this, params);
-						console.log('FB.api /me, response: ', response);
-						console.log('FB.api /me, name, email: ', params);	
+
+					// todo: have event listener, and only run this
+					// if facebook is ready
+					window.FB.getLoginStatus(function (response) {
+						console.log('emailPublishHandler FB GETLOGINGSTATUS() response', response);
+
+						if (response.status === 'connected') {
+
+							window.FB.api('/me', { fields: 'name, email' }, function (response) {
+			
+								params.from_email = response.email;
+								this.sendEmail.call(this, params);
+								console.log('FB.api /me, response: ', response);
+								console.log('FB.api /me, name, email: ', params);	
+
+							}.bind(this));
+
+						}
 					}.bind(this));
 	
 				} else {
