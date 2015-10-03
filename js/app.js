@@ -743,14 +743,14 @@
 					FB.api('/me', { fields: 'name, email' }, function (response) {
 	
 						params.from_email = response.email;
-						this.sendEmail(params);
+						this.sendEmail.call(this, params);
 						console.log('FB.api /me, response: ', response);
 						console.log('FB.api /me, name, email: ', params);	
 					}.bind(this));
 	
 				} else {
 	
-					this.sendEmail(params);
+					this.sendEmail.call(this, params);
 	
 				}
 
@@ -759,6 +759,8 @@
 		},
 
 		sendEmail: function (params){
+
+			console.log('sendEmail call');
 
 			var context = this,
 
