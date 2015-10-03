@@ -35,6 +35,7 @@
 			this.formFileModule = document.querySelector('.form-file-module');
 			this.formFile = document.querySelector('.myFileForm');
 			this.formFileCloseBtn = document.querySelector('.form-file-module .close');
+			this.formConfirmBtn = document.querySelector('.form-file-module .confirm');
 			this.ctaAppealTransitionMs = 1000;
 			this.photoBoxSubmitCta = document.querySelector('.photo-box-submit-cta');
 			this.formSuccessMessage = document.querySelector('.form-success-message');
@@ -52,6 +53,7 @@
 			this.checkboxFacebook = document.querySelector('input[name="tick-facebook"]');
 			this.checkboxEmailPublish = document.querySelector('input[name="tick-email-publish"]');
 			this.permissionCheckboxes = document.querySelectorAll('.permission-checkbox');
+			this.formSubmitLockedMs = 10000;
 		},
 
 		calcBoxWidth: function () {
@@ -136,12 +138,12 @@
 
 			}.bind(this));
 
+			// the fn is throttled, allowin only once submition every Xseconds
+			this.formFile.addEventListener('submit', _.throttle(this.formHandler.bind(this), this.formSubmitLockedMs), false);
+			// just to prevent default
 			this.formFile.addEventListener('submit', function (e) {
 				e.preventDefault();
-				console.log('e.target', e.target);
-				console.log('formFile event submit()');
-				this.formHandler.call(this);
-			}.bind(this), false);
+			}, false);
 
 			this.formFileCloseBtn.addEventListener('click', function () {
 				console.log('formFileCloseBtn event click!');
@@ -386,7 +388,8 @@
 
 		},
 
-		formHandler: function () {
+		formHandler: function (e) {
+			e.preventDefault();
 
 			console.log('formHandler!');
 			this.saveFile();
