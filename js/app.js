@@ -577,15 +577,14 @@
 			var w = this.calcBoxWidth();
 
 			div.setAttribute('class', "photo-box anim-hover photo-popup");
-			div.setAttribute('data-index', '');
+			div.setAttribute('data-index', '0');
+			div.setAttribute('data-name', '');
 			img.setAttribute('src', src);
 
 			div.appendChild(img);
 
 			div.style.width = w + 'px';
 			div.style.height = w + 'px';
-
-			console.log(div);
 
 			this.photoBoxes[0].parentNode.insertBefore(div, this.photoBoxes[0]);
 
