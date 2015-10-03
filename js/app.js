@@ -589,8 +589,10 @@
 
 			this.photoBoxes[0].parentNode.insertBefore(div, this.photoBoxes[0]);
 
-			// todo: update the `data-index` of all photoboxes
-			this.resetPhotoboxIndexes();
+			// queue last after DOM manip
+			setTimeout(function(){
+				this.resetPhotoboxIndexes.call(this);
+			}.bind(this), 0);
 
 		},
 
