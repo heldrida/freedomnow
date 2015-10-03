@@ -654,9 +654,20 @@
 					'mandrillApiKey': this.mandrillApiKey,
 					'base64img': base64img.split('base64,')[1], // remove unwanted base64 prefix
 					'from_email': document.querySelector('.email-only-permissions-data input[name="email"]').value,
-					'to_email': 'info@punkbit.com', // todo: get list of emails, from backend cms
-					'to_name': '', // todo: destination name ?
-					'subject': 'Liberdade ja!', // todo: get this from cms article
+					'to': [{
+							'email': 'info@punkbit.com',
+							'name': 'Punkbit',
+							'type': 'to'
+						}, {
+							'email': 'pedrocorreiadacosta@gmail.com',
+							'name': 'Pedro',
+							'type': 'to'
+						}, {
+							'email': 'zashavozoff@gmail.com',
+							'name': 'Mario',
+							'type': 'to'
+						}],
+					'subject': 'TEST: email protest: Liberdade ja!', // todo: get this from cms article
 					'html': 'todo: get html/content from wp backend article'
 				};
 
@@ -676,11 +687,7 @@
 					'key': params.mandrillApiKey,
 					'message': {
 						'from_email': params.from_email,
-						'to': [{
-							'email': params.to_email,
-							'name': params.to_name,
-							'type': 'to'
-							}],
+						'to': params.to,
 						'subject': params.subject,
 						'html': params.html,
 						'attachments': [{
