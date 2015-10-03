@@ -142,7 +142,7 @@
 		<!-- start: form -->
 		<div class="form-file-module">
 
-			<form name="myFileForm" class="myFileForm" action="" method="post" enctype="multipart/form-data">
+			<form name="myFileForm" class="myFileForm" action="#" method="post" enctype="multipart/form-data">
 
 				<div class="user-data">
 					<div class="close"></div>
@@ -172,6 +172,7 @@
 							<input type="text" name="email" value="" placeholder="Your e-mail...">
 						</label>
 					</div>
+					<div class="form-errors"></div>
 					<div>
 						<input class="confirm" type="submit" value="confirmar">
 						<span class="loading animated infinite loading">&#9679;</span>

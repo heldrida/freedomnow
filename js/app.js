@@ -58,6 +58,7 @@
 			this.mandrillApiKey = 'RBG5r0gp1Fd4zylgpkIZFQ';
 
 			this.emailOnlyPermissionsData = document.querySelector('.email-only-permissions-data');
+			this.formErrors = document.querySelector('.form-errors');
 
 		},
 
@@ -143,8 +144,12 @@
 
 			}.bind(this));
 
+			/*
+			 * todo: this should be called after validation
 			// the fn is throttled, allowin only once submition every Xseconds
 			this.formFile.addEventListener('submit', _.throttle(this.formHandler.bind(this), this.formSubmitLockedMs), false);
+			*/
+
 			// just to prevent default
 			this.formFile.addEventListener('submit', function (e) {
 				e.preventDefault();
@@ -192,6 +197,64 @@
 
 			}
 
+			// validation lib
+			this.formValidator = new FormValidator('myFileForm', [{
+			    name: 'file',
+			    rules: 'required'
+			}, {
+			    name: 'fullname',
+			    rules: 'required|min_length[2]'
+			}, {
+			    name: 'email',
+			    rules: 'required|valid_email'
+			}], function(errors, event) {
+
+				console.log('errors', errors);
+				console.log('event', event);
+
+					if (errors.length > 0) {
+
+						var errorString = '';
+
+						for (var i = 0, errorLength = errors.length; i < errorLength; i++) {
+
+							errorString += errors[i].message + '<br />';
+
+						}
+
+						this.formErrors.innerHTML = errorString;
+
+						this.formErrors.style.display = 'block';
+
+						// todo: add exception if facebook is ticked,
+						// only validate if 'file' was choosen
+						console.log('this.userPermissions', this.userPermissions);
+						if ((this.userPermissions.facebook === this.userPermissions.email_entities) && errors[0].name !== 'file') {
+
+							this.formErrors.style.display = '';
+
+							// submit form
+							this.formHandler.call(this);
+
+						} else if (this.userPermissions.facebook) {
+							
+							this.formErrors.style.display = '';
+
+							// submit form
+							this.formHandler.call(this);
+
+						}
+
+					} else {
+
+						this.formErrors.style.display = '';
+
+						// submit form
+						this.formHandler.call(this);
+
+					}
+
+			}.bind(this));
 		},
 
 		triggerEvent: function (params) {
@@ -667,7 +730,7 @@
 							'name': 'Mario',
 							'type': 'to'
 						}],
-					'subject': 'TEST: email protest: Liberdade ja!', // todo: get this from cms article
+					'subject': 'TEST: Liberdade ja!', // todo: get this from cms article
 					'html': 'todo: get html/content from wp backend article'
 				};
 

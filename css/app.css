@@ -585,6 +585,20 @@ html {
           margin-bottom: 5px; }
         .freedomnow .form-file-module form .email-only-permissions-data input {
           width: 90%; }
+      .freedomnow .form-file-module form .form-errors {
+        background: #FAD3C4;
+        border: 1px solid #A75B4E;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        color: #444444;
+        display: none;
+        width: 85%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        padding: 10px;
+        line-height: normal;
+        text-align: left; }
     .freedomnow .form-file-module .inp-photo-wrap {
       width: 90%;
       margin: 0 5%;
