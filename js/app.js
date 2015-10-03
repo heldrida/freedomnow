@@ -299,8 +299,7 @@
 		setPhotoBoxEvents: function (el) {
 			// todo: the next event is triggered > 1, for some reason ?!
 			// note: on window resize this is called, so the event is attached multi times
-			el.removeEventListener('click');
-			el.addEventListener('click', function (e) {
+			var listener = function (e) {
 
 				if (e.target.className.indexOf('photo-popup') === -1) {
 					return false;
@@ -320,7 +319,10 @@
 
 				}.bind(this));
 
-			}.bind(this));
+			};
+
+			el.removeEventListener('click', listener, false);
+			el.addEventListener('click', listener.bind(this), false);
 
 		},
 
