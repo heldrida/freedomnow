@@ -592,7 +592,7 @@
 		},
 
 		resetPhotoboxIndexes: function () {
-
+			this.photoBoxes = document.querySelectorAll('.photo-box');
 			for (var i = 0; i < this.photoBoxes.length; i++) {
 				this.photoBoxes[i].setAttribute('data-index', i);
 			}
