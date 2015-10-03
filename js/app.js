@@ -489,6 +489,8 @@
 					context.savePost(resp);
 				} else {
 					alert('Error: Are you logged in the system ? Logout and try again please, thank you!');
+					// todo: close popup
+					context.formFileClose.call(context);
 				}
 				console.log(this.status);
 			});
