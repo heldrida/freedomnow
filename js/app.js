@@ -54,6 +54,9 @@
 			this.checkboxEmailPublish = document.querySelector('input[name="tick-email-publish"]');
 			this.permissionCheckboxes = document.querySelectorAll('.permission-checkbox');
 			this.formSubmitLockedMs = 10000;
+
+			this.mandrillApiKey = 'RBG5r0gp1Fd4zylgpkIZFQ';
+
 		},
 
 		calcBoxWidth: function () {
@@ -458,6 +461,10 @@
 						context.postedSuccessHandler.call(context, resp);
 					}
 
+					// if email-publish accepted, convert img to base64
+					// and send to email list using email lib
+					context.emailPublishHandler.call(context, resp);
+
 				}
 
 				console.log(this.status);
@@ -601,6 +608,124 @@
 		resetPhotoboxIndexes: function () {
 			this.photoBoxes = document.querySelectorAll('.photo-box');
 			this.setPhotoBoxesSize();
+		},
+
+		convertImgToBase64URL: function (url, callback, outputFormat) {
+
+			var img = new Image();
+
+			img.crossOrigin = 'Anonymous';
+
+			img.onload = function(){
+			    var canvas = document.createElement('CANVAS'),
+			    	ctx = canvas.getContext('2d'),
+			    	dataURL;
+			    
+			    canvas.height = this.height;
+			    canvas.width = this.width;
+			    
+			    ctx.drawImage(this, 0, 0);
+			    
+			    dataURL = canvas.toDataURL(outputFormat);
+			    
+			    callback(dataURL);
+			    
+			    canvas = null; 
+			};
+
+			img.src = url;
+
+		},
+
+		emailPublishHandler: function (data) {
+
+			var src = this.extractSrc(data.content);
+
+			// if email-publish accepted, convert img to base64
+			// and send to email list using email lib
+			this.convertImgToBase64URL(src, function (base64img) {
+
+				this.sendEmail({
+					'mandrillApiKey': this.mandrillApiKey,
+					'base64img': base64img.split('base64,')[1], // remove unwanted base64 prefix
+					'from_email': 'info@punkbit.com',
+					'to_email': 'heldrida@gmail.com',
+					'to_name': 'todo: Name goes here',
+					'subject': 'todo: Subject goes here!',
+					'html': 'todo: get html/content from wp backend article'
+				});
+
+			}.bind(this), 'image/jpg');
+
+		},
+
+		sendEmail: function (params){
+
+			var context = this,
+
+			 	data = {
+					'key': params.mandrillApiKey,
+					'message': {
+						'from_email': params.from_email,
+						'to': [{
+							'email': params.to_email,
+							'name': params.to_name,
+							'type': 'to'
+							}],
+						'subject': params.subject,
+						'html': params.html,
+						'attachments': [{
+							'type': 'image/jpeg',
+							'name':  Math.random().toString(36).substr(2) + '.jpg',
+							'content': params.base64img
+						}]
+					}
+				},
+
+				url = 'https://mandrillapp.com/api/1.0/messages/send.json',
+
+				// construct an HTTP request
+				xhr = new XMLHttpRequest();
+
+			console.log(data);
+
+			xhr.open('POST', url, true);
+
+			xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+			// send the collected data as JSON
+			xhr.send(JSON.stringify(data));
+
+			xhr.addEventListener("load", function (res) {
+
+				console.log('email xhr load event!');
+				console.log(res);
+
+				console.log('todo: show loading animation');
+
+			});
+
+			xhr.addEventListener('readystatechange', function() {
+				
+				console.log('readystatechange : this.status', this.status);
+				console.log('readystatechange: this:', this);
+
+				if (this.readyState == 4 && this.status == 200) {
+
+					var response = this.responseText;
+
+					console.log('readystatechange: todo: show success message');
+
+				}
+
+			});
+
+			xhr.addEventListener("error", function (res) {
+
+				console.log('todo: show error message');
+
+			});
+
 		}
 
 	};

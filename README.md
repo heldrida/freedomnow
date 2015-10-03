@@ -36,3 +36,5 @@
 
 		http://www.developer.com/lang/working-with-facebook-sdk-for-javascript.html
 		https://tahiryasin.wordpress.com/2012/12/06/post-to-your-facebook-wall-using-javascript-sdk/
+
+		http://stackoverflow.com/questions/6150289/how-to-convert-image-into-base64-string-using-javascript
