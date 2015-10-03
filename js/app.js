@@ -296,6 +296,8 @@
 
 		setPhotoBoxEvents: function (el) {
 			// todo: the next event is triggered > 1, for some reason ?!
+			// note: on window resize this is called, so the event is attached multi times
+			el.removeEventListener('click');
 			el.addEventListener('click', function (e) {
 
 				if (e.target.className.indexOf('photo-popup') === -1) {
@@ -593,10 +595,7 @@
 
 		resetPhotoboxIndexes: function () {
 			this.photoBoxes = document.querySelectorAll('.photo-box');
-			for (var i = 0; i < this.photoBoxes.length; i++) {
-				this.photoBoxes[i].setAttribute('data-index', i);
-			}
-
+			this.setPhotoBoxesSize();
 		}
 
 	};
