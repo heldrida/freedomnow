@@ -746,7 +746,7 @@
 						this.sendEmail(params);
 						console.log('FB.api /me, response: ', response);
 						console.log('FB.api /me, name, email: ', params);	
-					});
+					}.bind(this));
 	
 				} else {
 	
