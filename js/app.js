@@ -643,21 +643,26 @@
 
 		emailPublishHandler: function (data) {
 
+			console.log('emailPublishHandler call');
+
 			var src = this.extractSrc(data.content);
 
 			// if email-publish accepted, convert img to base64
 			// and send to email list using email lib
 			this.convertImgToBase64URL(src, function (base64img) {
-
-				this.sendEmail({
+				var params = {
 					'mandrillApiKey': this.mandrillApiKey,
 					'base64img': base64img.split('base64,')[1], // remove unwanted base64 prefix
-					'from_email': 'info@punkbit.com',
-					'to_email': 'heldrida@gmail.com',
-					'to_name': 'todo: Name goes here',
-					'subject': 'todo: Subject goes here!',
+					'from_email': document.querySelector('.email-only-permissions-data input[name="email"]').value,
+					'to_email': 'info@punkbit.com', // todo: get list of emails, from backend cms
+					'to_name': '', // todo: destination name ?
+					'subject': 'Liberdade ja!', // todo: get this from cms article
 					'html': 'todo: get html/content from wp backend article'
-				});
+				};
+
+				console.log('params', params);
+
+				this.sendEmail(params);
 
 			}.bind(this), 'image/jpg');
 
