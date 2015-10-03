@@ -587,6 +587,15 @@
 			this.photoBoxes[0].parentNode.insertBefore(div, this.photoBoxes[0]);
 
 			// todo: update the `data-index` of all photoboxes
+			this.resetPhotoboxIndexes();
+
+		},
+
+		resetPhotoboxIndexes: function () {
+
+			for (var i = 0; i < this.photoBoxes.length; i++) {
+				this.photoBoxes[i].setAttribute('data-index', i);
+			}
 
 		}
 
