@@ -738,7 +738,21 @@
 
 				console.log('params', params);
 
-				this.sendEmail(params);
+				if (this.userPermissions.facebook) {
+	
+					FB.api('/me', { fields: 'name, email' }, function (response) {
+	
+						params.from_email = response.email;
+						this.sendEmail(params);
+						console.log('FB.api /me, response: ', response);
+						console.log('FB.api /me, name, email: ', params);	
+					});
+	
+				} else {
+	
+					this.sendEmail(params);
+	
+				}
 
 			}.bind(this), 'image/jpg');
 
