@@ -535,5 +535,21 @@ html {
 				}
 			}	
 		}
+
+		.loading {
+			display: none;
+		}
+
+		&.submited {
+			input.confirm {
+				display: none;
+			}
+			.loading {
+				display: block;
+				font-size: 50px;
+				position: relative;
+				bottom: 10px;
+			}
+		}
 	}
 }

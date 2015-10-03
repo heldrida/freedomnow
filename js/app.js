@@ -357,7 +357,7 @@
 			this.formUserData.style.display = '';
 			this.formSuccessMessage.style.display = '';
 			this.formSuccessMessage.style.opacity = '';
-
+			this.formFileModule.classList.remove('submited');
 		},
 
 		getDays: function (name) {
@@ -388,12 +388,10 @@
 
 		},
 
-		formHandler: function (e) {
-			e.preventDefault();
-
+		formHandler: function () {
+			this.formFileModule.classList.add('submited');
 			console.log('formHandler!');
 			this.saveFile();
-
 		},
 
 		saveFile: function () {

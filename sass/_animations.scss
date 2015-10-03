@@ -46,3 +46,41 @@
 	-webkit-transform-origin: center bottom;
 	transform-origin: center bottom;
 }
+
+
+@keyframes loading {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+
+@-webkit-keyframes loading {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.loading {
+	-webkit-animation-name: loading;
+	animation-name: loading;
+	-webkit-transform-origin: center bottom;
+	transform-origin: center bottom;
+}

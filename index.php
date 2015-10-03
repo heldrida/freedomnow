@@ -163,6 +163,7 @@
 					</div>
 					<div>
 						<input class="confirm" type="submit" value="confirmar">
+						<span class="loading animated infinite loading">&#9679;</span>
 					</div>
 				</div>
 
