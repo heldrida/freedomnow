@@ -40,3 +40,5 @@
 		http://stackoverflow.com/questions/6150289/how-to-convert-image-into-base64-string-using-javascript
 
 		https://github.com/blueimp/JavaScript-Load-Image
+
+		https://remysharp.com/2011/04/21/getting-cors-working

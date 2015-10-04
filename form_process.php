@@ -1,5 +1,10 @@
 <?php
 	
+    var_dump($_SERVER);
+    var_dump($_POST);
+    die;
+
+
 $tmp = $_FILES['file']['tmp_name']; 
 $emri = $_FILES['file']['name'];
 $madhesia= $_FILES['file']['size'];

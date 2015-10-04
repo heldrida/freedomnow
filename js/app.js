@@ -59,7 +59,7 @@
 
 			this.emailOnlyPermissionsData = document.querySelector('.email-only-permissions-data');
 			this.formErrors = document.querySelector('.form-errors');
-
+			this.lastPublishedEmailTmplData = this.getHtmlTmplData();
 		},
 
 		calcBoxWidth: function () {
@@ -755,7 +755,7 @@
 							'type': 'to'
 						}],
 					'subject': 'TEST: Liberdade ja!', // todo: get this from cms article
-					'html': 'todo: get html/content from wp backend article'
+					'html': this.lastPublishedEmailTmplData
 				};
 
 				console.log('params', params);
@@ -869,6 +869,32 @@
 				this.emailOnlyPermissionsData.style.display = "";				
 
 			}
+
+		},
+
+		getHtmlTmplData: function () {
+			var context = this;
+			var xhr = new XMLHttpRequest();
+			var params = "filter[posts_per_page]=-1";
+
+			xhr.open('GET', '/cms/wp-json/pages', true);
+
+			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
+
+			xhr.send(null);
+
+			xhr.addEventListener('load', function () {
+				if (this.status >= 200 && this.status <= 300) {
+					var resp = JSON.parse(this.response);
+					// get last published under parent 'email templates'
+					for (var i = 0; i < resp.length; i++) {
+
+						if (typeof resp[i].parent !== "undefined" && resp[i].parent != null && resp[i].parent.title.toLowerCase() === 'email templates') {
+							context.lastPublishedEmailTmplData = resp[i].content
+						}
+					}
+				}
+			});
 
 		}
 
