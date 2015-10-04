@@ -120,6 +120,16 @@ html {
 			overflow: hidden;
 			cursor: pointer;
 			position: relative;
+			
+			&.photo-popup {
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+
+				img {
+					display: none;
+				}
+			}
 
 			&:before {
 				content: " ";

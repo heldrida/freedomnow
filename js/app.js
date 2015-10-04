@@ -81,6 +81,11 @@
 				this.photoBoxes[i].style.width = w + 'px';
 				this.photoBoxes[i].style.height = w + 'px';
 
+				// set background image
+				if (this.photoBoxes[i].getAttribute('class').indexOf('photo-popup') > -1) {
+					this.photoBoxes[i].style.backgroundImage = 'url(' + this.photoBoxes[i].querySelector('img').getAttribute('src') + ')';
+				}
+
 				this.setPhotoBoxEvents.call(this, this.photoBoxes[i]);
 
 			}

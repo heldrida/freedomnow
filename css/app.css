@@ -195,6 +195,12 @@ html {
       overflow: hidden;
       cursor: pointer;
       position: relative; }
+      .freedomnow .appeal-grid-module .photo-box.photo-popup {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat; }
+        .freedomnow .appeal-grid-module .photo-box.photo-popup img {
+          display: none; }
       .freedomnow .appeal-grid-module .photo-box:before {
         content: " ";
         width: 100%;
