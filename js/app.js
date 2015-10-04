@@ -873,6 +873,7 @@
 		},
 
 		getHtmlTmplData: function () {
+			console.log('getHtmlTmplData');
 			var context = this;
 			var xhr = new XMLHttpRequest();
 			var params = "filter[posts_per_page]=-1";
@@ -884,6 +885,7 @@
 			xhr.send(null);
 
 			xhr.addEventListener('load', function () {
+				console.log('this.status', this.status);
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
 					// get last published under parent 'email templates'
