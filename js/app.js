@@ -757,8 +757,8 @@
 							'name': 'Mario',
 							'type': 'to'
 						}],
-					'subject': 'TEST: Liberdade ja!', // todo: get this from cms article
-					'html': this.lastPublishedEmailTmplData
+					'subject': this.lastPublishedEmailTmplTitle,
+					'html': this.lastPublishedEmailTmplBody
 				};
 
 				console.log('params', params);
