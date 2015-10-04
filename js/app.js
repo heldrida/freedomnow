@@ -59,7 +59,9 @@
 
 			this.emailOnlyPermissionsData = document.querySelector('.email-only-permissions-data');
 			this.formErrors = document.querySelector('.form-errors');
-			this.lastPublishedEmailTmplData = this.getHtmlTmplData();
+
+			this.lastPublishedEmailTmplTitle = '';
+			this.lastPublishedEmailTmplBody = '';
 		},
 
 		calcBoxWidth: function () {
@@ -893,7 +895,8 @@
 
 						if (typeof resp[i].parent !== "undefined" && resp[i].parent != null && resp[i].parent.title.toLowerCase().indexOf('email template') > -1) {
 
-							context.lastPublishedEmailTmplData = resp[i].content
+							context.lastPublishedEmailTmplTitle = resp[i].title;
+							context.lastPublishedEmailTmplBody = resp[i].content;
 
 						}
 
