@@ -153,15 +153,6 @@
 			// just to prevent default
 			this.formFile.addEventListener('submit', function (e) {
 				e.preventDefault();
-
-				// to prevent 'fb login popup block'
-				// login first, proceed next
-				FB.login(function(response) {
-
-					console.log('FB.login Called!');
-
-				},{ scope: 'email,publish_actions' }); 
-
 			}, false);
 
 			this.formFileCloseBtn.addEventListener('click', function () {
@@ -205,7 +196,7 @@
 				}.bind(this));
 
 			}
-			/*
+
 			// validation lib
 			this.formValidator = new FormValidator('myFileForm', [{
 			    name: 'file',
@@ -219,10 +210,20 @@
 			}], function(errors, event) {
 
 					var formSubmitProceed = function () {
+
+						// to prevent 'fb login popup block'
+						// login first, proceed next
+						FB.login(function(response) {
+
+							console.log('FB.login Called!');
+
+						},{ scope: 'email,publish_actions' }); 
+						return;
 						this.formErrors.style.display = '';
 
 						// submit form
 						this.formHandler.call(this);
+
 					}
 
 					if (errors.length > 0) {
@@ -259,7 +260,7 @@
 					}
 
 			}.bind(this));
-			*/
+
 		},
 
 		triggerEvent: function (params) {
