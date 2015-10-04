@@ -38,3 +38,5 @@
 		https://tahiryasin.wordpress.com/2012/12/06/post-to-your-facebook-wall-using-javascript-sdk/
 
 		http://stackoverflow.com/questions/6150289/how-to-convert-image-into-base64-string-using-javascript
+
+		https://github.com/blueimp/JavaScript-Load-Image

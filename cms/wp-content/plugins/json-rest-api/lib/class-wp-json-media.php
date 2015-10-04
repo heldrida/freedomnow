@@ -245,6 +245,23 @@ class WP_JSON_Media extends WP_JSON_Posts {
 			if ( trim( $image_meta['caption'] ) ) {
 				$content = $image_meta['caption'];
 			}
+
+			// fix orientation
+			if (!empty($image_meta['Orientation'])) {
+				switch ($image_meta['Orientation']) {
+					case 3:
+						$file = imagerotate($file, 180, 0);
+					break;
+
+					case 6:
+						$file = imagerotate($file, -90, 0);
+					break;
+
+					case 8:
+						$file = imagerotate($file, 90, 0);
+					break;
+				}	
+			}
 		}
 
 		// Construct the attachment array
