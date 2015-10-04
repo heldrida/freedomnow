@@ -235,7 +235,7 @@ class WP_JSON_Media extends WP_JSON_Posts {
 		$file    = $file['file'];
 		$title   = $name;
 		$content = '';
-
+		
 		// use image exif/iptc data for title and caption defaults if possible
 		if ( $image_meta = @wp_read_image_metadata($file) ) {
 			if ( trim( $image_meta['title'] ) && ! is_numeric( sanitize_title( $image_meta['title'] ) ) ) {
@@ -248,19 +248,24 @@ class WP_JSON_Media extends WP_JSON_Posts {
 
 			// fix orientation
 			if (!empty($image_meta['orientation'])) {
+				$temp = imagecreatefromJPEG($file);
 				switch ($image_meta['orientation']) {
 					case 3:
-						$file = imagerotate($file, 180, 0);
+						$img = imagerotate($temp, 180, 0);
 					break;
 
 					case 6:
-						$file = imagerotate($file, -90, 0);
+						$img = imagerotate($temp, -90, 0);
 					break;
 
 					case 8:
-						$file = imagerotate($file, 90, 0);
+						$img = imagerotate($temp, 90, 0);
 					break;
-				}	
+				}
+
+				// overwrite original file upload
+				imagejpeg($img, $file, 100);
+
 			}
 		}
 
