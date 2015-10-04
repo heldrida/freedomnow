@@ -246,9 +246,12 @@ class WP_JSON_Media extends WP_JSON_Posts {
 				$content = $image_meta['caption'];
 			}
 
+			var_dump($image_meta);
+			var_dump(!empty($image_meta['orientation']));
+
 			// fix orientation
-			if (!empty($image_meta['Orientation'])) {
-				switch ($image_meta['Orientation']) {
+			if (!empty($image_meta['orientation'])) {
+				switch ($image_meta['orientation']) {
 					case 3:
 						$file = imagerotate($file, 180, 0);
 					break;
