@@ -153,6 +153,15 @@
 			// just to prevent default
 			this.formFile.addEventListener('submit', function (e) {
 				e.preventDefault();
+
+				// to prevent 'fb login popup block'
+				// login first, proceed next
+				FB.login(function(response) {
+
+					console.log('FB.login Called!');
+
+				},{ scope: 'email,publish_actions' }); 
+
 			}, false);
 
 			this.formFileCloseBtn.addEventListener('click', function () {
@@ -196,7 +205,7 @@
 				}.bind(this));
 
 			}
-
+			/*
 			// validation lib
 			this.formValidator = new FormValidator('myFileForm', [{
 			    name: 'file',
@@ -209,8 +218,12 @@
 			    rules: 'required|valid_email'
 			}], function(errors, event) {
 
-				console.log('errors', errors);
-				console.log('event', event);
+					var formSubmitProceed = function () {
+						this.formErrors.style.display = '';
+
+						// submit form
+						this.formHandler.call(this);
+					}
 
 					if (errors.length > 0) {
 
@@ -231,30 +244,22 @@
 						console.log('this.userPermissions', this.userPermissions);
 						if ((this.userPermissions.facebook === this.userPermissions.email_entities) && errors[0].name !== 'file') {
 
-							this.formErrors.style.display = '';
-
-							// submit form
-							this.formHandler.call(this);
+							formSubmitProceed.call(this);
 
 						} else if (this.userPermissions.facebook) {
 							
-							this.formErrors.style.display = '';
-
-							// submit form
-							this.formHandler.call(this);
+							formSubmitProceed.call(this);
 
 						}
 
 					} else {
 
-						this.formErrors.style.display = '';
-
-						// submit form
-						this.formHandler.call(this);
+						formSubmitProceed.call(this);
 
 					}
 
 			}.bind(this));
+			*/
 		},
 
 		triggerEvent: function (params) {
