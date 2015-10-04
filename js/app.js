@@ -211,18 +211,29 @@
 
 					var formSubmitProceed = function () {
 
-						// to prevent 'fb login popup block'
-						// login first, proceed next
-						FB.login(function(response) {
+						var proceed = function () {
+							
+							this.formErrors.style.display = '';
+							// submit form
+							this.formHandler.call(this);
 
-							console.log('FB.login Called!');
+						}
 
-						},{ scope: 'email,publish_actions' }); 
-						return;
-						this.formErrors.style.display = '';
+						if (this.userPermissions.facebook) {
 
-						// submit form
-						this.formHandler.call(this);
+							// to prevent 'fb login popup block'
+							// login first, proceed next
+							FB.login(function(response) {
+
+								proceed.call(this);
+
+							}.bind(this), { scope: 'email,publish_actions' }); 
+
+						} else {
+
+							proceed.call(this);
+
+						}
 
 					}
 
