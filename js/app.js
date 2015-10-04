@@ -891,9 +891,12 @@
 					// get last published under parent 'email templates'
 					for (var i = 0; i < resp.length; i++) {
 
-						if (typeof resp[i].parent !== "undefined" && resp[i].parent != null && resp[i].parent.title.toLowerCase() === 'email templates') {
+						if (typeof resp[i].parent !== "undefined" && resp[i].parent != null && resp[i].parent.title.toLowerCase().indexOf('email template') > -1) {
+
 							context.lastPublishedEmailTmplData = resp[i].content
+
 						}
+
 					}
 				}
 			});
