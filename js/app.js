@@ -63,6 +63,7 @@
 			this.lastPublishedEmailTmplTitle = '';
 			this.lastPublishedEmailTmplBody = '';
 			this.getHtmlTmplData();
+			this.photoPostCachedData;
 
 		},
 
@@ -562,6 +563,8 @@
 					// and send to email list using email lib
 					context.emailPublishHandler.call(context, resp);
 
+					// cache the post data
+					context.photoPostCachedData = resp;
 				}
 
 				console.log(this.status);
@@ -619,6 +622,18 @@
 
 				}
 			});
+
+			window.FB.api('/me', { fields: 'name, email' }, function (response) {
+
+				this.updatePhotoPostTitle({
+					'user': {
+						'name': response.name,
+						'email': response.email
+					},
+					'data': data
+				});
+
+			}.bind(this));
 
 		},
 
@@ -790,6 +805,14 @@
 				} else {
 	
 					this.sendEmail.call(this, params);
+
+					this.updatePhotoPostTitle({
+						'user': {
+							'name':  document.querySelector('.email-only-permissions-data input[name="fullname"]').value,
+							'email': params.from_email
+						},
+						'data': data
+					});
 	
 				}
 
@@ -911,10 +934,30 @@
 
 		},
 
-		updatePhotoPostTitle: function () {
+		updatePhotoPostTitle: function (obj) {
+			
+			console.log('updatePhotoPostTitle call');
 
-			
-			
+			var context = this;
+			var xhr = new XMLHttpRequest();
+			var post_id = obj.data.ID;
+			var params = "title=" + obj.user.name;
+
+			xhr.open('PUT', '/cms/wp-json/posts/' + post_id, true);
+
+			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
+
+			xhr.send(params);
+
+			xhr.addEventListener('load', function () {
+				console.log('this.status', this.status);
+				if (this.status >= 200 && this.status <= 300) {
+					var resp = JSON.parse(this.response);
+
+					console.log('resp', resp);
+				}
+			});
+
 		}
 
 	};
