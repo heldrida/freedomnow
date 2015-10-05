@@ -625,6 +625,23 @@ html {
         padding: 10px;
         line-height: normal;
         text-align: left; }
+      .freedomnow .form-file-module form input[name="file"] {
+        display: none; }
+      .freedomnow .form-file-module form .browse-photo {
+        width: 100%;
+        background: #eee;
+        padding: 10px 0;
+        text-align: center;
+        color: #5785b9;
+        cursor: pointer;
+        -webkit-transition: opacity 0.3s;
+        -khtml-transition: opacity 0.3s;
+        -moz-transition: opacity 0.3s;
+        -ms-transition: opacity 0.3s;
+        -o-transition: opacity 0.3s;
+        transition: opacity 0.3s; }
+        .freedomnow .form-file-module form .browse-photo:hover {
+          opacity: 0.7; }
     .freedomnow .form-file-module .inp-photo-wrap {
       width: 90%;
       margin: 0 5%;

@@ -152,6 +152,7 @@
 					<div class="inp-photo-wrap">
 						<h3>Enviar foto com apelo:</h3>
 						<input type="file" name="file" accept="image/png, image/gif, image/jpeg">
+						<div class="browse-photo">Browse...</div>
 					</div>
 					<div class="permission-options">
 						<h3>Agradecemos permissao para:</h3>

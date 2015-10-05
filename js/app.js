@@ -67,6 +67,8 @@
 
 			this.groupEmailContact = document.querySelector('.group-email-contact');
 			this.groupEmailContact.innerHTML = 'info@liberdade-ja.com';
+			this.browsePhotoBtn = document.querySelector('.browse-photo');
+			this.inputFile = document.querySelector('input[name="file"]');
 
 		},
 
@@ -286,6 +288,16 @@
 			}.bind(this));
 
 			window.addEventListener('update_photo_post_title', this.updatePhotoPostTitle.bind(this));
+
+			this.browsePhotoBtn.addEventListener('click', function () {
+
+				this.inputFile.click();
+
+			}.bind(this));
+
+			this.inputFile.addEventListener('change', function (e) {
+				this.browsePhotoBtn.innerHTML = e.target.files[0].name;
+			}.bind(this));
 
 		},
 
