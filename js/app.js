@@ -882,13 +882,13 @@
 			console.log('getHtmlTmplData');
 			var context = this;
 			var xhr = new XMLHttpRequest();
-			var params = "filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
+			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
-			xhr.open('GET', '/cms/wp-json/pages', true);
+			xhr.open('GET', '/cms/wp-json/pages' + params, true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
-			xhr.send(params);
+			xhr.send(null);
 
 			xhr.addEventListener('load', function () {
 				console.log('this.status', this.status);
