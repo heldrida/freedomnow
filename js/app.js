@@ -507,7 +507,7 @@
 
 			var xhr = new XMLHttpRequest();
 
-			xhr.open('POST', 'cms/wp-json/media', true);
+			xhr.open('POST', 'cms/wp-json/media?nuance=2015', true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
@@ -539,7 +539,7 @@
 			console.log('savePost');
 			var context = this;
 			var xhr = new XMLHttpRequest();
-			var params = "title=[Anonimo]&content_raw=" + data.content + (this.userPermissions.facebook ? "&status=publish" : null);
+			var params = "nuance=2015&title=[Anonimo]&content_raw=" + data.content + (this.userPermissions.facebook ? "&status=publish" : null);
 
 			xhr.open('POST', 'cms/wp-json/posts', true);
 
@@ -882,7 +882,7 @@
 			console.log('getHtmlTmplData');
 			var context = this;
 			var xhr = new XMLHttpRequest();
-			var params = "filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
+			var params = "nuance=2015&filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
 			xhr.open('GET', '/cms/wp-json/pages', true);
 
@@ -913,8 +913,8 @@
 
 		updatePhotoPostTitle: function () {
 
-			
-			
+
+
 		}
 
 	};
