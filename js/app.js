@@ -880,9 +880,9 @@
 			console.log('getHtmlTmplData');
 			var context = this;
 			var xhr = new XMLHttpRequest();
-			var params = "filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
+			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
-			xhr.open('GET', '/cms/wp-json/pages', true);
+			xhr.open('GET', '/cms/wp-json/pages' + params, true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
@@ -892,13 +892,12 @@
 				console.log('this.status', this.status);
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
-					console.log(resp);
 
 					// get last published under parent 'email templates'
 					for (var i = 0; i < resp.length; i++) {
 
 						if (typeof resp[i].parent !== "undefined" && resp[i].parent != null && resp[i].parent.title.toLowerCase().indexOf('email template') > -1) {
-
+							console.log(resp[i]);
 							context.lastPublishedEmailTmplTitle = resp[i].title;
 							context.lastPublishedEmailTmplBody = resp[i].content;
 
