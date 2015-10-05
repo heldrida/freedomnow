@@ -664,4 +664,28 @@ html {
 		}
 	}
 
+	.privacy-policy {
+		padding: 50px;
+		p {
+			font-size: 18px;
+		}
+		h3 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h3, p {
+			color: #fff;
+			padding: 10px 0;
+		}
+		ul {
+			color: #fff;
+			li {
+				padding: 5px 0;
+			}
+		}
+		a {
+			color: #fff;
+		}
+	}
+
 }

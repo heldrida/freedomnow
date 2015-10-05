@@ -687,3 +687,19 @@ html {
       font-size: 50px;
       position: relative;
       bottom: 10px; }
+  .freedomnow .privacy-policy {
+    padding: 50px; }
+    .freedomnow .privacy-policy p {
+      font-size: 18px; }
+    .freedomnow .privacy-policy h3 {
+      font-size: 24px;
+      font-weight: bold; }
+    .freedomnow .privacy-policy h3, .freedomnow .privacy-policy p {
+      color: #fff;
+      padding: 10px 0; }
+    .freedomnow .privacy-policy ul {
+      color: #fff; }
+      .freedomnow .privacy-policy ul li {
+        padding: 5px 0; }
+    .freedomnow .privacy-policy a {
+      color: #fff; }
