@@ -1,4 +1,7 @@
-<?php
+<?php 
+
+	header('Access-Control-Allow-Origin: liberdade-ja.com');
+	header('Access-Control-Allow-Origin: www.liberdade-ja.com');
 
 	include_once('includes/helperFns.php')
 
