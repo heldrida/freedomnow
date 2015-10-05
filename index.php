@@ -104,7 +104,7 @@
 				<div class="photo-box general-tile contact-email" data-cta="contact-email">
 					<p>
 						<span>Contacto</span>
-						info@email.com
+						<span class="group-email-contact"></span>
 					</p>
 				</div>
 				<?php endif; ?>

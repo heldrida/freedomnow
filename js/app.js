@@ -65,6 +65,9 @@
 			this.getHtmlTmplData();
 			this.photoPostCachedData;
 
+			this.groupEmailContact = document.querySelector('.group-email-contact');
+			this.groupEmailContact.innerHTML = 'info@liberdade-ja.com';
+
 		},
 
 		calcBoxWidth: function () {
