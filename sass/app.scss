@@ -188,11 +188,19 @@ html {
 					&:nth-child(1) {
 						padding-top: 50px;
 					}
-					
+
 					&:nth-child(2) {
 						color: $blue;
 						font-weight: bold;
 					}
+				}
+				.arrow {
+					margin-top: 10px;
+					margin-left: 10px;
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					@include transform(rotate(-90deg));
 				}
 			}
 

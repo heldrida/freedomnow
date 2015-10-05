@@ -256,6 +256,18 @@ html {
         .freedomnow .appeal-grid-module .photo-box.contact-email span:nth-child(2) {
           color: #5785b9;
           font-weight: bold; }
+      .freedomnow .appeal-grid-module .photo-box.contact-email .arrow {
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        -webkit-transform: rotate(-90deg);
+        -khtml-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg); }
     .freedomnow .appeal-grid-module .photo-box-submit-cta {
       width: 100%;
       height: 100%;

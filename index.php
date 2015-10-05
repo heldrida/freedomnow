@@ -106,6 +106,9 @@
 						<span>Contacto</span>
 						<span class="group-email-contact"></span>
 					</p>
+					<div class="arrow">
+						<img class="animated infinite floating" src="images/icon-arrow-down.svg" alt="">
+					</div>
 				</div>
 				<?php endif; ?>
 				<!-- end: contact info tile -->
