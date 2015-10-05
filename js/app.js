@@ -880,7 +880,7 @@
 			console.log('getHtmlTmplData');
 			var context = this;
 			var xhr = new XMLHttpRequest();
-			var params = "filter[posts_per_page]=-1";
+			var params = "filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
 			xhr.open('GET', '/cms/wp-json/pages', true);
 
@@ -892,6 +892,8 @@
 				console.log('this.status', this.status);
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
+					console.log(resp);
+
 					// get last published under parent 'email templates'
 					for (var i = 0; i < resp.length; i++) {
 
