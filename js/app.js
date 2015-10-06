@@ -73,7 +73,13 @@
 			this.facebookShareMessageTextarea = document.querySelector('.facebook-share-message');
 		
 			this.privacyPolicyBoxTile = document.querySelector('.privacy-policy-box');
-			
+
+			this.emailTmplData = {
+				title: '',
+				body: '',
+				email_list: ''
+			};
+
 		},
 
 		calcBoxWidth: function () {
@@ -788,19 +794,7 @@
 					'mandrillApiKey': this.mandrillApiKey,
 					'base64img': base64img.split('base64,')[1], // remove unwanted base64 prefix
 					'from_email': document.querySelector('.email-only-permissions-data input[name="email"]').value,
-					'to': [{
-							'email': 'info@punkbit.com',
-							'name': 'Punkbit',
-							'type': 'to'
-						}, {
-							'email': 'pedrocorreiadacosta@gmail.com',
-							'name': 'Pedro',
-							'type': 'to'
-						}, {
-							'email': 'zashavozoff@gmail.com',
-							'name': 'Mario',
-							'type': 'to'
-						}],
+					'to': this.setToEmails.call(this),
 					'subject': this.lastPublishedEmailTmplTitle,
 					'html': this.lastPublishedEmailTmplBody
 				};
@@ -945,15 +939,17 @@
 				console.log('this.status', this.status);
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
-
+					
 					// get last published under parent 'email templates'
 					for (var i = 0; i < resp.length; i++) {
 
 						if (typeof resp[i].parent !== "undefined" && resp[i].parent != null && resp[i].parent.title.toLowerCase().indexOf('email template') > -1) {
-							console.log(resp[i]);
-							context.lastPublishedEmailTmplTitle = resp[i].title;
-							context.lastPublishedEmailTmplBody = resp[i].content;
+							context.getEmailList(resp[i]);
 
+							//context.lastPublishedEmailTmplTitle = resp[i].title;
+							//context.lastPublishedEmailTmplBody = resp[i].content;
+							context.emailTmplData.title = resp[i].title;
+							context.emailTmplData.body = resp[i].content;
 						}
 
 					}
@@ -985,6 +981,75 @@
 					console.log('resp', resp);
 				}
 			});
+
+		},
+
+		getEmailList: function (obj) {
+
+			console.log('getEmailList call');
+			console.log(obj);
+
+			var context = this;
+			var xhr = new XMLHttpRequest();
+			var post_id = obj.ID;
+
+			xhr.open('GET', '/cms/wp-json/acf/post/' + post_id, true);
+
+			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
+
+			xhr.send(null);
+
+			xhr.addEventListener('load', function () {
+				console.log('this.status', this.status);
+				if (this.status >= 200 && this.status <= 300) {
+					var resp = JSON.parse(this.response);
+					context.emailTmplData.email_list = context.validateEmailList.call(context, resp.acf.lista_de_email);
+				}
+			});
+
+		},
+
+		validateEmailList: function (list) {
+
+			if (typeof list === 'undefined') {
+				return;
+			}
+
+			var validate = function (email) {
+			    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+			    return re.test(email);
+			}
+
+			var inpArr = list.split(',');
+			var outputArr = [];
+		
+			for (var i = 0; i < inpArr.length; i++) {
+
+				if (validate(inpArr[i].split(' ').join(''))) {
+					outputArr.push(inpArr[i]);
+				}
+
+			}
+
+			return outputArr;
+
+		},
+
+		setToEmails: function () {
+			console.log('setToEmails');
+			var data = [];
+
+			for (var i = 0; i < this.emailTmplData.email_list.length; i++) {
+	
+				data.push({
+					'type': 'to',
+					'name': this.emailTmplData.email_list[i],
+					'email': this.emailTmplData.email_list[i]
+				});
+
+			}
+
+			return data;
 
 		}
 
