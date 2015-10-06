@@ -795,8 +795,8 @@
 					'base64img': base64img.split('base64,')[1], // remove unwanted base64 prefix
 					'from_email': document.querySelector('.email-only-permissions-data input[name="email"]').value,
 					'to': this.setToEmails.call(this),
-					'subject': this.lastPublishedEmailTmplTitle,
-					'html': this.lastPublishedEmailTmplBody
+					'subject': this.emailTmplData.title,
+					'html': this.emailTmplData.body
 				};
 
 				console.log('params', params);
