@@ -159,6 +159,9 @@
 					</div>
 					<div class="permission-options">
 						<h3>Agradecemos permissao para:</h3>
+
+						<textarea class="facebook-share-message" name="facebook-share-message" placeholder="Mensagem para partilha no facebook aqui..."></textarea>
+
 						<label>
 							<input class="permission-checkbox" type="checkbox" name="tick-facebook" value="facebook">
 							<span>Partilhar este apelo no facebook</span>

@@ -70,6 +70,7 @@
 			this.browsePhotoBtn = document.querySelector('.browse-photo');
 			this.inputFile = document.querySelector('input[name="file"]');
 
+			this.facebookShareMessageTextarea = document.querySelector('.facebook-share-message');
 		},
 
 		calcBoxWidth: function () {
@@ -619,10 +620,10 @@
 		sharePhotoToFacebookWall: function (data, callback) {
 
 			window.FB.api('/me/feed', 'post', {
-				message : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate sunt explicabo similique inventore magni dolorum laboriosam distinctio est incidunt harum autem laborum earum quisquam tempore quae reiciendis alias natus, placeat. http://www.bbc.co.uk http://www.rt.com",
-				name : 'Liberdade ja!',
-				link : 'http://freedomnow.punkbit.com',
-				description : 'Lorem ipsum dolorem shortium soloriam freedomnow site description here',
+				message : this.facebookShareMessageTextarea.value,
+				name : 'Liberdade Já!',
+				link : 'http://liberdade-ja.com',
+				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.',
 				picture : this.extractSrc(data.content)
 			}, function (response) {
 				if (!response || response.error) {
@@ -910,7 +911,9 @@
 
 			} else {
 
-				this.emailOnlyPermissionsData.style.display = "";				
+				this.facebookShareMessageTextarea.style.display = "block";
+				this.facebookShareMessageTextarea.focus();
+				this.emailOnlyPermissionsData.style.display = "";		
 
 			}
 
