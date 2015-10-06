@@ -127,6 +127,17 @@
 
 			<?php endforeach; ?>
 
+			<!-- start: privacy policy tile -->
+			<div class="photo-box general-tile privacy-policy-box" data-cta="privacy-policy">
+				<p>
+					<span>Política<br>de<br>Privacidade</span>
+				</p>
+				<div class="arrow">
+					<img class="animated infinite floating" src="images/icon-arrow-down.svg" alt="">
+				</div>
+			</div>
+			<!-- end: privacy policy tile -->
+
 		</div>
 		<!-- end: appeal grid -->
 

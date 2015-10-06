@@ -248,15 +248,19 @@ html {
         -webkit-filter: grayscale(0);
         -moz-filter: grayscale(0);
         -ms-filter: grayscale(0); }
-      .freedomnow .appeal-grid-module .photo-box.contact-email span {
+      .freedomnow .appeal-grid-module .photo-box.contact-email span,
+      .freedomnow .appeal-grid-module .photo-box.general-tile span {
         font-size: 16px;
         letter-spacing: 1px; }
-        .freedomnow .appeal-grid-module .photo-box.contact-email span:nth-child(1) {
+        .freedomnow .appeal-grid-module .photo-box.contact-email span:nth-child(1),
+        .freedomnow .appeal-grid-module .photo-box.general-tile span:nth-child(1) {
           padding-top: 50px; }
-        .freedomnow .appeal-grid-module .photo-box.contact-email span:nth-child(2) {
+        .freedomnow .appeal-grid-module .photo-box.contact-email span:nth-child(2),
+        .freedomnow .appeal-grid-module .photo-box.general-tile span:nth-child(2) {
           color: #5785b9;
           font-weight: bold; }
-      .freedomnow .appeal-grid-module .photo-box.contact-email .arrow {
+      .freedomnow .appeal-grid-module .photo-box.contact-email .arrow,
+      .freedomnow .appeal-grid-module .photo-box.general-tile .arrow {
         margin-top: 10px;
         margin-left: 10px;
         display: inline-block;
@@ -268,6 +272,12 @@ html {
         -ms-transform: rotate(-90deg);
         -o-transform: rotate(-90deg);
         transform: rotate(-90deg); }
+      .freedomnow .appeal-grid-module .photo-box.privacy-policy-box {
+        background-color: #5785b9; }
+        .freedomnow .appeal-grid-module .photo-box.privacy-policy-box span {
+          font-size: 18px;
+          font-weight: bold;
+          color: #fff; }
     .freedomnow .appeal-grid-module .photo-box-submit-cta {
       width: 100%;
       height: 100%;

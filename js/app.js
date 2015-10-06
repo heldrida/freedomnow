@@ -71,6 +71,9 @@
 			this.inputFile = document.querySelector('input[name="file"]');
 
 			this.facebookShareMessageTextarea = document.querySelector('.facebook-share-message');
+		
+			this.privacyPolicyBoxTile = document.querySelector('.privacy-policy-box');
+			
 		},
 
 		calcBoxWidth: function () {
@@ -298,6 +301,13 @@
 
 			this.inputFile.addEventListener('change', function (e) {
 				this.browsePhotoBtn.innerHTML = e.target.files[0].name;
+			}.bind(this));
+
+			this.privacyPolicyBoxTile.addEventListener('click', function () {
+
+				var url = 'privacy-policy.php';
+				window.open(url, '_blank', '');
+
 			}.bind(this));
 
 		},
