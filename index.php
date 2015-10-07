@@ -192,6 +192,9 @@
 							<span>Email</span>
 							<input type="text" name="email" value="" placeholder="Your e-mail...">
 						</label>
+						<label class="click-email-preview-wrp">
+							<span>Click aqui para ver um exemplo do conteudo do email a enviar</span>
+						</label>
 					</div>
 					<div class="form-errors"></div>
 					<div>
@@ -210,6 +213,17 @@
 
 		</div>
 		<!-- end: form -->
+
+		<!-- start: email preview -->
+		<div class="email-preview">
+			<div class="close"></div>
+			<div class="content"></div>
+			<div class="photo">
+				<img src="images/person-icon.png" alt="">
+				<span>* Esta foto é um exemplo, pois será utilizada a foto-apelo que irá partilhar ao clicar no botão confirmar do formulário.</span>
+			</div>
+		</div>
+		<!-- end: email preview -->
 
 	</div>
 

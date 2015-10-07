@@ -656,6 +656,25 @@ html {
         width: 90%;
         min-height: 50px;
         display: none; }
+      .freedomnow .form-file-module form .click-email-preview-wrp {
+        background: #eee;
+        cursor: pointer;
+        -webkit-transition: opacity 0.3s;
+        -khtml-transition: opacity 0.3s;
+        -moz-transition: opacity 0.3s;
+        -ms-transition: opacity 0.3s;
+        -o-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+        border-radius: 10px;
+        font-size: 10px;
+        margin: 0 0 10px 0 !important; }
+        .freedomnow .form-file-module form .click-email-preview-wrp:hover {
+          opacity: 0.7; }
+        .freedomnow .form-file-module form .click-email-preview-wrp span {
+          text-transform: none;
+          padding: 8px;
+          display: inline-block;
+          line-height: normal; }
     .freedomnow .form-file-module .inp-photo-wrap {
       width: 90%;
       margin: 0 5%;
@@ -717,3 +736,62 @@ html {
         padding: 5px 0; }
     .freedomnow .privacy-policy a {
       color: #fff; }
+  .freedomnow .email-preview {
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    margin: 0 50px;
+    padding: 40px;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    line-height: normal;
+    -webkit-transition: opacity 0.3s;
+    -khtml-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 0;
+    display: none;
+    -webkit-box-shadow: 0px 5px 60px #181818;
+    -khtml-box-shadow: 0px 5px 60px #181818;
+    -moz-box-shadow: 0px 5px 60px #181818;
+    -ms-box-shadow: 0px 5px 60px #181818;
+    -o-box-shadow: 0px 5px 60px #181818;
+    box-shadow: 0px 5px 60px #181818; }
+    .freedomnow .email-preview b {
+      font-weight: bold; }
+    .freedomnow .email-preview p {
+      padding-bottom: 10px; }
+    .freedomnow .email-preview .photo {
+      margin-top: 20px;
+      max-width: 200px; }
+      .freedomnow .email-preview .photo img {
+        width: 100%;
+        height: auto; }
+      .freedomnow .email-preview .photo span {
+        font-size: 10px; }
+    .freedomnow .email-preview .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/icon-close-black.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      -webkit-transition: opacity 0.3s;
+      -khtml-transition: opacity 0.3s;
+      -moz-transition: opacity 0.3s;
+      -ms-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
+      .freedomnow .email-preview .close:hover {
+        opacity: 0.8; }

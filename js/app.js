@@ -62,6 +62,13 @@
 
 			this.lastPublishedEmailTmplTitle = '';
 			this.lastPublishedEmailTmplBody = '';
+			
+			this.emailTmplData = {
+				title: '',
+				body: '',
+				email_list: ''
+			};
+
 			this.getHtmlTmplData();
 			this.photoPostCachedData;
 
@@ -74,11 +81,9 @@
 		
 			this.privacyPolicyBoxTile = document.querySelector('.privacy-policy-box');
 
-			this.emailTmplData = {
-				title: '',
-				body: '',
-				email_list: ''
-			};
+			this.emailPreview = document.querySelector('.email-preview');
+
+			this.emailPreviewOpenBtn = document.querySelector('.click-email-preview-wrp');
 
 		},
 
@@ -314,6 +319,23 @@
 				var url = 'privacy-policy.php';
 				window.open(url, '_blank', '');
 
+			}.bind(this));
+
+
+			this.emailPreview.querySelector('.close').addEventListener('click', function () {
+				this.emailPreview.style.opacity = 0;
+				setTimeout(function () {
+					this.emailPreview.style.display = "none";
+				}.bind(this), 800);
+			}.bind(this));
+
+			this.emailPreviewOpenBtn.addEventListener('click', function () {
+				this.emailPreview.style.top = 50 + (window.pageYOffset || document.documentElement.scrollTop) + 'px';
+				this.emailPreview.style.display = "block";
+
+				setTimeout(function () {
+					this.emailPreview.style.opacity = 1;
+				}.bind(this), 20);
 			}.bind(this));
 
 		},
@@ -944,7 +966,8 @@
 					for (var i = 0; i < resp.length; i++) {
 
 						if (typeof resp[i].parent !== "undefined" && resp[i].parent != null && resp[i].parent.title.toLowerCase().indexOf('email template') > -1) {
-							context.getEmailList(resp[i]);
+							context.getEmailList.call(context, resp[i]);
+							context.populateEmailPreview.call(context, resp[i]);
 
 							//context.lastPublishedEmailTmplTitle = resp[i].title;
 							//context.lastPublishedEmailTmplBody = resp[i].content;
@@ -1050,6 +1073,12 @@
 			}
 
 			return data;
+
+		},
+
+		populateEmailPreview: function (data) {
+
+			this.emailPreview.querySelector('.content').innerHTML = data.content;
 
 		}
 

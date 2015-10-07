@@ -616,6 +616,23 @@ html {
 				min-height: 50px;
 				display: none;
 			}
+			.click-email-preview-wrp {
+				background: #eee;
+				cursor: pointer;
+				@include transition(opacity 0.3s);
+				border-radius: 10px;
+				font-size: 10px;
+				margin: 0 0 10px 0 !important;
+				&:hover {
+					opacity: 0.7;
+				}
+				span {
+					text-transform: none;
+					padding: 8px;
+					display: inline-block;
+					line-height: normal;
+				}
+			}
 		}
 
 		.inp-photo-wrap {
@@ -700,6 +717,61 @@ html {
 		}
 		a {
 			color: #fff;
+		}
+	}
+
+	.email-preview {
+		font-size: 16px;
+		width: auto;
+		height: auto;
+		margin: 0 50px;
+		padding: 40px;
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		background-color: #fff;
+		line-height: normal;
+		@include transition(opacity 0.3s);
+		opacity: 0;
+		display: none;
+		@include box-shadow(0px, 5px, 60px, #181818);
+
+		b {
+			font-weight: bold;
+		}
+		p {
+			padding-bottom: 10px;			
+		}
+		.photo {
+			margin-top: 20px;
+			max-width: 200px;
+			img {
+				width: 100%;
+				height: auto;
+			}
+			span {
+				font-size: 10px;
+			}
+		}
+		.close {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 20px;
+			height: 20px;
+			background-image: url(../images/icon-close-black.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			@include transition(opacity 0.3s);
+
+			&:hover {
+				opacity: 0.8;
+			}
 		}
 	}
 
