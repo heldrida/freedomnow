@@ -217,6 +217,7 @@
 		<!-- start: email preview -->
 		<div class="email-preview">
 			<div class="close"></div>
+			<div class="where-to"></div>
 			<div class="content"></div>
 			<div class="photo">
 				<img src="images/person-icon.png" alt="">

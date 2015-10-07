@@ -800,3 +800,8 @@ html {
       transition: opacity 0.3s; }
       .freedomnow .email-preview .close:hover {
         opacity: 0.8; }
+    .freedomnow .email-preview .where-to {
+      color: #5785b9;
+      border-bottom: 1px solid #5785b9;
+      padding: 20px 0 40px;
+      margin-bottom: 40px; }

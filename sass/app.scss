@@ -779,6 +779,12 @@ html {
 				opacity: 0.8;
 			}
 		}
+		.where-to {
+			color: $blue;
+			border-bottom: 1px solid $blue;
+			padding: 20px 0 40px;
+			margin-bottom: 40px;
+		}
 	}
 
 }

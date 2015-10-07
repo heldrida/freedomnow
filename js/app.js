@@ -66,7 +66,8 @@
 			this.emailTmplData = {
 				title: '',
 				body: '',
-				email_list: ''
+				email_list: '',
+				preambulo: ''
 			};
 
 			this.getHtmlTmplData();
@@ -966,8 +967,7 @@
 					for (var i = 0; i < resp.length; i++) {
 
 						if (typeof resp[i].parent !== "undefined" && resp[i].parent != null && resp[i].parent.title.toLowerCase().indexOf('email template') > -1) {
-							context.getEmailList.call(context, resp[i]);
-							context.populateEmailPreview.call(context, resp[i]);
+							context.getCustomMetaData.call(context, resp[i]);
 
 							//context.lastPublishedEmailTmplTitle = resp[i].title;
 							//context.lastPublishedEmailTmplBody = resp[i].content;
@@ -1007,9 +1007,9 @@
 
 		},
 
-		getEmailList: function (obj) {
+		getCustomMetaData: function (obj) {
 
-			console.log('getEmailList call');
+			console.log('getCustomMetaData call');
 			console.log(obj);
 
 			var context = this;
@@ -1027,6 +1027,8 @@
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
 					context.emailTmplData.email_list = context.validateEmailList.call(context, resp.acf.lista_de_email);
+					context.emailTmplData.preambulo = resp.acf.preambulo;
+					context.populateEmailPreview.call(context, obj);
 				}
 			});
 
@@ -1078,7 +1080,10 @@
 
 		populateEmailPreview: function (data) {
 
+			this.emailPreview.querySelector('.where-to').innerHTML = this.emailTmplData.preambulo;
 			this.emailPreview.querySelector('.content').innerHTML = data.content;
+			
+			console.log('this.emailTmplData.preambulo', this.emailTmplData.preambulo);
 
 		}
 
