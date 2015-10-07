@@ -656,7 +656,12 @@ html {
         width: 90%;
         min-height: 50px;
         display: none; }
+      .freedomnow .form-file-module form .extended-email {
+        width: 90%;
+        margin: 0 auto; }
       .freedomnow .form-file-module form .click-email-preview-wrp {
+        width: 90%;
+        margin-left: 5%;
         background: #eee;
         cursor: pointer;
         -webkit-transition: opacity 0.3s;
@@ -667,7 +672,8 @@ html {
         transition: opacity 0.3s;
         border-radius: 10px;
         font-size: 10px;
-        margin: 0 0 10px 0 !important; }
+        margin: 0 0 10px 0 !important;
+        display: none; }
         .freedomnow .form-file-module form .click-email-preview-wrp:hover {
           opacity: 0.7; }
         .freedomnow .form-file-module form .click-email-preview-wrp span {

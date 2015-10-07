@@ -944,6 +944,26 @@
 
 			}
 
+			if (this.userPermissions.email_entities) {
+
+				this.emailPreviewOpenBtn.style.display = 'block';
+
+			} else {
+				
+				this.emailPreviewOpenBtn.style.display = '';
+
+			}
+
+			if (this.userPermissions.facebook) {
+
+				this.facebookShareMessageTextarea.style.display = "block";
+
+			} else {
+
+				this.facebookShareMessageTextarea.style.display = "";
+
+			}
+
 		},
 
 		getHtmlTmplData: function () {

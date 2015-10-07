@@ -192,6 +192,8 @@
 							<span>Email</span>
 							<input type="text" name="email" value="" placeholder="Your e-mail...">
 						</label>
+					</div>
+					<div class="extended-email">
 						<label class="click-email-preview-wrp">
 							<span>Click aqui para ver um exemplo do conteudo do email a enviar</span>
 						</label>
