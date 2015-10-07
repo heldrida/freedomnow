@@ -740,8 +740,12 @@
 		},
 
 		extractSrc: function (html) {
+			console.log('extractSrc');
+			console.log('html', html);
 
 			var myRegex = /<img[^>]+src="(http:\/\/[^">]+)"/g;
+			
+			console.log('myRegex.exec(html)', myRegex.exec(html));
 
 			return myRegex.exec(html)[1];
 
