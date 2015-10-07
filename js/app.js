@@ -1080,7 +1080,12 @@
 
 		populateEmailPreview: function (data) {
 
-			this.emailPreview.querySelector('.where-to').innerHTML = this.emailTmplData.preambulo;
+			if (this.emailTmplData.preambulo) {
+				this.emailPreview.querySelector('.where-to').innerHTML = this.emailTmplData.preambulo;
+			} else {
+				this.emailPreview.querySelector('.where-to').style.display = 'none';
+			}
+
 			this.emailPreview.querySelector('.content').innerHTML = data.content;
 			
 			console.log('this.emailTmplData.preambulo', this.emailTmplData.preambulo);
