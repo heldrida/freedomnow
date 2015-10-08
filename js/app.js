@@ -6,6 +6,7 @@
 
 	FreedomNow.prototype = {
 		init: function () {
+			this.loadPolyfills();
 			this.setVars();
 			this.setListeners();
 		},
