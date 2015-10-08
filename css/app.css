@@ -544,7 +544,7 @@ html {
           .freedomnow .appeal-popup-module .img-container .nav-ctrl button.how-to-appeal {
             background: #fff;
             color: #5785b9; }
-      @media only screen and (max-width: 480px) {
+      @media only screen and (max-width: 767px) {
         .freedomnow .appeal-popup-module .img-container {
           background-size: 100%;
           background-color: rgba(0, 0, 0, 0.8); } }
