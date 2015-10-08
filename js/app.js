@@ -1235,7 +1235,7 @@
 			}
 
 			if (!window.console) {
-				injectScript('console-polyfill.js');
+				injectScript('js/vendor/console-polyfill.js');
 			}
 
 		}
