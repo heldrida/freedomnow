@@ -841,3 +841,6 @@ html {
       margin-bottom: 40px; }
   .freedomnow .who-we-are p {
     padding: 10px 0; }
+  .freedomnow .who-we-are a {
+    color: #5785b9;
+    text-decoration: none; }
