@@ -127,7 +127,6 @@ html {
 				background-repeat: no-repeat;
 
 				img {
-					display: none;
 					position: relative;
 					width: auto;
 					height: 100%;
@@ -416,6 +415,14 @@ html {
 
 		&:hover {
 			opacity: 0.5;
+		}
+
+		@media only screen and (max-width: 480px) {
+			padding-top: 100px;
+			img {
+				width: 35px;
+				height: 35px;
+			}
 		}
 	}
 

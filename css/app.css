@@ -200,7 +200,6 @@ html {
         background-position: center center;
         background-repeat: no-repeat; }
         .freedomnow .appeal-grid-module .photo-box.photo-popup img {
-          display: none;
           position: relative;
           width: auto;
           height: 100%;
@@ -445,6 +444,12 @@ html {
     transition: opacity 0.3s; }
     .freedomnow .arrow-down:hover {
       opacity: 0.5; }
+    @media only screen and (max-width: 480px) {
+      .freedomnow .arrow-down {
+        padding-top: 100px; }
+        .freedomnow .arrow-down img {
+          width: 35px;
+          height: 35px; } }
   .freedomnow .npe {
     pointer-events: none; }
   .freedomnow .appeal-popup-module {

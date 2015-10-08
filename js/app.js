@@ -116,9 +116,9 @@
 
 				// set background image
 				if (this.photoBoxes[i].getAttribute('class').indexOf('photo-popup') > -1) {
-					this.photoBoxes[i].style.backgroundImage = 'url(' + this.photoBoxes[i].querySelector('img').getAttribute('src') + ')';
+					//this.photoBoxes[i].style.backgroundImage = 'url(' + this.photoBoxes[i].querySelector('img').getAttribute('src') + ')';
 					// disabled for the moment, needs to remove display:none from css img
-					//this.imageFit.call(this, this.photoBoxes[i]);
+					this.imageFit.call(this, this.photoBoxes[i]);
 				}
 
 				this.setPhotoBoxEvents.call(this, this.photoBoxes[i]);
@@ -1193,9 +1193,10 @@
 		imageFit: function (container) {
 
 			var img = container.querySelector('img');
-			console.log(img);
+
 			if (img.width > img.height) {
 
+				img.style.width = 'auto';
 				img.style.height = container.offsetHeight + 'px';
 				var offset = Math.abs(container.offsetWidth -     img.width) / 2;
 
@@ -1204,6 +1205,7 @@
 			} else {
 
 				img.style.width = container.offsetWidth + 'px';
+				img.style.height = 'auto';
 
 				var offset = Math.abs(container.offsetHeight -     img.height) / 2;
 
