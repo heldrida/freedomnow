@@ -475,8 +475,8 @@ html {
       background-size: cover;
       width: 100%;
       height: 100%;
-      max-width: 500px;
-      max-height: 500px;
+      max-width: 800px;
+      max-height: 600px;
       margin: auto;
       top: 50%;
       -webkit-box-shadow: 0px 20px 80px #181818;
@@ -544,6 +544,10 @@ html {
           .freedomnow .appeal-popup-module .img-container .nav-ctrl button.how-to-appeal {
             background: #fff;
             color: #5785b9; }
+      @media only screen and (max-width: 480px) {
+        .freedomnow .appeal-popup-module .img-container {
+          background-size: 100%;
+          background-color: rgba(0, 0, 0, 0.8); } }
   .freedomnow .form-file-module {
     position: fixed;
     top: 0;
