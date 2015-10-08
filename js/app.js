@@ -994,7 +994,7 @@
 
 			xhr.send(null);
 
-			xhr.onreadystatechange = function () {
+			xhr.addEventListener('load', function () {
 				console.log('this.status', this.status);
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
@@ -1013,7 +1013,7 @@
 
 					}
 				}
-			};
+			});
 
 		},
 
