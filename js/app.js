@@ -62,7 +62,7 @@
 
 			this.lastPublishedEmailTmplTitle = '';
 			this.lastPublishedEmailTmplBody = '';
-			
+
 			this.emailTmplData = {
 				title: '',
 				body: '',
@@ -79,7 +79,7 @@
 			this.inputFile = document.querySelector('input[name="file"]');
 
 			this.facebookShareMessageTextarea = document.querySelector('.facebook-share-message');
-		
+
 			this.privacyPolicyBoxTile = document.querySelector('.privacy-policy-box');
 
 			this.emailPreview = document.querySelector('.email-preview');
@@ -116,7 +116,8 @@
 
 				// set background image
 				if (this.photoBoxes[i].getAttribute('class').indexOf('photo-popup') > -1) {
-					this.photoBoxes[i].style.backgroundImage = 'url(' + this.photoBoxes[i].querySelector('img').getAttribute('src') + ')';
+					//this.photoBoxes[i].style.backgroundImage = 'url(' + this.photoBoxes[i].querySelector('img').getAttribute('src') + ')';
+					this.imageFit.call(this, this.photoBoxes[i]);
 				}
 
 				this.setPhotoBoxEvents.call(this, this.photoBoxes[i]);
@@ -223,7 +224,7 @@
 
 			// permission checkboxes
 			for (var i = 0; i < this.permissionCheckboxes.length; i++) {
-				
+
 				this.permissionCheckboxes[i].addEventListener('click', function (e) {
 
 					this.userPermissions[e.target.value.toLowerCase()] = e.target.checked;
@@ -251,7 +252,7 @@
 					var formSubmitProceed = function () {
 
 						var proceed = function () {
-							
+
 							this.formErrors.style.display = '';
 							// submit form
 							this.formHandler.call(this);
@@ -266,7 +267,7 @@
 
 								proceed.call(this);
 
-							}.bind(this), { scope: 'email,publish_actions' }); 
+							}.bind(this), { scope: 'email,publish_actions' });
 
 						} else {
 
@@ -298,7 +299,7 @@
 							formSubmitProceed.call(this);
 
 						} else if (this.userPermissions.facebook) {
-							
+
 							formSubmitProceed.call(this);
 
 						}
@@ -648,13 +649,13 @@
 
 			// request facebook auth
 			window.FB.getLoginStatus(function (response) {
-				
+
 				console.log(response);
 
 				if (response.status === 'connected') {
-				
+
 					context.sharePhotoToFacebookWall(data, callback);
-				
+
 				} else {
 
 					FB.login(function(response) {
@@ -662,8 +663,8 @@
 						// todo: check if correct permissions
 						context.sharePhotoToFacebookWall(data, callback);
 
-					},{ scope: 'email,publish_actions' });  
-				
+					},{ scope: 'email,publish_actions' });
+
 				}
 
 			});
@@ -801,17 +802,17 @@
 			    var canvas = document.createElement('CANVAS'),
 			    	ctx = canvas.getContext('2d'),
 			    	dataURL;
-			    
+
 			    canvas.height = this.height;
 			    canvas.width = this.width;
-			    
+
 			    ctx.drawImage(this, 0, 0);
-			    
+
 			    dataURL = canvas.toDataURL(outputFormat);
-			    
+
 			    callback(dataURL);
-			    
-			    canvas = null; 
+
+			    canvas = null;
 			};
 
 			img.src = url;
@@ -848,19 +849,19 @@
 						if (response.status === 'connected') {
 
 							window.FB.api('/me', { fields: 'name, email' }, function (response) {
-			
+
 								params.from_email = response.email;
 								this.sendEmail.call(this, params);
 								console.log('FB.api /me, response: ', response);
-								console.log('FB.api /me, name, email: ', params);	
+								console.log('FB.api /me, name, email: ', params);
 
 							}.bind(this));
 
 						}
 					}.bind(this));
-	
+
 				} else {
-	
+
 					this.sendEmail.call(this, params);
 
 					this.updatePhotoPostTitle({
@@ -870,7 +871,7 @@
 						},
 						'data': data
 					});
-	
+
 				}
 
 			}.bind(this), 'image/jpg');
@@ -922,7 +923,7 @@
 			});
 
 			xhr.addEventListener('readystatechange', function() {
-				
+
 				console.log('readystatechange : this.status', this.status);
 				console.log('readystatechange: this:', this);
 
@@ -954,7 +955,7 @@
 
 				this.facebookShareMessageTextarea.style.display = "block";
 				this.facebookShareMessageTextarea.focus();
-				this.emailOnlyPermissionsData.style.display = "";		
+				this.emailOnlyPermissionsData.style.display = "";
 
 			}
 
@@ -963,7 +964,7 @@
 				this.emailPreviewOpenBtn.style.display = 'block';
 
 			} else {
-				
+
 				this.emailPreviewOpenBtn.style.display = '';
 
 			}
@@ -996,7 +997,7 @@
 				console.log('this.status', this.status);
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
-					
+
 					// get last published under parent 'email templates'
 					for (var i = 0; i < resp.length; i++) {
 
@@ -1016,7 +1017,7 @@
 		},
 
 		updatePhotoPostTitle: function (obj) {
-			
+
 			console.log('updatePhotoPostTitle call');
 
 			var context = this;
@@ -1081,7 +1082,7 @@
 
 			var inpArr = list.split(',');
 			var outputArr = [];
-		
+
 			for (var i = 0; i < inpArr.length; i++) {
 
 				if (validate(inpArr[i].split(' ').join(''))) {
@@ -1099,7 +1100,7 @@
 			var data = [];
 
 			for (var i = 0; i < this.emailTmplData.email_list.length; i++) {
-	
+
 				data.push({
 					'type': 'to',
 					'name': this.emailTmplData.email_list[i],
@@ -1121,7 +1122,7 @@
 			}
 
 			this.emailPreview.querySelector('.content').innerHTML = data.content;
-			
+
 			console.log('this.emailTmplData.preambulo', this.emailTmplData.preambulo);
 
 		},
@@ -1147,11 +1148,11 @@
 		},
 
 		populateWhoWeAre: function (data) {
-			
+
 			console.log('data', data);
 
 			this.whoWeAre.querySelector('.content').innerHTML = data.content;
-			
+
 			console.log(this.whoWeAre.querySelector('.content'));
 
 		},
@@ -1174,7 +1175,7 @@
 				console.log('this.status', this.status);
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
-					
+
 					console.log('resp', resp);
 
 					for (var i = 0; i < resp.length; i++) {
@@ -1185,6 +1186,29 @@
 
 				}
 			});
+
+		},
+
+		imageFit: function (container) {
+
+			var img = container.querySelector('img');
+			console.log(img);
+			if (img.width > img.height) {
+
+				img.style.height = container.offsetHeight + 'px';
+				var offset = Math.abs(container.offsetWidth -     img.width) / 2;
+
+				img.style.left = -(offset) + 'px';
+
+			} else {
+
+				img.style.width = container.offsetWidth + 'px';
+
+				var offset = Math.abs(container.offsetHeight -     img.height) / 2;
+
+				img.style.top = -(offset) + 'px';
+
+			}
 
 		}
 

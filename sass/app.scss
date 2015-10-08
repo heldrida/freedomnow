@@ -120,16 +120,32 @@ html {
 			overflow: hidden;
 			cursor: pointer;
 			position: relative;
-			
+
 			&.photo-popup {
 				background-size: cover;
 				background-position: center center;
 				background-repeat: no-repeat;
 
 				img {
-					display: none;
+					position: relative;
+					width: auto;
+					height: 100%;
+					transform-origin: center center;
+					@include transition(transform 0.3s filter 0.3s);
+					filter: grayscale(0.9);
+					-webkit-filter: grayscale(0.9);
+					-moz-filter: grayscale(0.9);
+					-ms-filter: grayscale(0.9);
 				}
 
+				&:hover {
+					img {
+						filter: grayscale(0);
+						-webkit-filter: grayscale(0);
+						-moz-filter: grayscale(0);
+						-ms-filter: grayscale(0);
+					}
+				}
 			}
 
 			&:before {
@@ -165,7 +181,7 @@ html {
 				span {
 					font-size: 16px;
 					letter-spacing: 1px;
-					
+
 					&:nth-child(1) {
 						padding-top: 50px;
 					}
@@ -175,6 +191,7 @@ html {
 						font-weight: bold;
 					}
 				}
+
 				.arrow {
 					margin-top: 10px;
 					margin-left: 10px;
@@ -184,8 +201,10 @@ html {
 					@include transform(rotate(-90deg));
 				}
 			}
+
 			&.privacy-policy-box {
 				background-color: $blue;
+
 				span {
 					font-size: 18px;
 					font-weight: bold;
@@ -198,6 +217,7 @@ html {
 				margin-left: 20px;
 				margin-bottom: 10px;
 				padding: 10px 0;
+
 				span {
 					padding: 0 !important;
 					margin: 0;
@@ -205,18 +225,19 @@ html {
 					font-size: 38px;
 					font-weight: bold;
 					color: $blue;
+
 					&:nth-child(1) {
 						color: #fff;
 						font-weight: normal;
 					}
 				}
+
 				@media only screen and (max-width: 480px) {
 					span {
 						font-size: 12px;
 					}
 				}
 			}
-
 		}
 
 		.photo-box-submit-cta {
@@ -536,6 +557,7 @@ html {
 				opacity: 0;
 				display: none;
 				@include transition(opacity 0.3s);
+
 				p {
 					padding-bottom: 20px;
 					line-height: normal;
@@ -548,6 +570,7 @@ html {
 				cursor: pointer;
 				margin-top: 10px;
 				@include transition(all 0.3s);
+
 				&:hover {
 					background-color: #fff;
 					color: $blue;
@@ -566,7 +589,7 @@ html {
 					font-weight: 900;
 					margin-bottom: 20px;
 				}
-				
+
 				label {
 					margin: 0 0 0 0px;
 					padding: 0;
@@ -581,6 +604,7 @@ html {
 					width: 90%;
 				}
 			}
+
 			.form-errors {
 				background: #FAD3C4;
 				border: 1px solid #A75B4E;
@@ -620,10 +644,12 @@ html {
 				min-height: 50px;
 				display: none;
 			}
+
 			.extended-email {
 				width: 90%;
 				margin: 0 auto;
 			}
+
 			.click-email-preview-wrp {
 				width: 90%;
 				margin-left: 5%;
@@ -633,6 +659,7 @@ html {
 				border-radius: 10px;
 				font-size: 10px;
 				margin: 0 0 10px 0 !important;
+
 				&:hover {
 					opacity: 0.7;
 				}
@@ -654,10 +681,12 @@ html {
 			border-bottom: 1px dashed $blue;
 			margin-bottom: 20px;
 			padding-bottom: 20px;
+
 			h3 {
 				font-weight: 900;
 				margin-bottom: 20px;
 			}
+
 			input[type="file"] {
 				width: 90%;
 				margin: 0;
@@ -674,6 +703,7 @@ html {
 				margin-bottom: 10px;
 			}
 			text-align: left;
+
 			label {
 				cursor: pointer;
 				line-height: normal;
@@ -688,7 +718,7 @@ html {
 				input[type="checkbox"] {
 					margin: 0 5px 0 0;
 				}
-			}	
+			}
 		}
 
 		.loading {
@@ -699,6 +729,7 @@ html {
 			input.confirm {
 				display: none;
 			}
+
 			.loading {
 				display: block;
 				font-size: 50px;
@@ -710,23 +741,29 @@ html {
 
 	.privacy-policy {
 		padding: 50px;
+
 		p {
 			font-size: 18px;
 		}
+
 		h3 {
 			font-size: 24px;
 			font-weight: bold;
 		}
+
 		h3, p {
 			color: #fff;
 			padding: 10px 0;
 		}
+
 		ul {
 			color: #fff;
+
 			li {
 				padding: 5px 0;
 			}
 		}
+
 		a {
 			color: #fff;
 		}
@@ -759,20 +796,25 @@ html {
 		b {
 			font-weight: bold;
 		}
+
 		p {
-			padding-bottom: 10px;			
+			padding-bottom: 10px;
 		}
+
 		.photo {
 			margin-top: 20px;
 			max-width: 200px;
+
 			img {
 				width: 100%;
 				height: auto;
 			}
+
 			span {
 				font-size: 10px;
 			}
 		}
+
 		.close {
 			position: absolute;
 			top: 10px;
@@ -792,19 +834,20 @@ html {
 				opacity: 0.8;
 			}
 		}
+
 		.where-to {
 			color: $blue;
 			border-bottom: 1px solid $blue;
 			padding: 20px 0 40px;
 			margin-bottom: 40px;
 		}
-
 	}
 
 	.who-we-are {
 		p {
 			padding: 10px 0;
 		}
+
 		a {
 			color: $blue;
 			text-decoration: none;

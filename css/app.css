@@ -200,7 +200,25 @@ html {
         background-position: center center;
         background-repeat: no-repeat; }
         .freedomnow .appeal-grid-module .photo-box.photo-popup img {
-          display: none; }
+          position: relative;
+          width: auto;
+          height: 100%;
+          transform-origin: center center;
+          -webkit-transition: transform 0.3s filter 0.3s;
+          -khtml-transition: transform 0.3s filter 0.3s;
+          -moz-transition: transform 0.3s filter 0.3s;
+          -ms-transition: transform 0.3s filter 0.3s;
+          -o-transition: transform 0.3s filter 0.3s;
+          transition: transform 0.3s filter 0.3s;
+          filter: grayscale(0.9);
+          -webkit-filter: grayscale(0.9);
+          -moz-filter: grayscale(0.9);
+          -ms-filter: grayscale(0.9); }
+        .freedomnow .appeal-grid-module .photo-box.photo-popup:hover img {
+          filter: grayscale(0);
+          -webkit-filter: grayscale(0);
+          -moz-filter: grayscale(0);
+          -ms-filter: grayscale(0); }
       .freedomnow .appeal-grid-module .photo-box:before {
         content: " ";
         width: 100%;
