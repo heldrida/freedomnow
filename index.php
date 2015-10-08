@@ -104,11 +104,17 @@
 
 				<!-- start: contact info tile -->
 				<?php if ($i === 9) : ?>
-				<div class="photo-box general-tile contact-email" data-cta="contact-email">
+				<div class="photo-box general-tile who-we-are-tile" data-cta="who-we-area-box">
+					<!--
 					<p>
 						<span>Contacto</span>
 						<span class="group-email-contact"></span>
 					</p>
+					-->
+					<div class="who-we-are-el">
+						<span>ler</span>
+						<span>Quem<br>somos</span>
+					</div>
 					<div class="arrow">
 						<img class="animated infinite floating" src="images/icon-arrow-down.svg" alt="">
 					</div>

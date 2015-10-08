@@ -42,7 +42,7 @@
 			this.formUserData = document.querySelector('.form-file-module .user-data')
 			this.formSuccessMessageStartMs = 800;
 			this.formSuccessMessageEndMs = 5000;
-			this.contactEmailCta = document.querySelector('.contact-email');
+			//this.contactEmailCta = document.querySelector('.contact-email');
 			this.signPetitionCta = document.querySelector('.amnistia-internacional-portugal');
 			this.popupImgContainer = document.querySelector('.appeal-popup-module .img-container');
 			this.popupNextBtn = document.querySelector('.nav-ctrl .next');
@@ -73,8 +73,8 @@
 			this.getHtmlTmplData();
 			this.photoPostCachedData;
 
-			this.groupEmailContact = document.querySelector('.group-email-contact');
-			this.groupEmailContact.innerHTML = 'info@liberdade-ja.com';
+			//this.groupEmailContact = document.querySelector('.group-email-contact');
+			//this.groupEmailContact.innerHTML = 'info@liberdade-ja.com';
 			this.browsePhotoBtn = document.querySelector('.browse-photo');
 			this.inputFile = document.querySelector('input[name="file"]');
 
@@ -87,8 +87,10 @@
 			this.emailPreviewOpenBtn = document.querySelector('.click-email-preview-wrp');
 
 			this.whoWeAre = document.querySelector('.who-we-are');
+			this.whoWeAreTile = document.querySelector('.who-we-are-tile');
 
 			this.getWhoWeAre();
+
 		},
 
 		calcBoxWidth: function () {
@@ -199,11 +201,12 @@
 				this.formFileModule.style.opacity = 1;
 			}.bind(this));
 
-			this.contactEmailCta.addEventListener('click', function () {
+			this.whoWeAreTile.addEventListener('click', function () {
 
-				window.location.href = "mailto: mail@example.org";
+				this.openWhoWeAre.call(this);
 
 			}.bind(this));
+
 
 			this.signPetitionCta.addEventListener('click', function () {
 
@@ -1122,7 +1125,7 @@
 		},
 
 		openWhoWeAre: function () {
-
+			console.log('who we are call');
 			this.whoWeAre.style.top = 50 + (window.pageYOffset || document.documentElement.scrollTop) + 'px';
 			this.whoWeAre.style.display = 'block';
 
