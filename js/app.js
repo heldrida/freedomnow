@@ -43,7 +43,7 @@
 			this.formSuccessMessageStartMs = 800;
 			this.formSuccessMessageEndMs = 5000;
 			//this.contactEmailCta = document.querySelector('.contact-email');
-			this.signPetitionCta = document.querySelector('.amnistia-internacional-portugal');
+			this.signPetitionCta = document.querySelector('.amnistia-internacional');
 			this.popupImgContainer = document.querySelector('.appeal-popup-module .img-container');
 			this.popupNextBtn = document.querySelector('.nav-ctrl .next');
 			this.userPermissions = {
@@ -90,6 +90,8 @@
 			this.whoWeAreTile = document.querySelector('.who-we-are-tile');
 
 			this.getWhoWeAre();
+
+			this.amnestyInternationalUrl = 'http://www.amnistia-internacional.pt/index.php?option=com_wrapper&view=wrapper&Itemid=40&sf_pid=a077000000TgvwwAAB';
 
 		},
 
@@ -210,7 +212,7 @@
 
 			this.signPetitionCta.addEventListener('click', function () {
 
-				var url = 'http://www.amnistia-internacional.pt/index.php?option=com_wrapper&view=wrapper&Itemid=40&sf_pid=a077000000TcpJGAAZ';
+				var url = this.amnestyInternationalUrl;
 				window.open(url, '_blank', '');
 
 			}.bind(this));

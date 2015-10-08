@@ -129,6 +129,7 @@ html {
 				img {
 					display: none;
 				}
+
 			}
 
 			&:before {
@@ -156,27 +157,6 @@ html {
 						/* Safari */
 						transition-duration: 12s;
 					}
-				}
-			}
-
-			img {
-				width: auto;
-				height: 100%;
-				transform-origin: center center;
-				@include transition(transform 0.3s filter 0.3s);
-
-				filter: grayscale(0.9);
-				-webkit-filter: grayscale(0.9);
-				-moz-filter: grayscale(0.9);
-				-ms-filter: grayscale(0.9);
-			}
-
-			&:hover {
-				img {
-					filter: grayscale(0);
-					-webkit-filter: grayscale(0);
-					-moz-filter: grayscale(0);
-					-ms-filter: grayscale(0);
 				}
 			}
 
@@ -319,7 +299,7 @@ html {
 			}
 		}
 
-		.amnistia-internacional-portugal {
+		.amnistia-internacional {
 			background: $yellow;
 			text-align: center;
 			position: relative;

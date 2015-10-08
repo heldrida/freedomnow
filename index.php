@@ -124,9 +124,9 @@
 
 				<!-- start: contact info tile -->
 				<?php if ($i === 11) : ?>
-				<div class="photo-box general-tile amnistia-internacional-portugal" data-cta="contact-email">
+				<div class="photo-box general-tile amnistia-internacional" data-cta="contact-email">
 					<h3>Assinar a petição</h3>
-					<img src="images/amnistia-internacional-portugal.png" alt="">
+					<img src="images/amnesty-international.png?20151008" alt="">
 				</div>
 				<?php endif; ?>
 				<!-- end: contact info tile -->
