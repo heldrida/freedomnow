@@ -296,6 +296,8 @@ html {
         @media only screen and (max-width: 480px) {
           .freedomnow .appeal-grid-module .photo-box .who-we-are-el span {
             font-size: 12px; } }
+      .freedomnow .appeal-grid-module .photo-box .arrow img {
+        width: 100%; }
     .freedomnow .appeal-grid-module .photo-box-submit-cta {
       width: 100%;
       height: 100%;
