@@ -86,6 +86,9 @@
 
 			this.emailPreviewOpenBtn = document.querySelector('.click-email-preview-wrp');
 
+			this.whoWeAre = document.querySelector('.who-we-are');
+
+			this.getWhoWeAre();
 		},
 
 		calcBoxWidth: function () {
@@ -337,6 +340,12 @@
 				setTimeout(function () {
 					this.emailPreview.style.opacity = 1;
 				}.bind(this), 20);
+			}.bind(this));
+
+			this.whoWeAre.querySelector('.close').addEventListener('click', function () {
+
+				this.closeWhoWeAre.call(this);
+
 			}.bind(this));
 
 		},
@@ -1109,6 +1118,68 @@
 			this.emailPreview.querySelector('.content').innerHTML = data.content;
 			
 			console.log('this.emailTmplData.preambulo', this.emailTmplData.preambulo);
+
+		},
+
+		openWhoWeAre: function () {
+
+			this.whoWeAre.style.top = 50 + (window.pageYOffset || document.documentElement.scrollTop) + 'px';
+			this.whoWeAre.style.display = 'block';
+
+			setTimeout(function () {
+				this.whoWeAre.style.opacity = 1;
+			}.bind(this), 20);
+
+		},
+
+		closeWhoWeAre: function () {
+
+			this.whoWeAre.style.opacity = 0;
+
+			setTimeout(function () {
+				this.whoWeAre.style.display = 'none';
+			}.bind(this), 800);
+		},
+
+		populateWhoWeAre: function (data) {
+			
+			console.log('data', data);
+
+			this.whoWeAre.querySelector('.content').innerHTML = data.content;
+			
+			console.log(this.whoWeAre.querySelector('.content'));
+
+		},
+
+		getWhoWeAre: function () {
+
+			console.log('getWhoWeAre call');
+
+			var context = this;
+			var xhr = new XMLHttpRequest();
+			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
+
+			xhr.open('GET', '/cms/wp-json/pages' + params, true);
+
+			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
+
+			xhr.send(null);
+
+			xhr.addEventListener('load', function () {
+				console.log('this.status', this.status);
+				if (this.status >= 200 && this.status <= 300) {
+					var resp = JSON.parse(this.response);
+					
+					console.log('resp', resp);
+
+					for (var i = 0; i < resp.length; i++) {
+						if (typeof resp[i] !== "undefined" && resp[i] != null && resp[i].title.toLowerCase().indexOf('quem somos') > -1) {
+							context.populateWhoWeAre.call(context, resp[i]);
+						}
+					}
+
+				}
+			});
 
 		}
 

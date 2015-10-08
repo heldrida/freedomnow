@@ -742,7 +742,8 @@ html {
         padding: 5px 0; }
     .freedomnow .privacy-policy a {
       color: #fff; }
-  .freedomnow .email-preview {
+  .freedomnow .email-preview,
+  .freedomnow .who-we-are {
     font-size: 16px;
     width: auto;
     height: auto;
@@ -769,23 +770,30 @@ html {
     -o-box-shadow: 0px 5px 60px #181818;
     box-shadow: 0px 5px 60px #181818; }
     @media only screen and (max-width: 480px) {
-      .freedomnow .email-preview {
+      .freedomnow .email-preview,
+      .freedomnow .who-we-are {
         margin: 0 5px;
         padding: 10px;
         font-size: 12px; } }
-    .freedomnow .email-preview b {
+    .freedomnow .email-preview b,
+    .freedomnow .who-we-are b {
       font-weight: bold; }
-    .freedomnow .email-preview p {
+    .freedomnow .email-preview p,
+    .freedomnow .who-we-are p {
       padding-bottom: 10px; }
-    .freedomnow .email-preview .photo {
+    .freedomnow .email-preview .photo,
+    .freedomnow .who-we-are .photo {
       margin-top: 20px;
       max-width: 200px; }
-      .freedomnow .email-preview .photo img {
+      .freedomnow .email-preview .photo img,
+      .freedomnow .who-we-are .photo img {
         width: 100%;
         height: auto; }
-      .freedomnow .email-preview .photo span {
+      .freedomnow .email-preview .photo span,
+      .freedomnow .who-we-are .photo span {
         font-size: 10px; }
-    .freedomnow .email-preview .close {
+    .freedomnow .email-preview .close,
+    .freedomnow .who-we-are .close {
       position: absolute;
       top: 10px;
       right: 10px;
@@ -804,9 +812,11 @@ html {
       -ms-transition: opacity 0.3s;
       -o-transition: opacity 0.3s;
       transition: opacity 0.3s; }
-      .freedomnow .email-preview .close:hover {
+      .freedomnow .email-preview .close:hover,
+      .freedomnow .who-we-are .close:hover {
         opacity: 0.8; }
-    .freedomnow .email-preview .where-to {
+    .freedomnow .email-preview .where-to,
+    .freedomnow .who-we-are .where-to {
       color: #5785b9;
       border-bottom: 1px solid #5785b9;
       padding: 20px 0 40px;

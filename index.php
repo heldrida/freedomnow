@@ -228,6 +228,15 @@
 		</div>
 		<!-- end: email preview -->
 
+		<!-- start: who we are -->
+		<div class="who-we-are">
+			<div class="close"></div>
+			<div class="content">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione similique quod maiores debitis beatae quis quaerat necessitatibus suscipit, quae delectus cupiditate saepe dicta sed excepturi voluptatum, laudantium, aut quam nam?
+			</div>
+		</div>
+		<!-- end: who are we -->
+
 	</div>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>

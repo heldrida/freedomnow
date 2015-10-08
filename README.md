@@ -42,3 +42,5 @@
 		https://github.com/blueimp/JavaScript-Load-Image
 
 		https://remysharp.com/2011/04/21/getting-cors-working
+
+		https://github.com/chrisdavies/rlite
