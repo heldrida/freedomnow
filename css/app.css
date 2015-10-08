@@ -278,6 +278,15 @@ html {
           font-size: 18px;
           font-weight: bold;
           color: #fff; }
+        @media only screen and (max-width: 480px) {
+          .freedomnow .appeal-grid-module .photo-box.privacy-policy-box span {
+            padding-top: 10px !important;
+            margin-top: 0;
+            font-size: 12px; }
+          .freedomnow .appeal-grid-module .photo-box.privacy-policy-box .arrow {
+            width: 12px;
+            height: 12px;
+            padding-left: 10px; } }
       .freedomnow .appeal-grid-module .photo-box .who-we-are-el {
         color: #fff;
         margin-left: 20px;
@@ -361,6 +370,11 @@ html {
         color: #5785b9;
         padding: 10px 20px;
         text-transform: uppercase; }
+      @media only screen and (max-width: 480px) {
+        .freedomnow .appeal-grid-module .general-tile .arrow {
+          width: 12px !important;
+          height: 12px !important;
+          padding-left: 10px; } }
     .freedomnow .appeal-grid-module .amnistia-internacional {
       background: #fef301;
       text-align: center;

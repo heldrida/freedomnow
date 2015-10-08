@@ -211,6 +211,18 @@ html {
 					font-weight: bold;
 					color: #fff;
 				}
+				@media only screen and (max-width: 480px) {
+					span {
+						padding-top: 10px !important;
+						margin-top: 0;
+						font-size: 12px;
+					}
+					.arrow {
+						width: 12px;
+						height: 12px;
+						padding-left: 10px;
+					}
+				}
 			}
 
 			.who-we-are-el {
@@ -323,6 +335,14 @@ html {
 				color: $blue;
 				padding: 10px 20px;
 				text-transform: uppercase;
+			}
+
+			@media only screen and (max-width: 480px) {
+				.arrow {
+					width: 12px !important;
+					height: 12px !important;
+					padding-left: 10px;
+				}
 			}
 		}
 
