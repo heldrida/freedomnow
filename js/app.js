@@ -1192,26 +1192,34 @@
 
 		imageFit: function (container) {
 
-			var img = container.querySelector('img');
+			var el = container.querySelector('img');
+			var set = function (img) {
+				if (img.width > img.height) {
 
-			if (img.width > img.height) {
+					img.style.width = 'auto';
+					img.style.height = container.offsetHeight + 'px';
+					var offset = Math.abs(container.offsetWidth -     img.width) / 2;
 
-				img.style.width = 'auto';
-				img.style.height = container.offsetHeight + 'px';
-				var offset = Math.abs(container.offsetWidth -     img.width) / 2;
+					img.style.left = -(offset) + 'px';
 
-				img.style.left = -(offset) + 'px';
+				} else {
 
-			} else {
+					img.style.width = container.offsetWidth + 'px';
+					img.style.height = 'auto';
 
-				img.style.width = container.offsetWidth + 'px';
-				img.style.height = 'auto';
+					var offset = Math.abs(container.offsetHeight -     img.height) / 2;
 
-				var offset = Math.abs(container.offsetHeight -     img.height) / 2;
+					img.style.top = -(offset) + 'px';
 
-				img.style.top = -(offset) + 'px';
-
+				}
 			}
+
+			var image = new Image();
+			image.src = el.getAttribute('src');
+			image.onload = function () {
+				set(el);
+				console.log(this.src + ' loaded!');
+			};
 
 		}
 
