@@ -1234,9 +1234,7 @@
 				injectScript('js/vendor/base64.min.js');
 			}
 
-			if (!window.console) {
-				injectScript('js/vendor/console-polyfill.js');
-			}
+			injectScript('js/vendor/console-polyfill.js');
 
 		}
 
