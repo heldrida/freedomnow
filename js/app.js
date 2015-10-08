@@ -1234,6 +1234,10 @@
 				injectScript('js/vendor/base64.min.js');
 			}
 
+			if (!window.console) {
+				injectScript('console-polyfill.js');
+			}
+
 		}
 
 	};
