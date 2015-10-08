@@ -116,8 +116,9 @@
 
 				// set background image
 				if (this.photoBoxes[i].getAttribute('class').indexOf('photo-popup') > -1) {
-					//this.photoBoxes[i].style.backgroundImage = 'url(' + this.photoBoxes[i].querySelector('img').getAttribute('src') + ')';
-					this.imageFit.call(this, this.photoBoxes[i]);
+					this.photoBoxes[i].style.backgroundImage = 'url(' + this.photoBoxes[i].querySelector('img').getAttribute('src') + ')';
+					// disabled for the moment, needs to remove display:none from css img
+					//this.imageFit.call(this, this.photoBoxes[i]);
 				}
 
 				this.setPhotoBoxEvents.call(this, this.photoBoxes[i]);

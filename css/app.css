@@ -200,6 +200,7 @@ html {
         background-position: center center;
         background-repeat: no-repeat; }
         .freedomnow .appeal-grid-module .photo-box.photo-popup img {
+          display: none;
           position: relative;
           width: auto;
           height: 100%;
