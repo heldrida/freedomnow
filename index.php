@@ -250,7 +250,7 @@
 	<script src="js/vendor/validate.min.js"></script>
 	<script src="js/vendor/console-polyfill.js"></script>
 	<script src="js/vendor/base64.min.js"></script>
-	<script src="js/vendor/json3.min.js"></script>
+	<script src="js/vendor/json-polyfill.js"></script>
 	<script src="js/app.js"></script>
 
 </body>
