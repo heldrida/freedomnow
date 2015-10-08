@@ -1213,6 +1213,26 @@
 
 			}
 
+		},
+
+		loadPolyfills: function () {
+
+			var injectScript = function (src) {
+
+				var script = document.createElement('script');
+				script.src = src;
+				script.onload = function () {
+				    //do stuff with the script
+				};
+
+				document.head.appendChild(script);
+
+			}
+
+			if (!window.btoa && !window.atob) {
+				injectScript('js/vendor/base64.min.js');
+			}
+
 		}
 
 	};
