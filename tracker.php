@@ -1,5 +1,9 @@
 <?php
 
+	if (!isset($_POST['track'])) {
+		return;
+	}
+
 	require_once 'includes/db_credentials.php';
 
 	$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -25,21 +29,26 @@
 
 	$mysqli->query($sql_create_tbl);
 
-	// temp
-	$name = 'Foobar';
-	$email = 'foobar@foobar.com';
-	$fb_uid = 9999999;
-	$share_fb = 1;
-	$share_email = 1;
+	$name = isset($_POST['name']) ? $_POST['name'] : 'anonimous';
+	$email = isset($_POST['email']) ? $_POST['email'] : '';
+	$fb_uid = isset($_POST['fb_uid']) ? $_POST['fb_uid'] : '';
+	$share_fb = isset($_POST['share_fb']) ? $_POST['share_fb'] : 0;
+	$share_email = isset($_POST['share_email']) ? $_POST['share_email'] : 0;
 
 	$stmt = $mysqli->prepare($sql_insert_tbl);
 
 	if ($mysqli->error) {
-		var_dump($mysqli->error);
+		echo json_encode($mysqli->error);
+		return;
 	}
 
 	$stmt->bind_param('ssiii', $name, $email, $fb_uid, $share_fb, $share_email);
-	$stmt->execute();
-	$stmt->close();
 
-	$mysqli->close();
+	if ($stmt->execute()) {
+
+		$stmt->close();
+		$mysqli->close();
+
+		echo json_encode('appeal tracked');
+
+	}

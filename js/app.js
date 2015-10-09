@@ -874,7 +874,11 @@
 								console.log('FB.api /me, response: ', response);
 								console.log('FB.api /me, name, email: ', params);
 
-								response.name
+								this.track({
+									name: response.name,
+									email: response.email,
+									fb_uid: 9999999 // todo: add fb_uid from response
+								});
 
 							}.bind(this));
 
@@ -893,6 +897,12 @@
 							'email': params.from_email
 						},
 						'data': data
+					});
+
+					this.track({
+						name: document.querySelector('.email-only-permissions-data input[name="fullname"]').value,
+						email: params.from_email,
+						fb_uid: 9999999 // todo: add fb_uid from response
 					});
 
 				}
@@ -1261,6 +1271,33 @@
 				console.log('response', response);
 			});
 
+		},
+
+		track: function (data) {
+
+			console.log('track called!');
+
+			var context = this;
+			var xhr = new XMLHttpRequest();
+			var params = "name=" + data.name + "&email=" + data.email + "&fb_uid=" + data.fb_uid + "&share_fb=" + (this.userPermissions.facebook ? 1 : 0) + "&share_email=" + (this.userPermissions.email_entities ? 1 : 0) + "&track=1";
+
+			xhr.open('POST', 'tracker.php', true);
+
+			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
+			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			xhr.addEventListener('load', function () {
+
+				console.log(this.status);
+
+				if (this.status >= 200 && this.status <= 300) {
+					var resp = JSON.parse(this.response);
+					console.log(resp);
+				}
+
+			});
+
+			xhr.send(params);
 		}
 
 	};
