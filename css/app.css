@@ -870,3 +870,23 @@ html {
   .freedomnow .who-we-are a {
     color: #5785b9;
     text-decoration: none; }
+  .freedomnow .fb-share-btn {
+    background-image: url(../images/facebook-share-button.png?201510110114);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 34px;
+    position: relative;
+    top: 4px;
+    left: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    -webkit-transition: opacity 0.3s;
+    -khtml-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+    .freedomnow .fb-share-btn:hover {
+      opacity: 0.7; }

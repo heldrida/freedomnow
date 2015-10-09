@@ -154,6 +154,7 @@
 				<div class="nav-ctrl">
 					<button class="next">ver proximo</button>
 					<button class="cta-appeal how-to-appeal">Participar!</button>
+					<button class="cta-appeal fb-share-btn" data-image=""></button>
 				</div>
 				<button class="close">fechar</button>
 			</div>

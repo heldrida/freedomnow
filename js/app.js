@@ -93,6 +93,8 @@
 
 			this.amnestyInternationalUrl = 'http://www.amnistia-internacional.pt/index.php?option=com_wrapper&view=wrapper&Itemid=40&sf_pid=a077000000TgvwwAAB';
 
+			this.fbShareBtn = document.querySelector('.fb-share-btn');
+
 		},
 
 		calcBoxWidth: function () {
@@ -175,6 +177,8 @@
 				}.bind(this), this.ctaAppealTransitionMs);
 
 			}.bind(this));
+
+			this.fbShareBtn.addEventListener('click', this.boxPhotoShare);
 
 			this.formFileModule.addEventListener('click', function (e) {
 
@@ -511,6 +515,7 @@
 			var src = el.querySelector('img').getAttribute('src');
 
 			this.popupImgContainer.style.backgroundImage = 'url(' + src + ')';
+			this.popupImgContainer.querySelector('.fb-share-btn').setAttribute('data-image', src);
 			this.appealPopupModule.setAttribute('data-current-index', el.getAttribute('data-index'));
 		},
 
@@ -677,7 +682,7 @@
 			window.FB.api('/me/feed', 'post', {
 				message : this.facebookShareMessageTextarea.value,
 				name : 'Liberdade Já!',
-				link : 'http://liberdade-ja.com',
+				link : 'https://liberdade-ja.com',
 				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.',
 				picture : this.extractSrc(data.content)
 			}, function (response) {
@@ -745,8 +750,9 @@
 			if (image_src) {
 
 				this.appealPopupModule.querySelector('.img-container').style.backgroundImage = "url(" + image_src + ")";
+				this.appealPopupModule.querySelector('.fb-share-btn').setAttribute('data-image', image_src);
 				this.appealPopupModule.setAttribute('data-current-index', nextIndex);
-
+				
 			} else {
 
 				this.popupNextBtn.style.display = 'none';
@@ -1220,6 +1226,24 @@
 				set(el);
 				console.log(this.src + ' loaded!');
 			};
+
+		},
+
+		boxPhotoShare: function (e) {
+
+			console.log('boxPhotoShare call');
+
+			var img_src = e.target.getAttribute('data-image');
+
+			FB.ui({
+				method: 'feed',
+				link: 'https://liberdade-ja.com',
+				caption: 'Liberdade Já!',
+				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.',
+				picture: img_src
+			}, function(response){
+				console.log('response', response);
+			});
 
 		}
 
