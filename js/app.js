@@ -850,7 +850,7 @@
 					'from_email': document.querySelector('.email-only-permissions-data input[name="email"]').value,
 					'to': this.setToEmails.call(this),
 					'subject': this.emailTmplData.title,
-					'html': this.emailTmplData.body + '<div>' + document.querySelector('.email-only-permissions-data input[name="fullname"]').value + '</div>'
+					'html': this.emailTmplData.body
 				};
 
 				console.log('params', params);
@@ -866,10 +866,13 @@
 
 							window.FB.api('/me', { fields: 'name, email' }, function (response) {
 
+								params.html += '<div>' + response.name + '</div>';
 								params.from_email = response.email;
 								this.sendEmail.call(this, params);
 								console.log('FB.api /me, response: ', response);
 								console.log('FB.api /me, name, email: ', params);
+
+								response.name
 
 							}.bind(this));
 
@@ -877,6 +880,8 @@
 					}.bind(this));
 
 				} else {
+
+					params.html += '<div>' + document.querySelector('.email-only-permissions-data input[name="fullname"]').value + '</div>';
 
 					this.sendEmail.call(this, params);
 
