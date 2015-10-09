@@ -18,7 +18,7 @@
 	<meta property="og:title" content="Liberdade Já!" />
 	<meta property="og:type" content="non_profit" />
 	<meta property="og:url" content="https://liberdade-ja.com/" />
-	<meta property="og:image" content="https://liberdade-ja.com/images/silencio-mata.jpg?201510090222" />
+	<meta property="og:image" content="https://liberdade-ja.com/images/liberdade.png?201510090222" />
 	<meta property="og:site_name" content="Liberdade Já!" />
 	<meta property="fb:admins" content="1685315056" />
 	<meta property="fb:app_id" content="982790748442723" />
