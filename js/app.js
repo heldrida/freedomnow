@@ -1269,10 +1269,12 @@
 				set(el);
 			}.bind(this));
 
+			/*
 			image.onload = function () {
 				set(el);
 				console.log(this.src + ' loaded!');
 			};
+			*/
 
 			image.src = el.getAttribute('src');
 
