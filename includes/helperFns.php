@@ -15,8 +15,8 @@
 
 		$data = [];
 
-		$response = \Httpful\Request::get('http://' . $_SERVER['SERVER_NAME'] . '/' . $_SERVER['REQUEST_URI'] . 'cms/wp-json/posts?filter[posts_per_page]=-1&filter[order]=desc&filter[orderby]=post_date')->send();
-		
+		$response = \Httpful\Request::get('http://' . $_SERVER['SERVER_NAME'] . '/' . 'cms/wp-json/posts?filter[posts_per_page]=-1&filter[order]=desc&filter[orderby]=post_date')->send();
+
 		foreach ($response->body as $key => $post) {
 
 			$image_src = getImage($post->content);
