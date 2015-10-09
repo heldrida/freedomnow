@@ -544,6 +544,8 @@
 			this.formSuccessMessage.style.display = '';
 			this.formSuccessMessage.style.opacity = '';
 			this.formFileModule.classList.remove('submited');
+			document.querySelector('[name="file"]').value = "";
+			this.browsePhotoBtn.innerHTML = this.browsePhotoBtn.getAttribute('data-default-text');
 		},
 
 		getDays: function (name) {
@@ -761,7 +763,7 @@
 				this.appealPopupModule.querySelector('.img-container').style.backgroundImage = "url(" + image_src + ")";
 				this.appealPopupModule.querySelector('.fb-share-btn').setAttribute('data-image', image_src);
 				this.appealPopupModule.setAttribute('data-current-index', nextIndex);
-				
+
 			} else {
 
 				this.popupNextBtn.style.display = 'none';
