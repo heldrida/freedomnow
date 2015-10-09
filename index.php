@@ -21,7 +21,7 @@
 
 	<!-- start: Facebook Open Graph Meta Tags -->
 	<meta property="og:title" content="Liberdade Já!" />
-	<meta property="og:type" content="" />
+	<meta property="og:type" content="non_profit" />
 	<meta property="og:url" content="https://liberdade-ja.com/" />
 	<meta property="og:image" content="https://liberdade-ja.com/images/logo-freedomnow.jpg" />
 	<meta property="og:site_name" content="Liberdade Já!" />
