@@ -542,9 +542,15 @@ html {
           .freedomnow .appeal-popup-module .img-container .nav-ctrl button.next {
             background-color: #5785b9;
             color: #fff; }
+            @media only screen and (max-width: 767px) {
+              .freedomnow .appeal-popup-module .img-container .nav-ctrl button.next {
+                margin-right: 0; } }
           .freedomnow .appeal-popup-module .img-container .nav-ctrl button.how-to-appeal {
             background: #fff;
             color: #5785b9; }
+            @media only screen and (max-width: 767px) {
+              .freedomnow .appeal-popup-module .img-container .nav-ctrl button.how-to-appeal {
+                display: none; } }
       @media only screen and (max-width: 767px) {
         .freedomnow .appeal-popup-module .img-container {
           background-size: 100%;

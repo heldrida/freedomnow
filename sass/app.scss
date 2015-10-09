@@ -509,11 +509,19 @@ html {
 					&.next {
 						background-color: $blue;
 						color: #fff;
+
+						@media only screen and (max-width: 767px) {
+							margin-right: 0;
+						}
 					}
 
 					&.how-to-appeal {
 						background: #fff;
 						color: $blue;
+
+						@media only screen and (max-width: 767px) {
+							display: none;
+						}
 					}
 				}
 			}
