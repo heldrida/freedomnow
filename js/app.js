@@ -850,7 +850,7 @@
 					'from_email': document.querySelector('.email-only-permissions-data input[name="email"]').value,
 					'to': this.setToEmails.call(this),
 					'subject': this.emailTmplData.title,
-					'html': this.emailTmplData.body
+					'html': this.emailTmplData.body + '<div>' + document.querySelector('.email-only-permissions-data input[name="fullname"]').value + '</div>'
 				};
 
 				console.log('params', params);
