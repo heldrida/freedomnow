@@ -256,6 +256,7 @@
 			<div class="close"></div>
 			<div class="where-to"></div>
 			<div class="content"></div>
+			<div>* O seu nome aqui</div>
 			<div class="photo">
 				<img src="images/person-icon.png" alt="">
 				<span>* Esta foto é um exemplo, pois será utilizada a foto-apelo que irá partilhar ao clicar no botão confirmar do formulário.</span>
