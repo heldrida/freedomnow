@@ -272,7 +272,8 @@ html {
         -o-transform: rotate(-90deg);
         transform: rotate(-90deg); }
       .freedomnow .appeal-grid-module .photo-box.privacy-policy-box {
-        background-color: #5785b9; }
+        background-color: #5785b9;
+        display: none; }
         .freedomnow .appeal-grid-module .photo-box.privacy-policy-box span {
           font-size: 18px;
           font-weight: bold;
