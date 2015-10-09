@@ -267,17 +267,25 @@
 						}
 
 						if (this.userPermissions.facebook) {
-
+							console.log('>>> request FB.login > when login > Proceed');
 							// to prevent 'fb login popup block'
 							// login first, proceed next
 							FB.login(function(response) {
 
-								proceed.call(this);
+								if (response.authResponse) {
+
+									proceed.call(this);
+
+								} else {
+
+									console.log('User cancelled login or did not fully authorize.');
+
+								}
 
 							}.bind(this), { scope: 'email,publish_actions' });
 
 						} else {
-
+							console.log('>>> no FB.login request needed > proceed');
 							proceed.call(this);
 
 						}
@@ -302,16 +310,18 @@
 						// only validate if 'file' was choosen
 						console.log('this.userPermissions', this.userPermissions);
 						if ((this.userPermissions.facebook === this.userPermissions.email_entities) && errors[0].name !== 'file') {
-
+							console.log('>> 1');
 							formSubmitProceed.call(this);
 
 						} else if (this.userPermissions.facebook) {
+							console.log('>> 2');
 
 							formSubmitProceed.call(this);
 
 						}
 
 					} else {
+						console.log('>> 3');
 
 						formSubmitProceed.call(this);
 
