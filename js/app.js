@@ -304,7 +304,11 @@
 
 						this.formErrors.innerHTML = errorString;
 
-						this.formErrors.style.display = 'block';
+						// delay displaying the errors
+						// to prevent showing errors on false positive
+						setTimeout(function () {
+							this.formErrors.style.display = 'block';
+						}.bind(this), 3000);
 
 						// todo: add exception if facebook is ticked,
 						// only validate if 'file' was choosen
