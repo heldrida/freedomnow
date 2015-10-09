@@ -14,12 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.">
 	<meta name="keywords" content="Luaty da Silva Beirão, Manuel Chivonde (Nito Alves), Nuno Álvaro Dala, Afonso Mahenda Matias (Mbanza Hanza), Nelson Dibango Mendes dos Santos, Itler Jessy Chivonde (Itler Samussuko), Albano Evaristo Bingocabingo, Sedrick Domingos de Carvalho, Fernando António Tomás (Nicolas o Radical), Arante Kivuvu Italiano Lopes, Benedito Jeremias, José Gomes Hata (Cheick Hata), Inocêncio António de Brito ">
-	<title>Liberdade aos Presos Políticos em Angola</title>
 
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-	<link rel="stylesheet" href="css/app.css">
-
-	<!-- start: Facebook Open Graph Meta Tags -->
 	<meta property="og:title" content="Liberdade Já!" />
 	<meta property="og:type" content="non_profit" />
 	<meta property="og:url" content="https://liberdade-ja.com/" />
@@ -28,7 +23,11 @@
 	<meta property="fb:admins" content="1685315056" />
 	<meta property="fb:app_id" content="982790748442723" />
 	<meta property="og:description" content="Contra as prisÃµes polÃ­ticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola." />
-	<!-- end: Facebook Open Graph Meta Tags -->
+	
+	<title>Liberdade aos Presos Políticos em Angola</title>
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="css/app.css">
 
 </head>
 <body data-lang="en">
