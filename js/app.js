@@ -618,7 +618,7 @@
 					var resp = JSON.parse(this.response);
 					context.savePost(resp);
 				} else {
-					alert('Error: Are you logged in the system ? Logout and try again please, thank you!');
+					alert('Error: Are you logged in the system ? Logout and try again please, thank you! (error: ' + this.status + ')');
 					// todo: close popup
 					context.formFileClose.call(context);
 				}
@@ -708,7 +708,7 @@
 				message : this.facebookShareMessageTextarea.value,
 				name : 'Liberdade Já!',
 				link : 'https://liberdade-ja.com',
-				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.',
+				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola. https://liberdade-ja.com',
 				picture : this.extractSrc(data.content)
 			}, function (response) {
 				if (!response || response.error) {
@@ -1279,7 +1279,7 @@
 				method: 'feed',
 				link: 'https://liberdade-ja.com',
 				caption: 'Liberdade Já!',
-				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.',
+				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola. https://liberdade-ja.com',
 				picture: img_src
 			}, function(response){
 				console.log('response', response);
