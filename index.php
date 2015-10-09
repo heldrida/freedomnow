@@ -18,6 +18,18 @@
 
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 	<link rel="stylesheet" href="css/app.css">
+
+	<!-- start: Facebook Open Graph Meta Tags -->
+	<meta property="og:title" content="Liberdade Já!" />
+	<meta property="og:type" content="" />
+	<meta property="og:url" content="https://liberdade-ja.com/" />
+	<meta property="og:image" content="https://liberdade-ja.com/images/logo-freedomnow.jpg" />
+	<meta property="og:site_name" content="Liberdade Já!" />
+	<meta property="fb:admins" content="1685315056" />
+	<meta property="fb:app_id" content="982790748442723" />
+	<meta property="og:description" content="Contra as prisÃµes polÃ­ticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola." />
+	<!-- end: Facebook Open Graph Meta Tags -->
+
 </head>
 <body data-lang="en">
 
