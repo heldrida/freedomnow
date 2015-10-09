@@ -22,7 +22,7 @@
 	<meta property="og:site_name" content="Liberdade Já!" />
 	<meta property="fb:admins" content="1685315056" />
 	<meta property="fb:app_id" content="982790748442723" />
-	<meta property="og:description" content="Contra as prisÃµes polÃ­ticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola." />
+	<meta property="og:description" content="Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola." />
 
 	<title>Liberdade aos Presos Políticos em Angola</title>
 
