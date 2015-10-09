@@ -622,6 +622,9 @@ html {
         text-transform: uppercase;
         cursor: pointer;
         margin-bottom: 20px; }
+        @media only screen and (max-width: 480px) {
+          .freedomnow .form-file-module form input {
+            margin-bottom: 10px; } }
       .freedomnow .form-file-module form .close {
         position: absolute;
         top: 10px;
@@ -740,6 +743,11 @@ html {
           padding: 8px;
           display: inline-block;
           line-height: normal; }
+        @media only screen and (max-width: 480px) {
+          .freedomnow .form-file-module form .click-email-preview-wrp {
+            margin: 0 !important; }
+            .freedomnow .form-file-module form .click-email-preview-wrp span {
+              padding: 4px; } }
     .freedomnow .form-file-module .inp-photo-wrap {
       width: 90%;
       margin: 0 5%;

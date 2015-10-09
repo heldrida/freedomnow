@@ -596,6 +596,10 @@ html {
 				text-transform: uppercase;
 				cursor: pointer;
 				margin-bottom: 20px;
+
+				@media only screen and (max-width: 480px) {
+					margin-bottom: 10px;
+				}
 			}
 
 			.close {
@@ -731,6 +735,14 @@ html {
 					padding: 8px;
 					display: inline-block;
 					line-height: normal;
+				}
+
+				@media only screen and (max-width: 480px) {
+					margin: 0 !important;
+
+					span {
+						padding: 4px;
+					}
 				}
 			}
 		}
