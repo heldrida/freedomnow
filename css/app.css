@@ -610,6 +610,9 @@ html {
         .freedomnow .form-file-module form > div label {
           padding: 10px;
           display: block; }
+          @media only screen and (max-width: 480px) {
+            .freedomnow .form-file-module form > div label {
+              padding: 5px; } }
       .freedomnow .form-file-module form input {
         color: #5785b9;
         background: transparent;
@@ -758,6 +761,9 @@ html {
       .freedomnow .form-file-module .permission-options h3 {
         font-weight: 900;
         margin-bottom: 10px; }
+        @media only screen and (max-width: 480px) {
+          .freedomnow .form-file-module .permission-options h3 {
+            display: none; } }
       .freedomnow .form-file-module .permission-options label {
         cursor: pointer;
         line-height: normal;

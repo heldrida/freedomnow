@@ -580,6 +580,10 @@ html {
 				label {
 					padding: 10px;
 					display: block;
+
+					@media only screen and (max-width: 480px) {
+						padding: 5px;
+					}
 				}
 			}
 
@@ -758,6 +762,10 @@ html {
 			h3 {
 				font-weight: 900;
 				margin-bottom: 10px;
+
+				@media only screen and (max-width: 480px) {
+					display: none;
+				}
 			}
 			text-align: left;
 
