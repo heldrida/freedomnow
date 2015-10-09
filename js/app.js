@@ -1261,11 +1261,18 @@
 			}
 
 			var image = new Image();
+
+			imagesLoaded(image).on('done', function () {
+				set(el);
+			}.bind(this));
+
 			image.src = el.getAttribute('src');
+			/*
 			image.onload = function () {
 				set(el);
 				console.log(this.src + ' loaded!');
 			};
+			*/
 
 		},
 
