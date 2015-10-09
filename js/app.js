@@ -1253,7 +1253,7 @@
 					img.style.width = container.offsetWidth + 'px';
 					img.style.height = 'auto';
 
-					var offset = Math.abs(container.offsetHeight -     img.height) / 2;
+					var offset = Math.abs(container.offsetHeight - img.height) / 2;
 
 					img.style.top = -(offset) + 'px';
 
@@ -1266,13 +1266,12 @@
 				set(el);
 			}.bind(this));
 
-			image.src = el.getAttribute('src');
-			/*
 			image.onload = function () {
 				set(el);
 				console.log(this.src + ' loaded!');
 			};
-			*/
+
+			image.src = el.getAttribute('src');
 
 		},
 
