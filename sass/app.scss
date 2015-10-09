@@ -917,4 +917,23 @@ html {
 			opacity: 0.7;
 		}
 	}
+	.visit-us-on-facebook {
+		p {
+			span {
+				padding: 0 !important;
+				margin: 0;
+				color: $blue !important;
+				font-weight: bold !important;
+			}
+		}
+		.fb-icon-wrp {
+			margin-top: 20px;
+			width: 50px;
+			margin-left: 20px;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
 }

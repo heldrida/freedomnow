@@ -95,6 +95,8 @@
 
 			this.fbShareBtn = document.querySelector('.fb-share-btn');
 
+			this.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
+
 		},
 
 		calcBoxWidth: function () {
@@ -356,6 +358,13 @@
 			this.whoWeAre.querySelector('.close').addEventListener('click', function () {
 
 				this.closeWhoWeAre.call(this);
+
+			}.bind(this));
+
+			this.visitUsOnFb.addEventListener('click', function () {
+
+				var url = 'https://www.facebook.com/Liberdade-aos-Presos-Pol%C3%ADticos-em-Angola-1606187489646481/timeline/';
+				window.open(url, '_blank');
 
 			}.bind(this));
 

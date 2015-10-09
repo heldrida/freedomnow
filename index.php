@@ -130,6 +130,22 @@
 				<?php endif; ?>
 				<!-- end: contact info tile -->
 
+				<!-- start: privacy policy tile -->
+				<?php if ($i === 14) : ?>
+				<div class="photo-box general-tile visit-us-on-facebook" data-cta="visit-us-on-facebook">
+					<div class="fb-icon-wrp">
+						<img src="images/icon-fb.png" alt="">
+					</div>
+					<p>
+						<span>Visita-nos<br>no<br>Facebook</span>
+					</p>
+					<div class="arrow">
+						<img class="animated infinite floating" src="images/icon-arrow-down.svg" alt="">
+					</div>
+				</div>
+				<?php endif; ?>
+				<!-- end: privacy policy tile -->
+
 			<?php endforeach; ?>
 
 			<!-- start: privacy policy tile -->

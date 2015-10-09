@@ -896,3 +896,14 @@ html {
     transition: opacity 0.3s; }
     .freedomnow .fb-share-btn:hover {
       opacity: 0.7; }
+  .freedomnow .visit-us-on-facebook p span {
+    padding: 0 !important;
+    margin: 0;
+    color: #5785b9 !important;
+    font-weight: bold !important; }
+  .freedomnow .visit-us-on-facebook .fb-icon-wrp {
+    margin-top: 20px;
+    width: 50px;
+    margin-left: 20px; }
+    .freedomnow .visit-us-on-facebook .fb-icon-wrp img {
+      width: 100%; }
