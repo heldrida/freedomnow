@@ -87,7 +87,7 @@
 		<!-- start: appeal grid -->
 		<div class="appeal-grid-module">
 
-			<?php $data = getPhotos('destaque'); $i = 0; ?>
+			<?php $data = getPhotosByHighglithFirst('destaque'); $i = 0; ?>
 
 			<?php foreach ($data As $k => $obj) : ?>
 				<?php $i++; ?>

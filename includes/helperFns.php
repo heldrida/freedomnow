@@ -15,17 +15,18 @@
 		return $html->find('img') ? $html->find('img')[0]->src : false;
 	}
 
-	function getPhotos($category = false) {
+	function getPhotos($category, $posts = []) {
 
-		$data = [];
+		$is_highlights = is_array($posts) && empty($posts);
+		$data = !$is_highlights ? $posts : [];
 
-		$response = \Httpful\Request::get('http://' . $_SERVER['SERVER_NAME'] . '/' . $_SERVER['REQUEST_URI'] . 'cms/wp-json/posts?filter[posts_per_page]=-1&filter[order]=desc&filter[orderby]=post_date' . ($category != false ? '&filter[category_name]=destaque' : null))->send();
+		$response = \Httpful\Request::get('http://' . $_SERVER['SERVER_NAME'] . '/' . $_SERVER['REQUEST_URI'] . 'cms/wp-json/posts?filter[posts_per_page]=-1&filter[order]=desc&filter[orderby]=post_date' . ($is_highlights ? '&filter[category_name]=destaque' : null))->send();
 		
 		$catId = get_cat_ID($category);
 
 		foreach ($response->body as $key => $post) {
 
-			if (!$category && !isHighgligthCategory($catId, $post->terms->category)) {
+			if (!$is_highlights && !isHighgligthCategory($catId, $post->terms->category)) {
 
 				$image_src = getImage($post->content);
 
@@ -37,7 +38,7 @@
 					);
 				}
 
-			} else if ($category && isHighgligthCategory($catId, $post->terms->category)) {
+			} else if ($is_highlights && isHighgligthCategory($catId, $post->terms->category)) {
 
 				$image_src = getImage($post->content);
 
@@ -70,5 +71,13 @@
 		}
 
 		return $bool;
+
+	}
+
+	function getPhotosByHighglithFirst($category) {
+
+		$posts = getPhotos($category);
+
+		return getPhotos($category, $posts);
 
 	}
