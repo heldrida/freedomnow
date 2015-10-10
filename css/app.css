@@ -616,7 +616,11 @@ html {
           -o-transform: none;
           transform: none;
           width: 100%;
-          height: 100%; } }
+          height: 100%;
+          overflow: scroll;
+          max-width: none; }
+          .freedomnow .form-file-module form .user-data {
+            margin-bottom: 50px; } }
       .freedomnow .form-file-module form > div {
         margin-bottom: 10px; }
         .freedomnow .form-file-module form > div label {

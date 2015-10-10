@@ -580,6 +580,12 @@ html {
 				@include transform(none);
 				width: 100%;
 				height: 100%;
+				overflow: scroll;
+				max-width: none;
+
+				.user-data {
+					margin-bottom: 50px;
+				}
 			}
 
 			> div {
