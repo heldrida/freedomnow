@@ -90,7 +90,8 @@
 			<?php $data = getPhotosByHighglithFirst('destaque'); $i = 0; ?>
 
 			<?php foreach ($data As $k => $obj) : ?>
-				<div class="photo-box anim-hover photo-popup" data-index="<?php echo $i; ?>" data-id="<?php echo $obj['id']; ?>" data-title="<?php echo strtolower($obj['title']); ?>">
+				<?php $i++; ?>
+				<div class="photo-box anim-hover photo-popup" data-index="<?php echo $i; ?>" data-id="<?php echo $obj['id']; ?>" data-name="<?php echo strtolower($obj['title']); ?>">
 					<img src="<?php echo $obj['image_src']; ?>" alt="">
 				</div>
 
