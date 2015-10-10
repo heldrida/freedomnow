@@ -15,9 +15,9 @@
 		return $html->find('img') ? $html->find('img')[0]->src : false;
 	}
 
-	function getPhotos($category, $posts = []) {
+	function getPhotos($category, $posts) {
 
-		$is_highlights = is_array($posts) && empty($posts);
+		$is_highlights = !is_array($posts);
 		$data = !$is_highlights ? $posts : [];
 
 		$response = \Httpful\Request::get('http://' . $_SERVER['SERVER_NAME'] . '/' . $_SERVER['REQUEST_URI'] . 'cms/wp-json/posts?filter[posts_per_page]=-1&filter[order]=desc&filter[orderby]=post_date' . ($is_highlights ? '&filter[category_name]=destaque' : null))->send();
@@ -76,7 +76,7 @@
 
 	function getPhotosByHighglithFirst($category) {
 
-		$posts = getPhotos($category);
+		$posts = getPhotos($category, false);
 
 		return getPhotos($category, $posts);
 
