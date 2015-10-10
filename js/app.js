@@ -267,17 +267,25 @@
 						}
 
 						if (this.userPermissions.facebook) {
-
+							console.log('>>> request FB.login > when login > Proceed');
 							// to prevent 'fb login popup block'
 							// login first, proceed next
 							FB.login(function(response) {
 
-								proceed.call(this);
+								if (response.authResponse) {
+
+									proceed.call(this);
+
+								} else {
+
+									console.log('User cancelled login or did not fully authorize.');
+
+								}
 
 							}.bind(this), { scope: 'email,publish_actions' });
 
 						} else {
-
+							console.log('>>> no FB.login request needed > proceed');
 							proceed.call(this);
 
 						}
@@ -296,22 +304,28 @@
 
 						this.formErrors.innerHTML = errorString;
 
-						this.formErrors.style.display = 'block';
+						// delay displaying the errors
+						// to prevent showing errors on false positive
+						setTimeout(function () {
+							this.formErrors.style.display = 'block';
+						}.bind(this), 3000);
 
 						// todo: add exception if facebook is ticked,
 						// only validate if 'file' was choosen
 						console.log('this.userPermissions', this.userPermissions);
 						if ((this.userPermissions.facebook === this.userPermissions.email_entities) && errors[0].name !== 'file') {
-
+							console.log('>> 1');
 							formSubmitProceed.call(this);
 
 						} else if (this.userPermissions.facebook) {
+							console.log('>> 2');
 
 							formSubmitProceed.call(this);
 
 						}
 
 					} else {
+						console.log('>> 3');
 
 						formSubmitProceed.call(this);
 
@@ -544,6 +558,8 @@
 			this.formSuccessMessage.style.display = '';
 			this.formSuccessMessage.style.opacity = '';
 			this.formFileModule.classList.remove('submited');
+			document.querySelector('[name="file"]').value = "";
+			this.browsePhotoBtn.innerHTML = this.browsePhotoBtn.getAttribute('data-default-text');
 		},
 
 		getDays: function (name) {
@@ -761,7 +777,7 @@
 				this.appealPopupModule.querySelector('.img-container').style.backgroundImage = "url(" + image_src + ")";
 				this.appealPopupModule.querySelector('.fb-share-btn').setAttribute('data-image', image_src);
 				this.appealPopupModule.setAttribute('data-current-index', nextIndex);
-				
+
 			} else {
 
 				this.popupNextBtn.style.display = 'none';
@@ -872,7 +888,11 @@
 								console.log('FB.api /me, response: ', response);
 								console.log('FB.api /me, name, email: ', params);
 
-								response.name
+								this.track({
+									name: response.name,
+									email: response.email,
+									fb_uid: 9999999 // todo: add fb_uid from response
+								});
 
 							}.bind(this));
 
@@ -891,6 +911,12 @@
 							'email': params.from_email
 						},
 						'data': data
+					});
+
+					this.track({
+						name: document.querySelector('.email-only-permissions-data input[name="fullname"]').value,
+						email: params.from_email,
+						fb_uid: 9999999 // todo: add fb_uid from response
 					});
 
 				}
@@ -1259,6 +1285,33 @@
 				console.log('response', response);
 			});
 
+		},
+
+		track: function (data) {
+
+			console.log('track called!');
+
+			var context = this;
+			var xhr = new XMLHttpRequest();
+			var params = "name=" + data.name + "&email=" + data.email + "&fb_uid=" + data.fb_uid + "&share_fb=" + (this.userPermissions.facebook ? 1 : 0) + "&share_email=" + (this.userPermissions.email_entities ? 1 : 0) + "&track=1";
+
+			xhr.open('POST', 'tracker.php', true);
+
+			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
+			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			xhr.addEventListener('load', function () {
+
+				console.log(this.status);
+
+				if (this.status >= 200 && this.status <= 300) {
+					var resp = JSON.parse(this.response);
+					console.log(resp);
+				}
+
+			});
+
+			xhr.send(params);
 		}
 
 	};

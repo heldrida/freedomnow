@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	header('Access-Control-Allow-Origin: liberdade-ja.com');
 	header('Access-Control-Allow-Origin: www.liberdade-ja.com');
@@ -87,7 +87,7 @@
 		<!-- start: appeal grid -->
 		<div class="appeal-grid-module">
 
-			<?php $data = getPhotos(); $i = 0; ?>
+			<?php $data = getPhotos('destaque'); $i = 0; ?>
 
 			<?php foreach ($data As $k => $obj) : ?>
 				<?php $i++; ?>
@@ -201,7 +201,7 @@
 					<div class="inp-photo-wrap">
 						<h3>Enviar foto com apelo:</h3>
 						<input type="file" name="file" accept="image/png, image/gif, image/jpeg">
-						<div class="browse-photo">Browse...</div>
+						<div class="browse-photo" data-default-text="Browse...">Browse...</div>
 					</div>
 					<div class="permission-options">
 						<h3>Agradecemos permissao para:</h3>
@@ -268,7 +268,6 @@
 		<div class="who-we-are">
 			<div class="close"></div>
 			<div class="content">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione similique quod maiores debitis beatae quis quaerat necessitatibus suscipit, quae delectus cupiditate saepe dicta sed excepturi voluptatum, laudantium, aut quam nam?
 			</div>
 		</div>
 		<!-- end: who are we -->
