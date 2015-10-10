@@ -233,7 +233,7 @@
 					</div>
 					<div class="form-errors"></div>
 					<div class="note-about-share">
-						Obs: A tua foto sera aprovada e publicada automaticamente neste site, se o post no Facebook for seleccionado. As restantes, ficam pendentes e publicadas apos aprovacao. Obrigado pelo apoio!
+						A tua foto será aprovada e publicada automaticamente neste site, se o post no Facebook for seleccionado. As restantes, ficam pendentes e publicadas após aprovação. Obrigado pelo apoio!
 					</div>
 					<div>
 						<input class="confirm" type="submit" value="confirmar">
