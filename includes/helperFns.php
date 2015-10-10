@@ -32,6 +32,7 @@
 
 				if ($image_src) {
 					array_push($data, array(
+							'id' => $post->ID,
 							'title' => $post->title,
 							'image_src' => getImage($post->content)
 						)
