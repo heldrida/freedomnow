@@ -2,10 +2,8 @@
 
 	global $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
 	require( 'cms/wp-load.php');
-
 	include('./includes/httpful.phar');
 	include('./includes/simple_html_dom.php');
-
 
 	function getImage($html) {
 
@@ -20,7 +18,9 @@
 		$is_highlights = !is_array($posts);
 		$data = !$is_highlights ? $posts : [];
 
-		$response = \Httpful\Request::get('http://' . $_SERVER['SERVER_NAME'] . '/' . $_SERVER['REQUEST_URI'] . 'cms/wp-json/posts?filter[posts_per_page]=-1&filter[order]=desc&filter[orderby]=post_date' . ($is_highlights ? '&filter[category_name]=destaque' : null))->send();
+		$url = 'http://' . $_SERVER['SERVER_NAME'] . '/' . 'cms/wp-json/posts?filter[posts_per_page]=-1&filter[order]=desc&filter[orderby]=post_date' . ($is_highlights ? '&filter[category_name]=destaque' : null);
+
+		$response = \Httpful\Request::get($url)->send();
 		
 		$catId = get_cat_ID($category);
 
@@ -79,9 +79,13 @@
 	
 		$cache = phpFastCache();
 
-		$posts = $cache->get("posts");
+		if (isset($_GET['clear_cache'])) {
+			$cache->delete('posts');
+		}
 
-		if ($posts == null) {
+		$posts = $cache->get("posts");
+		
+		if (!$posts || $posts == null) {
 
 			$posts = getPhotos($category, false);
 			$posts = getPhotos($category, $posts);

@@ -1,12 +1,8 @@
 <?php
 
-	header('Access-Control-Allow-Origin: liberdade-ja.com');
-	header('Access-Control-Allow-Origin: www.liberdade-ja.com');
-
-
 	require_once("includes/phpfastcache/phpfastcache.php");
 	include_once('includes/helperFns.php');
-
+	
 ?>
 
 <!DOCTYPE html>
