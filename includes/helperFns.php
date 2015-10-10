@@ -91,7 +91,7 @@
 			$posts = getPhotos($category, $posts);
 
 			// cache for an hour
-			$cache->set("posts", $posts, 6000);
+			$cache->set("posts", $posts, 3000);
 
 		}
 
