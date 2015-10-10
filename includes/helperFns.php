@@ -78,12 +78,11 @@
 	function getPhotosByHighglithFirst($category) {
 	
 		$cache = phpFastCache();
-		$cache->delete("posts");
 
 		$posts = $cache->get("posts");
 		var_dump("$posts dump");
 		var_dump($posts);
-		
+
 		if ($posts == null) {
 
 			$posts = getPhotos($category, false);
