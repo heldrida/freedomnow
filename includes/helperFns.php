@@ -80,8 +80,6 @@
 		$cache = phpFastCache();
 
 		$posts = $cache->get("posts");
-		var_dump("$posts dump");
-		var_dump($posts);
 
 		if ($posts == null) {
 
