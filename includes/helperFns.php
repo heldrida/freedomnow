@@ -21,8 +21,6 @@
 		$data = !$is_highlights ? $posts : [];
 
 		$response = \Httpful\Request::get('http://' . $_SERVER['SERVER_NAME'] . '/' . $_SERVER['REQUEST_URI'] . 'cms/wp-json/posts?filter[posts_per_page]=-1&filter[order]=desc&filter[orderby]=post_date' . ($is_highlights ? '&filter[category_name]=destaque' : null))->send();
-		
-		$catId = get_cat_ID($category);
 
 		foreach ($response->body as $key => $post) {
 

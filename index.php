@@ -282,6 +282,7 @@
 	<script src="js/vendor/base64.min.js"></script>
 	<script src="js/vendor/json-polyfill.js"></script>
 	<script src="js/vendor/xhr-polyfill.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
 	<script src="js/app.js"></script>
 
 </body>

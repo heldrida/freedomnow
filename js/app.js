@@ -618,7 +618,7 @@
 					var resp = JSON.parse(this.response);
 					context.savePost(resp);
 				} else {
-					alert('Error: Are you logged in the system ? Logout and try again please, thank you!');
+					alert('Error: Are you logged in the system ? Logout and try again please, thank you! (error: ' + this.status + ')');
 					// todo: close popup
 					context.formFileClose.call(context);
 				}
@@ -708,7 +708,7 @@
 				message : this.facebookShareMessageTextarea.value,
 				name : 'Liberdade Já!',
 				link : 'https://liberdade-ja.com',
-				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.',
+				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola. https://liberdade-ja.com',
 				picture : this.extractSrc(data.content)
 			}, function (response) {
 				if (!response || response.error) {
@@ -1246,26 +1246,37 @@
 					img.style.height = container.offsetHeight + 'px';
 					var offset = Math.abs(container.offsetWidth -     img.width) / 2;
 
+					img.style.top = '';
 					img.style.left = -(offset) + 'px';
+
 
 				} else {
 
 					img.style.width = container.offsetWidth + 'px';
 					img.style.height = 'auto';
 
-					var offset = Math.abs(container.offsetHeight -     img.height) / 2;
+					var offset = Math.abs(container.offsetHeight - img.height) / 2;
 
 					img.style.top = -(offset) + 'px';
+					img.style.left = '';
 
 				}
 			}
 
 			var image = new Image();
-			image.src = el.getAttribute('src');
+
+			imagesLoaded(image).on('done', function () {
+				set(el);
+			}.bind(this));
+
+			/*
 			image.onload = function () {
 				set(el);
 				console.log(this.src + ' loaded!');
 			};
+			*/
+
+			image.src = el.getAttribute('src');
 
 		},
 
@@ -1279,7 +1290,7 @@
 				method: 'feed',
 				link: 'https://liberdade-ja.com',
 				caption: 'Liberdade Já!',
-				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.',
+				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola. https://liberdade-ja.com',
 				picture: img_src
 			}, function(response){
 				console.log('response', response);

@@ -213,7 +213,12 @@ html {
           filter: grayscale(0.9);
           -webkit-filter: grayscale(0.75);
           -moz-filter: grayscale(0.75);
-          -ms-filter: grayscale(0.75); }
+          -ms-filter: grayscale(0.75);
+          /*
+					@media only screen and (max-width: 480px) {
+						display: none;
+					}
+					*/ }
         .freedomnow .appeal-grid-module .photo-box.photo-popup:hover img {
           filter: grayscale(0);
           -webkit-filter: grayscale(0);
@@ -605,6 +610,9 @@ html {
         .freedomnow .form-file-module form > div label {
           padding: 10px;
           display: block; }
+          @media only screen and (max-width: 480px) {
+            .freedomnow .form-file-module form > div label {
+              padding: 5px; } }
       .freedomnow .form-file-module form input {
         color: #5785b9;
         background: transparent;
@@ -614,6 +622,9 @@ html {
         text-transform: uppercase;
         cursor: pointer;
         margin-bottom: 20px; }
+        @media only screen and (max-width: 480px) {
+          .freedomnow .form-file-module form input {
+            margin-bottom: 10px; } }
       .freedomnow .form-file-module form .close {
         position: absolute;
         top: 10px;
@@ -732,6 +743,11 @@ html {
           padding: 8px;
           display: inline-block;
           line-height: normal; }
+        @media only screen and (max-width: 480px) {
+          .freedomnow .form-file-module form .click-email-preview-wrp {
+            margin: 0 !important; }
+            .freedomnow .form-file-module form .click-email-preview-wrp span {
+              padding: 4px; } }
     .freedomnow .form-file-module .inp-photo-wrap {
       width: 90%;
       margin: 0 5%;
@@ -753,6 +769,9 @@ html {
       .freedomnow .form-file-module .permission-options h3 {
         font-weight: 900;
         margin-bottom: 10px; }
+        @media only screen and (max-width: 480px) {
+          .freedomnow .form-file-module .permission-options h3 {
+            display: none; } }
       .freedomnow .form-file-module .permission-options label {
         cursor: pointer;
         line-height: normal;

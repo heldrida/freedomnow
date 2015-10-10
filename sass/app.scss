@@ -136,6 +136,11 @@ html {
 					-webkit-filter: grayscale(0.75);
 					-moz-filter: grayscale(0.75);
 					-ms-filter: grayscale(0.75);
+					/*
+					@media only screen and (max-width: 480px) {
+						display: none;
+					}
+					*/
 				}
 
 				&:hover {
@@ -211,12 +216,14 @@ html {
 					font-weight: bold;
 					color: #fff;
 				}
+
 				@media only screen and (max-width: 480px) {
 					span {
 						padding-top: 10px !important;
 						margin-top: 0;
 						font-size: 12px;
 					}
+
 					.arrow {
 						width: 12px;
 						height: 12px;
@@ -251,6 +258,7 @@ html {
 					}
 				}
 			}
+
 			.arrow {
 				img {
 					width: 100%;
@@ -420,6 +428,7 @@ html {
 
 		@media only screen and (max-width: 480px) {
 			padding-top: 100px;
+
 			img {
 				width: 35px;
 				height: 35px;
@@ -571,6 +580,10 @@ html {
 				label {
 					padding: 10px;
 					display: block;
+
+					@media only screen and (max-width: 480px) {
+						padding: 5px;
+					}
 				}
 			}
 
@@ -583,6 +596,10 @@ html {
 				text-transform: uppercase;
 				cursor: pointer;
 				margin-bottom: 20px;
+
+				@media only screen and (max-width: 480px) {
+					margin-bottom: 10px;
+				}
 			}
 
 			.close {
@@ -719,6 +736,14 @@ html {
 					display: inline-block;
 					line-height: normal;
 				}
+
+				@media only screen and (max-width: 480px) {
+					margin: 0 !important;
+
+					span {
+						padding: 4px;
+					}
+				}
 			}
 		}
 
@@ -749,6 +774,10 @@ html {
 			h3 {
 				font-weight: 900;
 				margin-bottom: 10px;
+
+				@media only screen and (max-width: 480px) {
+					display: none;
+				}
 			}
 			text-align: left;
 
@@ -901,6 +930,7 @@ html {
 			text-decoration: none;
 		}
 	}
+
 	.fb-share-btn {
 		background-image: url(../images/facebook-share-button.png?201510110114);
 		background-repeat: no-repeat;
@@ -914,10 +944,12 @@ html {
 		border-radius: 6px;
 		cursor: pointer;
 		@include transition(opacity 0.3s);
+
 		&:hover {
 			opacity: 0.7;
 		}
 	}
+
 	.visit-us-on-facebook {
 		p {
 			span {
@@ -936,6 +968,7 @@ html {
 				}
 			}
 		}
+
 		.fb-icon-wrp {
 			margin-top: 20px;
 			width: 50px;
