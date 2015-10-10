@@ -536,7 +536,7 @@
 
 		setPopupData: function (el) {
 
-			var src = el.querySelector('img').getAttribute('src');
+			var src = el.getAttribute('data-img-lrg');
 
 			this.popupImgContainer.style.backgroundImage = 'url(' + src + ')';
 			this.popupImgContainer.querySelector('.fb-share-btn').setAttribute('data-image', src);

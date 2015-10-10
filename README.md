@@ -46,3 +46,5 @@
 		https://github.com/chrisdavies/rlite
 
 		https://github.com/j4mie/idiorm
+
+		https://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/

@@ -89,7 +89,7 @@
 
 			<?php foreach ($data As $k => $obj) : ?>
 				<?php $i++; ?>
-				<div class="photo-box anim-hover photo-popup" data-index="<?php echo $i; ?>" data-id="<?php echo $obj['id']; ?>" data-name="<?php echo strtolower($obj['title']); ?>">
+				<div class="photo-box anim-hover photo-popup" data-index="<?php echo $i; ?>" data-id="<?php echo $obj['id']; ?>" data-name="<?php echo strtolower($obj['title']); ?>" data-img-lrg="<?php echo $obj['image_large_src']; ?>">
 					<img src="<?php echo $obj['image_src']; ?>" alt="">
 				</div>
 
