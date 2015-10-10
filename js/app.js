@@ -304,16 +304,17 @@
 
 						this.formErrors.innerHTML = errorString;
 
-						// delay displaying the errors
-						// to prevent showing errors on false positive
-						setTimeout(function () {
-							this.formErrors.style.display = 'block';
-						}.bind(this), 3000);
+						this.formErrors.style.display = 'block';
 
 						// todo: add exception if facebook is ticked,
 						// only validate if 'file' was choosen
 						console.log('this.userPermissions', this.userPermissions);
 						if ((this.userPermissions.facebook === this.userPermissions.email_entities) && errors[0].name !== 'file') {
+							
+							if (this.userPermissions.facebook === true && this.userPermissions.email_entities === true) {
+								this.formErrors.style.display = '';
+							}
+
 							console.log('>> 1');
 							formSubmitProceed.call(this);
 
