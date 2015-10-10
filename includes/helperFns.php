@@ -77,8 +77,20 @@
 
 	function getPhotosByHighglithFirst($category) {
 
-		$posts = getPhotos($category, false);
+		$posts = __c()->get("posts");
+		
+		var_dump('$posts dump:');
+		var_dump($posts);
 
-		return getPhotos($category, $posts);
+		if ($posts == null) {
 
+			$posts = getPhotos($category, false);
+			$posts = getPhotos($category, $posts);
+
+			// cache for an hour
+			__c()->set("posts", $posts, 6000);
+
+		}
+
+		return $posts;
 	}
