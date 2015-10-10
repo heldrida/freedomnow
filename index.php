@@ -199,7 +199,7 @@
 				<div class="user-data">
 					<div class="close"></div>
 					<div class="inp-photo-wrap">
-						<h3>Enviar foto com apelo:</h3>
+						<h3>Enviar foto com <span class="underline">apelo escrito</span>:</h3>
 						<input type="file" name="file" accept="image/png, image/gif, image/jpeg">
 						<div class="browse-photo" data-default-text="Browse...">Browse...</div>
 					</div>

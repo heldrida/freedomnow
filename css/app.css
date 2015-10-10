@@ -933,3 +933,5 @@ html {
     margin-left: 20px; }
     .freedomnow .visit-us-on-facebook .fb-icon-wrp img {
       width: 100%; }
+  .freedomnow .underline {
+    text-decoration: underline !important; }
