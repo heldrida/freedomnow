@@ -97,6 +97,8 @@
 
 			this.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
 
+			this.baseUrl = window.location.protocol + '//' +  window.location.hostname;
+
 		},
 
 		calcBoxWidth: function () {
@@ -644,7 +646,7 @@
 
 			var xhr = new XMLHttpRequest();
 
-			xhr.open('POST', 'cms/wp-json/media', true);
+			xhr.open('POST', this.baseUrl + '/cms/wp-json/media', true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
@@ -678,7 +680,7 @@
 			var xhr = new XMLHttpRequest();
 			var params = "title=[Anonimo]&content_raw=" + data.content + (this.userPermissions.facebook ? "&status=publish" : null);
 
-			xhr.open('POST', 'cms/wp-json/posts', true);
+			xhr.open('POST', this.baseUrl + '/cms/wp-json/posts', true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -1099,7 +1101,7 @@
 			var xhr = new XMLHttpRequest();
 			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
-			xhr.open('GET', '/cms/wp-json/pages' + params, true);
+			xhr.open('GET', this.baseUrl + '/cms/wp-json/pages' + params, true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
@@ -1137,7 +1139,7 @@
 			var post_id = obj.data.ID;
 			var params = "title=" + obj.user.name;
 
-			xhr.open('PUT', '/cms/wp-json/posts/' + post_id, true);
+			xhr.open('PUT', this.baseUrl + '/cms/wp-json/posts/' + post_id, true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
@@ -1163,7 +1165,7 @@
 			var xhr = new XMLHttpRequest();
 			var post_id = obj.ID;
 
-			xhr.open('GET', '/cms/wp-json/acf/post/' + post_id, true);
+			xhr.open('GET', this.baseUrl + '/cms/wp-json/acf/post/' + post_id, true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
@@ -1283,7 +1285,7 @@
 			var xhr = new XMLHttpRequest();
 			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
-			xhr.open('GET', '/cms/wp-json/pages' + params, true);
+			xhr.open('GET', this.baseUrl + '/cms/wp-json/pages' + params, true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
@@ -1397,7 +1399,7 @@
 			var xhr = new XMLHttpRequest();
 			var params = "name=" + data.name + "&email=" + data.email + "&fb_uid=" + data.fb_uid + "&share_fb=" + (this.userPermissions.facebook ? 1 : 0) + "&share_email=" + (this.userPermissions.email_entities ? 1 : 0) + "&track=1";
 
-			xhr.open('POST', 'tracker.php', true);
+			xhr.open('POST', this.baseUrl + '/tracker.php', true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
