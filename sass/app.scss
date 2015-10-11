@@ -711,10 +711,19 @@ html {
 				text-align: center;
 				color: $blue;
 				cursor: pointer;
+				position: relative;
 				@include transition(opacity 0.3s);
 
 				&:hover {
 					opacity: 0.7;
+				}
+
+				&:before {
+					content: "\25B6";
+					position: absolute;
+					top: 8px;
+					left: 15px;
+					color: #fc0;
 				}
 			}
 
