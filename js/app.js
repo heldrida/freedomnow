@@ -143,10 +143,6 @@
 
 			}.bind(this));
 
-			imagesLoaded(this.appealGridModule).on('always', function () {
-				console.log('images preloaded');
-			});
-
 			window.addEventListener('resize', _.throttle(this.setPhotoBoxesSize.bind(this), this.resizeThrottleMs));
 
 			window.addEventListener('startCounter', function () {
@@ -159,6 +155,12 @@
 
 				var to = this.clockModule.offsetHeight;
 				this.scrollTo.call(this, document.body, to, this.scrollToMs);
+
+				ga('send', 'event', { 
+					eventCategory: 'Arrow down',
+					eventAction: 'The user clicked on the arrow down!',
+					eventLabel: 'click'
+				});
 
 			}.bind(this));
 
@@ -177,6 +179,12 @@
 					this.formFileModule.style.display = 'block';
 					this.formFileModule.style.opacity = 1;
 				}.bind(this), this.ctaAppealTransitionMs);
+
+				ga('send', 'event', { 
+					eventCategory: 'Appeal popup form',
+					eventAction: 'The user click to open the Appeal popup form, to participate',
+					eventLabel: 'click'
+				});
 
 			}.bind(this));
 
@@ -222,6 +230,12 @@
 
 				var url = this.amnestyInternationalUrl;
 				window.open(url, '_blank', '');
+
+				ga('send', 'event', { 
+					eventCategory: 'Sign petition',
+					eventAction: 'The user clicked the amnesty international tile, to sign the petition',
+					eventLabel: 'click'
+				});
 
 			}.bind(this));
 
@@ -368,6 +382,13 @@
 				setTimeout(function () {
 					this.emailPreview.style.opacity = 1;
 				}.bind(this), 20);
+
+				ga('send', 'event', { 
+					eventCategory: 'Email previewer',
+					eventAction: 'The user opened the email previewer',
+					eventLabel: 'click'
+				});
+
 			}.bind(this));
 
 			this.whoWeAre.querySelector('.close').addEventListener('click', function () {
@@ -380,6 +401,13 @@
 
 				var url = 'https://www.facebook.com/Liberdade-aos-Presos-Pol%C3%ADticos-em-Angola-1606187489646481/timeline/';
 				window.open(url, '_blank');
+
+				ga('send', 'event', { 
+					eventCategory: 'Facebook visit us tile',
+					eventAction: 'The user clicked the facebook visit us tile',
+					eventLabel: 'click'
+				});
+
 
 			}.bind(this));
 
@@ -516,6 +544,12 @@
 					this.closePopup.call(this);
 
 				}.bind(this));
+
+				ga('send', 'event', { 
+					eventCategory: 'Photobox',
+					eventAction: 'Lightbox / Photo popup open',
+					eventLabel: 'click'
+				});
 
 			};
 
@@ -718,6 +752,12 @@
 				else {
 					console.log('Success - Post ID: ' + response.id);
 
+					ga('send', 'event', { 
+						eventCategory: 'Facebook share',
+						eventAction: 'Shared from Form permissions',
+						eventLabel: 'click'
+					});
+
 					if (typeof callback === "function") {
 						callback.call(this);
 					}
@@ -779,9 +819,21 @@
 				this.appealPopupModule.querySelector('.fb-share-btn').setAttribute('data-image', image_src);
 				this.appealPopupModule.setAttribute('data-current-index', nextIndex);
 
+				ga('send', 'event', { 
+					eventCategory: 'Photobox Next Button',
+					eventAction: 'User clicked on Next button',
+					eventLabel: 'click'
+				});
+
 			} else {
 
 				this.popupNextBtn.style.display = 'none';
+
+				ga('send', 'event', { 
+					eventCategory: 'Photobox Next Button',
+					eventAction: 'User reached last available photo in gallery',
+					eventLabel: 'click'
+				});
 
 			}
 
@@ -981,6 +1033,12 @@
 
 					console.log('readystatechange: todo: show success message');
 
+					ga('send', 'event', { 
+						eventCategory: 'Email sender',
+						eventAction: 'The email was successfully sent!',
+						eventLabel: 'click'
+					});
+
 				}
 
 			});
@@ -988,6 +1046,12 @@
 			xhr.addEventListener("error", function (res) {
 
 				console.log('todo: show error message');
+
+				ga('send', 'event', { 
+					eventCategory: 'Email send',
+					eventAction: 'The email sender failed because of error',
+					eventLabel: 'click'
+				});
 
 			});
 
@@ -1184,6 +1248,12 @@
 				this.whoWeAre.style.opacity = 1;
 			}.bind(this), 20);
 
+			ga('send', 'event', { 
+				eventCategory: 'Who we are',
+				eventAction: 'User opened who we are module',
+				eventLabel: 'click'
+			});
+
 		},
 
 		closeWhoWeAre: function () {
@@ -1294,7 +1364,27 @@
 				description : 'Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola. https://liberdade-ja.com',
 				picture: img_src
 			}, function(response){
+
 				console.log('response', response);
+
+				if (response && response.post_id) {
+					
+					ga('send', 'event', { 
+						eventCategory: 'Facebook Photobox share button',
+						eventAction: 'The user shared a photo from the Photobox list, sucessfully',
+						eventLabel: 'async_response'
+					});
+
+				} else {
+
+					ga('send', 'event', { 
+						eventCategory: 'Facebook Photobox share button',
+						eventAction: 'An error occured and the share failed to happen.',
+						eventLabel: 'async_response'
+					});
+
+				}
+
 			});
 
 		},
@@ -1319,6 +1409,21 @@
 				if (this.status >= 200 && this.status <= 300) {
 					var resp = JSON.parse(this.response);
 					console.log(resp);
+
+					ga('send', 'event', { 
+						eventCategory: 'User data tracker',
+						eventAction: 'The user data was successfully saved',
+						eventLabel: 'async_response'
+					});
+
+				} else {
+
+					ga('send', 'event', { 
+						eventCategory: 'User data tracker',
+						eventAction: 'The user data was not saved.',
+						eventLabel: 'async_response'
+					});					
+
 				}
 
 			});
