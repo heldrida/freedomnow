@@ -11,7 +11,7 @@
 		},
 
 		setVars: function () {
-
+			this.baseUrl = window.location.protocol + '//' +  window.location.hostname;
 			this.photoBoxes = document.querySelectorAll('.photo-box');
 			this.setPhotoBoxesSize();
 
@@ -96,8 +96,6 @@
 			this.fbShareBtn = document.querySelector('.fb-share-btn');
 
 			this.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
-
-			this.baseUrl = window.location.protocol + '//' +  window.location.hostname;
 
 		},
 
@@ -1101,10 +1099,8 @@
 			var xhr = new XMLHttpRequest();
 			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
-			xhr.open('GET', context.baseUrl + '/cms/wp-json/pages' + params, true);
+			xhr.open('GET', this.baseUrl + '/cms/wp-json/pages' + params, true);
 			
-			console.log(context.baseUrl + '/cms/wp-json/pages' + params);
-
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
 			xhr.send(null);
@@ -1287,9 +1283,7 @@
 			var xhr = new XMLHttpRequest();
 			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
-			xhr.open('GET', context.baseUrl + '/cms/wp-json/pages' + params, true);
-			
-			console.log(context.baseUrl + '/cms/wp-json/pages' + params);
+			xhr.open('GET', this.baseUrl + '/cms/wp-json/pages' + params, true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
