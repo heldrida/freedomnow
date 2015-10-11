@@ -210,7 +210,7 @@
 					<div class="inp-photo-wrap">
 						<h3>Enviar foto com <span class="underline">apelo escrito</span>:</h3>
 						<input type="file" name="file" accept="image/png, image/gif, image/jpeg">
-						<div class="browse-photo" data-default-text="Browse...">Browse...</div>
+						<div class="browse-photo" data-default-text="Clique para selecionar foto...">Clique para selecionar foto...</div>
 					</div>
 					<div class="permission-options">
 						<h3>Agradecemos permissao para:</h3>
