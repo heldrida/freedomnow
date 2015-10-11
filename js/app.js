@@ -1101,7 +1101,7 @@
 			var xhr = new XMLHttpRequest();
 			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
-			xhr.open('GET', this.baseUrl + '/cms/wp-json/pages' + params, true);
+			xhr.open('GET', context.baseUrl + '/cms/wp-json/pages' + params, true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
@@ -1285,7 +1285,7 @@
 			var xhr = new XMLHttpRequest();
 			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
-			xhr.open('GET', this.baseUrl + '/cms/wp-json/pages' + params, true);
+			xhr.open('GET', context.baseUrl + '/cms/wp-json/pages' + params, true);
 
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
