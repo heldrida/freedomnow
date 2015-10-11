@@ -802,7 +802,8 @@ html {
         -ms-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s;
-        padding-left: 0; }
+        padding-left: 0;
+        padding: 5px 0; }
         .freedomnow .form-file-module .permission-options label:hover {
           opacity: 0.7; }
         .freedomnow .form-file-module .permission-options label input[type="checkbox"] {
