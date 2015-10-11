@@ -332,7 +332,7 @@
 							console.log('>> 1');
 							formSubmitProceed.call(this);
 
-						} else if (this.userPermissions.facebook) {
+						} else if (this.userPermissions.facebook && errors[0].name !== 'file') {
 							console.log('>> 2');
 
 							formSubmitProceed.call(this);
