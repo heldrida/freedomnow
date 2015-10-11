@@ -70,7 +70,7 @@
 				preambulo: ''
 			};
 
-			this.getHtmlTmplData();
+			this.getHtmlTmplData.call(this);
 			this.photoPostCachedData;
 
 			//this.groupEmailContact = document.querySelector('.group-email-contact');
@@ -89,7 +89,7 @@
 			this.whoWeAre = document.querySelector('.who-we-are');
 			this.whoWeAreTile = document.querySelector('.who-we-are-tile');
 
-			this.getWhoWeAre();
+			this.getWhoWeAre.call(this);
 
 			this.amnestyInternationalUrl = 'http://www.amnistia-internacional.pt/index.php?option=com_wrapper&view=wrapper&Itemid=40&sf_pid=a077000000TgvwwAAB';
 
