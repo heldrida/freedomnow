@@ -1,5 +1,15 @@
 <?php
 
+	if (!isset($_GET['language']) || empty($_GET['language'])) {
+		$url = 'http://' . $_SERVER['HTTP_HOST'];
+		$url .= '/pt/' . $_SERVER['QUERY_STRING'];
+		header('Location: ' . $url, true, 302);
+		die;
+	}
+
+	define("BASEURL", $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
+
+	require_once("includes/language_package.php");
 	require_once("includes/phpfastcache/phpfastcache.php");
 	include_once('includes/helperFns.php');
 	
@@ -13,19 +23,19 @@
 	<meta name="description" content="Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.">
 	<meta name="keywords" content="Luaty da Silva Beirão, Manuel Chivonde (Nito Alves), Nuno Álvaro Dala, Afonso Mahenda Matias (Mbanza Hanza), Nelson Dibango Mendes dos Santos, Itler Jessy Chivonde (Itler Samussuko), Albano Evaristo Bingocabingo, Sedrick Domingos de Carvalho, Fernando António Tomás (Nicolas o Radical), Arante Kivuvu Italiano Lopes, Benedito Jeremias, José Gomes Hata (Cheick Hata), Inocêncio António de Brito ">
 
-	<meta property="og:title" content="Liberdade Já!" />
+	<meta property="og:title" content="<?php echo translation($language, 'site_title'); ?>" />
 	<meta property="og:type" content="non_profit" />
 	<meta property="og:url" content="https://liberdade-ja.com/" />
 	<meta property="og:image" content="https://liberdade-ja.com/images/liberdade.png?201510090222" />
-	<meta property="og:site_name" content="Liberdade Já!" />
+	<meta property="og:site_name" content="<?php echo translation($language, 'site_title'); ?>" />
 	<meta property="fb:admins" content="1685315056" />
 	<meta property="fb:app_id" content="982790748442723" />
-	<meta property="og:description" content="Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola." />
+	<meta property="og:description" content="<?php echo translation($language, 'site_description'); ?>" />
 
-	<title>Liberdade aos Presos Políticos em Angola</title>
+	<title><?php echo translation($language, 'site_long_title'); ?></title>
 
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="<?php echo BASEURL; ?>/css/app.css">
 
 </head>
 <body data-lang="en">
@@ -54,7 +64,7 @@
 						<p><span class="count-to" data-count-to="diasPresos">0</span></p>
 					</div>
 					<div class="col col-2">
-						<p>dias presos</p>
+						<p><?php echo translation($language, 'dias_presos'); ?></p>
 					</div>
 
 				</div>
@@ -70,7 +80,7 @@
 					</div>
 
 					<div class="col col-2">
-						<p>de greve<br>de fome</p>
+						<p><?php echo translation($language, 'greve_fome'); ?></p>
 					</div>
 
 				</div>
@@ -81,10 +91,10 @@
 			<div class="topbox-bot-bar">
 
 				<div class="arrow-down animated infinite floating">
-					<img src="images/icon-arrow-down.svg" alt="">
+					<img src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
 				</div>
 
-				<img class="logo-freedomnow npe" src="images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
+				<img class="logo-freedomnow npe" src="<?php echo BASEURL; ?>/images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
 
 			</div>
 			<!-- topbox bottom bar -->
@@ -108,11 +118,10 @@
 				<?php if ($i === 4) : ?>
 				<div class="photo-box photo-box-submit-cta anim-hover" data-cta="photo-submit">
 					<p>
-						<span>Eu</span>
-						Quero<br>Participar!
+						<?php echo translation($language, 'quero_participar'); ?>
 					</p>
 					<div class="arrow">
-						<img class="animated infinite floating" src="images/icon-arrow-down.svg" alt="">
+						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
 					</div>
 					<div class="hashtags">
 						<span class="hashtag">#liberdadeja</span>
@@ -132,11 +141,10 @@
 					</p>
 					-->
 					<div class="who-we-are-el">
-						<span>ler</span>
-						<span>Quem<br>somos</span>
+						<?php echo translation($language, 'ler_quem_somos'); ?>
 					</div>
 					<div class="arrow">
-						<img class="animated infinite floating" src="images/icon-arrow-down.svg" alt="">
+						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
 					</div>
 				</div>
 				<?php endif; ?>
@@ -145,7 +153,7 @@
 				<!-- start: contact info tile -->
 				<?php if ($i === 11) : ?>
 				<div class="photo-box general-tile amnistia-internacional" data-cta="contact-email">
-					<img src="images/amnesty-international.png?20151008" alt="">
+					<img src="<?php echo BASEURL; ?>/images/amnesty-international.png?20151008" alt="">
 				</div>
 				<?php endif; ?>
 				<!-- end: contact info tile -->
@@ -159,10 +167,10 @@
 					</div>
 					-->
 					<p>
-						<span><em>Visita-nos</em><br>no<br>Facebook</span>
+						<?php echo translation($language, 'visita_nos_facebook'); ?>
 					</p>
 					<div class="arrow">
-						<img class="animated infinite floating" src="images/icon-arrow-down.svg" alt="">
+						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
 					</div>
 				</div>
 				<?php endif; ?>
@@ -173,10 +181,10 @@
 			<!-- start: privacy policy tile -->
 			<div class="photo-box general-tile privacy-policy-box" data-cta="privacy-policy">
 				<p>
-					<span>Política<br>de<br>Privacidade</span>
+					<?php echo translation($language, 'politica_privacidade'); ?>
 				</p>
 				<div class="arrow">
-					<img class="animated infinite floating" src="images/icon-arrow-down.svg" alt="">
+					<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
 				</div>
 			</div>
 			<!-- end: privacy policy tile -->
@@ -190,11 +198,11 @@
 			<div class="img-container">
 
 				<div class="nav-ctrl">
-					<button class="next">ver proximo</button>
-					<button class="cta-appeal how-to-appeal">Participar!</button>
+					<button class="next"><?php echo translation($language, 'ver_proximo'); ?></button>
+					<button class="cta-appeal how-to-appeal"><?php echo translation($language, 'ver_proximo'); ?></button>
 					<button class="cta-appeal fb-share-btn" data-image=""></button>
 				</div>
-				<button class="close">fechar</button>
+				<button class="close"><?php echo translation($language, 'fechar'); ?></button>
 			</div>
 
 		</div>
@@ -208,53 +216,53 @@
 				<div class="user-data">
 					<div class="close"></div>
 					<div class="inp-photo-wrap">
-						<h3>Enviar foto com <span class="underline">apelo escrito</span>:</h3>
+						<h3><?php echo translation($language, 'enviar_foto_apelo'); ?></h3>
 						<input type="file" name="file" accept="image/png, image/gif, image/jpeg">
-						<div class="browse-photo" data-default-text="Clique para selecionar foto...">Clique para selecionar foto...</div>
+						<div class="browse-photo" data-default-text="<?php echo translation($language, 'seleccionar_foto'); ?>"><?php echo translation($language, 'seleccionar_foto'); ?></div>
 					</div>
 					<div class="permission-options">
-						<h3>Agradecemos permissao para:</h3>
+						<h3><?php echo translation($language, 'agradecemos_permissao'); ?>:</h3>
 
-						<textarea class="facebook-share-message" name="facebook-share-message" placeholder="Mensagem para partilha no facebook aqui..."></textarea>
+						<textarea class="facebook-share-message" name="facebook-share-message" placeholder="<?php echo translation($language, 'mensagem_partilha_facebook'); ?>"></textarea>
 
 						<label>
 							<input class="permission-checkbox" type="checkbox" name="tick-facebook" value="facebook">
-							<span>Partilhar este apelo no facebook</span>
+							<span><?php echo translation($language, 'partilhar_apelo_facebook'); ?></span>
 						</label>
 						<label>
 							<input class="permission-checkbox" type="checkbox" name="tick-email-publish" value="email_entities">
-							<span>Enviar o apelo por email para as entidades competentes</span>
+							<span><?php echo translation($language, 'enviar_para_entidades'); ?></span>
 						</label>
 					</div>
 					<div class="email-only-permissions-data">
-						<h3>Qual o teu nome e email ?</h3>
+						<h3><?php echo translation($language, 'qual_nome_email'); ?></h3>
 						<label>
-							<span>Nome</span>
-							<input type="text" name="fullname" value="" placeholder="Name here...">
+							<span><?php echo translation($language, 'form_nome'); ?></span>
+							<input type="text" name="fullname" value="" placeholder="<?php echo translation($language, 'form_nome_placeholder'); ?>">
 						</label>
 						<label>
-							<span>Email</span>
-							<input type="text" name="email" value="" placeholder="Your e-mail...">
+							<span><?php echo translation($language, 'form_email'); ?></span>
+							<input type="text" name="email" value="" placeholder="<?php echo translation($language, 'form_email_placeholder'); ?>">
 						</label>
 					</div>
 					<div class="extended-email">
 						<label class="click-email-preview-wrp">
-							<span>Click aqui para ver um exemplo do conteudo do email a enviar</span>
+							<span><?php echo translation($language, 'form_preview_email'); ?></span>
 						</label>
 					</div>
 					<div class="form-errors"></div>
 					<div class="note-about-share">
-						A tua foto será aprovada e publicada automaticamente neste site, se o post no Facebook for seleccionado. As restantes, ficam pendentes e publicadas após aprovação. Obrigado pelo apoio!
+						<?php echo translation($language, 'form_about_photo_approvals'); ?>
 					</div>
 					<div>
-						<input class="confirm" type="submit" value="confirmar">
+						<input class="confirm" type="submit" value="<?php echo translation($language, 'form_confirmar'); ?>">
 						<span class="loading animated infinite loading">&#9679;</span>
 					</div>
 				</div>
 
 				<!-- start: success message -->
 				<div class="form-success-message">
-					<p>O seu apelo foi registado com sucesso.<br>Obrigado!</p>
+					<p><?php echo translation($language, 'form_success_message'); ?></p>
 				</div>
 				<!-- end: success message -->
 
@@ -268,10 +276,10 @@
 			<div class="close"></div>
 			<div class="where-to"></div>
 			<div class="content"></div>
-			<div>* O seu nome aqui</div>
+			<div><?php echo translation($language, 'email_preview_your_name_here'); ?></div>
 			<div class="photo">
-				<img src="images/person-icon.png" alt="">
-				<span>* Esta foto é um exemplo, pois será utilizada a foto-apelo que irá partilhar ao clicar no botão confirmar do formulário.</span>
+				<img src="<?php echo BASEURL; ?>/images/person-icon.png" alt="">
+				<span><?php echo translation($language, 'email_preview_about_this_photo'); ?></span>
 			</div>
 		</div>
 		<!-- end: email preview -->
@@ -289,13 +297,13 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-	<script src="js/vendor/validate.min.js"></script>
-	<script src="js/vendor/console-polyfill.js"></script>
-	<script src="js/vendor/base64.min.js"></script>
-	<script src="js/vendor/json-polyfill.js"></script>
-	<script src="js/vendor/xhr-polyfill.min.js"></script>
+	<script src="<?php echo BASEURL; ?>/js/vendor/validate.min.js"></script>
+	<script src="<?php echo BASEURL; ?>/js/vendor/console-polyfill.js"></script>
+	<script src="<?php echo BASEURL; ?>/js/vendor/base64.min.js"></script>
+	<script src="<?php echo BASEURL; ?>/js/vendor/json-polyfill.js"></script>
+	<script src="<?php echo BASEURL; ?>/js/vendor/xhr-polyfill.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
-	<script src="js/app.js"></script>
+	<script src="<?php echo BASEURL; ?>/js/app.js"></script>
 
 </body>
 </html>

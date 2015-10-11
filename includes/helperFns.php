@@ -131,3 +131,11 @@
 	 
 		return $attachment_id;
 	}
+
+	function translation($language, $name) {
+	
+		global $languagePackage;
+
+		return isset($languagePackage[$language][$name]) && !empty($languagePackage[$language][$name]) ? $languagePackage[$language][$name] : '[Translation failing!]';
+
+	}

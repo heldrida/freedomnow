@@ -578,7 +578,7 @@ html {
       color: #5785b9;
       height: auto;
       width: 80%;
-      max-width: 320px;
+      max-width: 400px;
       text-align: center;
       padding: 30px 0;
       padding-bottom: 0px;
@@ -736,7 +736,7 @@ html {
           position: absolute;
           top: 8px;
           left: 15px;
-          color: #fc4; }
+          color: #fc0; }
       .freedomnow .form-file-module form .facebook-share-message {
         width: 90%;
         min-height: 50px;
