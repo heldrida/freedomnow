@@ -83,7 +83,8 @@
 	}
 
 	function getPhotosByHighglithFirst($category) {
-	
+		global $detect;
+		
 		$cache = phpFastCache();
 
 		if (isset($_GET['clear_cache'])) {
