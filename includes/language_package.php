@@ -39,7 +39,7 @@
 			'site_long_title' => 'Liberdade aos Presos Políticos em Angola',
 			'site_description' => "Against the political arrests of 15 Angolan activists. For the freedom and democracy in Angola.",
 			'dias_presos' => "days in jail",
-			'greve_fome' => "hunger strike",
+			'greve_fome' => "on hunger<br>strike",
 			'quero_participar' => "<span>I</span>want to<br>Participate!",
 			'ler_quem_somos' => "<span>About</span><span>Who<br>we are</span>",
 			'visita_nos_facebook' => "<span><em>Visit us</em><br>on<br>Facebook</span>",
