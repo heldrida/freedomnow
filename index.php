@@ -7,8 +7,6 @@
 		die;
 	}
 
-	$detect = new Mobile_Detect;
-
 	define("BASEURL", $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
 
 	require_once("includes/mobile-detect/Mobile_Detect.php");
