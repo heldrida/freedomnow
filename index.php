@@ -205,7 +205,7 @@
 			<div class="img-container">
 
 				<div class="nav-ctrl">
-					<button class="next"><?php echo translation($language, 'ver_proximo'); ?></button>
+					<button class="next"><?php echo translation($language, 'proximo'); ?></button>
 					<button class="cta-appeal how-to-appeal"><?php echo translation($language, 'participar'); ?></button>
 					<button class="cta-appeal fb-share-btn" data-image=""></button>
 				</div>
