@@ -1,5 +1,6 @@
 <IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
+        SetEnvIf Origin "^http(s)?://(.+\.)?(liberdade-ja\.com)$" origin_is=$0
+        Header always set Access-Control-Allow-Origin %{origin_is}e env=origin_is
 </IfModule>
 
 <IfModule mod_rewrite.c>
