@@ -97,6 +97,8 @@
 
 			this.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
 
+			this.languageOptions = document.querySelectorAll('.language-selector ul li');
+
 		},
 
 		calcBoxWidth: function () {
@@ -410,6 +412,17 @@
 
 
 			}.bind(this));
+
+			for (var i = 0; i < this.languageOptions.length; i++) {
+				
+				this.languageOptions[i].addEventListener('click', function (e) {
+
+					var url = e.target.querySelector('a').getAttribute('href');
+					window.open(url, '_self');
+
+				}.bind(this));
+
+			}
 
 		},
 

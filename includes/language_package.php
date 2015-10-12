@@ -34,5 +34,35 @@
 			'email_preview_about_this_photo' => "* Esta foto é um exemplo, pois será utilizada a foto-apelo que irá partilhar ao clicar no botão confirmar do formulário."
 		),
 
-		'en' => false
+		'en' => array(
+			'site_title' => "Freedom now!",
+			'site_long_title' => 'Liberdade aos Presos Políticos em Angola',
+			'site_description' => "Against the political arrests of 15 Angolan activists. For the freedom and democracy in Angola.",
+			'dias_presos' => "days in jail",
+			'greve_fome' => "hunger strike",
+			'quero_participar' => "<span>I</span>want to<br>Participate!",
+			'ler_quem_somos' => "<span>About</span><span>Who<br>we are</span>",
+			'visita_nos_facebook' => "<span><em>Visit us</em><br>on<br>Facebook</span>",
+			'politica_privacidade' => "<span>Privacy<br>Policy</span>",
+			'participar' => "Participate!",
+			'fechar' => 'close',
+			'enviar_foto_apelo' => 'Send your <span class="underline">photo appeal</span>',
+			'agradecemos_permissao' => 'We\'d appreciate your permission to',
+			'seleccionar_foto' => "Click to select a photo...",
+			'mensagem_partilha_facebook' => 'Your message for your Facebook share...',
+			'partilhar_apelo_facebook' => "Share this appeal on Facebook",
+			'enviar_para_entidades' => 'Send the appeal to the competent authorities',
+			'qual_nome_email' => 'What\'s your name & email address ?',
+			'form_nome' => "name",
+			'form_email' => "email",
+			'form_nome_placeholder' => 'Name here...',
+			'form_email_placeholder' => 'Your e-mail...',
+			'form_preview_email' => 'Click to preview the email that we\'ll send',
+			'form_about_photo_approvals' => 'Your photo will be published imediately if you\'ve accepted sharing on Facebook. Otherwise they\'ll  be published after an approval process. Thanks for your support!',
+			'form_confirmar' => "confirm",
+			'form_success_message' => "Your appeal was sent successfully!<br>Thank you!",
+			'email_preview_your_name_here' => "* Your name here",
+			'email_preview_about_this_photo' => "* Photo example, the photo you share will be used instead."
+		)
+
 	);

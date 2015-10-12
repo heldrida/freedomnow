@@ -53,6 +53,13 @@
 
 	<div class="freedomnow">
 
+		<div class="language-selector">
+			<ul>
+				<li class="<?php echo $language == 'pt' ? 'active' : '' ?>"><a href="<?php echo BASEURL . '/pt' ?>">português</a></li>
+				<li class="<?php echo $language == 'en' ? 'active' : '' ?>"><a href="<?php echo BASEURL . '/en' ?>">english</a></li>
+			</ul>
+		</div>
+
 		<!-- start: clock -->
 		<div class="clock-module npe">
 

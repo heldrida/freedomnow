@@ -966,3 +966,57 @@ html {
     background-color: #FFFCC5;
     padding: 5% 2.5%;
     text-transform: none; }
+  .freedomnow .language-selector {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20; }
+    .freedomnow .language-selector ul {
+      width: auto;
+      height: auto;
+      padding: 10px 15px; }
+      .freedomnow .language-selector ul li {
+        float: left;
+        display: block;
+        text-transform: uppercase;
+        font-size: 9px;
+        line-height: normal;
+        font-weight: normal;
+        color: #fff;
+        letter-spacing: 1px;
+        cursor: pointer;
+        -webkit-transition: opacity 0.3s;
+        -khtml-transition: opacity 0.3s;
+        -moz-transition: opacity 0.3s;
+        -ms-transition: opacity 0.3s;
+        -o-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+        position: relative; }
+        .freedomnow .language-selector ul li:before {
+          content: "";
+          display: block;
+          width: 25px;
+          height: 25px;
+          top: 18px;
+          position: absolute;
+          background-size: 100%; }
+        .freedomnow .language-selector ul li:nth-child(1) {
+          border-right: 1px solid #fff;
+          padding: 0 8px;
+          margin: 0 8px; }
+          .freedomnow .language-selector ul li:nth-child(1):before {
+            background-image: url(../images/flag-angola.png?201510120141);
+            left: 28px; }
+        .freedomnow .language-selector ul li:nth-child(2):before {
+          background-image: url(../images/flag-uk.png?201510120141);
+          left: 10px; }
+        .freedomnow .language-selector ul li a {
+          text-decoration: none;
+          color: #fff; }
+        .freedomnow .language-selector ul li:hover {
+          opacity: 0.75; }
+        .freedomnow .language-selector ul li.active {
+          font-weight: bold; }
