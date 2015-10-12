@@ -15,7 +15,7 @@
 	require_once("includes/language_package.php");
 	require_once("includes/phpfastcache/phpfastcache.php");
 	include_once('includes/helperFns.php');
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +42,7 @@
 
 </head>
 <body data-lang="en">
-	
+
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -208,8 +208,8 @@
 			<div class="img-container">
 
 				<div class="nav-ctrl">
-					<button class="next"><?php echo translation($language, 'ver_proximo'); ?></button>
-					<button class="cta-appeal how-to-appeal"><?php echo translation($language, 'ver_proximo'); ?></button>
+					<button class="next"><?php echo translation($language, 'proximo'); ?></button>
+					<button class="cta-appeal how-to-appeal"><?php echo translation($language, 'participar'); ?></button>
 					<button class="cta-appeal fb-share-btn" data-image=""></button>
 				</div>
 				<button class="close"><?php echo translation($language, 'fechar'); ?></button>

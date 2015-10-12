@@ -1,3 +1,20 @@
+<IfModule mod_headers.c>
+        SetEnvIf Origin "^http(s)?://(.+\.)?(liberdade-ja\.com)$" origin_is=$0
+        Header always set Access-Control-Allow-Origin %{origin_is}e env=origin_is
+</IfModule>
+
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(pt/?)$ /index.php?language=pt [QSA,L]
+RewriteRule ^(en/?)$ /index.php?language=en [QSA,L]
+
+</IfModule>
 <IfModule mod_rewrite.c>
 Options +FollowSymLinks
 RewriteEngine On
