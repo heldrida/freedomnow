@@ -1,3 +1,19 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(pt/?)$ /index.php?language=pt [QSA,L]
+RewriteRule ^(en/?)$ /index.php?language=en [QSA,L]
+
+</IfModule>
 <IfModule mod_rewrite.c>
 Options +FollowSymLinks
 RewriteEngine On
