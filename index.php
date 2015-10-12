@@ -20,7 +20,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Contra as prisões políticas dos 15 activistas angolanos. Pela liberdade e a democracia em Angola. Freedom for the Political Prisoners in Angola.">
+	<meta name="description" content="<?php echo translation($language, 'site_description'); ?>">
 	<meta name="keywords" content="Luaty da Silva Beirão, Manuel Chivonde (Nito Alves), Nuno Álvaro Dala, Afonso Mahenda Matias (Mbanza Hanza), Nelson Dibango Mendes dos Santos, Itler Jessy Chivonde (Itler Samussuko), Albano Evaristo Bingocabingo, Sedrick Domingos de Carvalho, Fernando António Tomás (Nicolas o Radical), Arante Kivuvu Italiano Lopes, Benedito Jeremias, José Gomes Hata (Cheick Hata), Inocêncio António de Brito ">
 
 	<meta property="og:title" content="<?php echo translation($language, 'site_title'); ?>" />
