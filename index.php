@@ -7,8 +7,11 @@
 		die;
 	}
 
+	$detect = new Mobile_Detect;
+
 	define("BASEURL", $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
 
+	require_once("includes/mobile-detect/Mobile_Detect.php");
 	require_once("includes/language_package.php");
 	require_once("includes/phpfastcache/phpfastcache.php");
 	include_once('includes/helperFns.php');

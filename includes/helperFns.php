@@ -1,6 +1,6 @@
 <?php
 
-	global $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
+	global $detect, $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
 	require( 'cms/wp-load.php');
 	include('./includes/httpful.phar');
 	include('./includes/simple_html_dom.php');
@@ -98,6 +98,10 @@
 			// cache for an hour
 			$cache->set("posts", $posts, 3000);
 
+		}
+
+		if ($detect->isMobile()) {
+			$posts = array_chunk($posts, 10);
 		}
 
 		return $posts;
