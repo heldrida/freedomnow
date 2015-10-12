@@ -64,6 +64,24 @@ html {
 							top: -18px * 0.5;
 							line-height: 148px * 0.5;
 						}
+
+						.en & {
+							font-size: 145px * 0.85;
+							top: -18px * 0.85;
+							line-height: 148px * 0.85;
+
+							@media only screen and (max-width: 768px) {
+								font-size: 145px * 0.62;
+								top: -18px * 0.62;
+								line-height: 148px * 0.62;
+							}
+
+							@media only screen and (max-width: 480px) {
+								font-size: 145px * 0.4;
+								top: -18px * 0.4;
+								line-height: 148px * 0.4;
+							}
+						}
 					}
 				}
 			}
@@ -87,6 +105,20 @@ html {
 					margin-right: 30px * 0.5;
 					width: 200px * 0.5;
 				}
+
+				.en & {
+					margin-right: 20px * 0.8;
+
+					@media only screen and (max-width: 768px) {
+						margin-right: 30px * 0.75;
+						width: 200px * 0.75;
+					}
+
+					@media only screen and (max-width: 480px) {
+						margin-right: 30px * 0.3;
+						width: 200px * 0.4;
+					}
+				}
 			}
 
 			p {
@@ -99,7 +131,21 @@ html {
 				@media only screen and (max-width: 480px) {
 					font-size: 60px * 0.5;
 				}
+
+				.en & {	
+					font-size: 50px;
+
+					@media only screen and (max-width: 768px) {
+						font-size: 60px * 0.6;
+					}
+
+					@media only screen and (max-width: 480px) {
+						font-size: 60px * 0.4;
+					}
+				}
+
 			}
+
 		}
 
 		.topbox-bot-bar {
@@ -319,6 +365,23 @@ html {
 					line-height: normal;
 				}
 			}
+
+			.en & {
+				font-size: 34px;
+
+				p {
+					line-height: 38px;
+				}
+
+				@media only screen and (max-width: 767px) {
+					font-size: 26px;
+
+					p {
+						line-height: 34px;
+					}
+				}
+			}
+
 		}
 
 		.general-tile {

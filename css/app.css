@@ -158,6 +158,20 @@ html {
                 font-size: 72.5px;
                 top: -9px;
                 line-height: 74px; } }
+            .en .freedomnow .clock-module .row.r2 .col-1 p {
+              font-size: 123.25px;
+              top: -15.3px;
+              line-height: 125.8px; }
+              @media only screen and (max-width: 768px) {
+                .en .freedomnow .clock-module .row.r2 .col-1 p {
+                  font-size: 89.9px;
+                  top: -11.16px;
+                  line-height: 91.76px; } }
+              @media only screen and (max-width: 480px) {
+                .en .freedomnow .clock-module .row.r2 .col-1 p {
+                  font-size: 58px;
+                  top: -7.2px;
+                  line-height: 59.2px; } }
       .freedomnow .clock-module .row .col {
         float: left; }
       .freedomnow .clock-module .row .col-1 {
@@ -173,6 +187,16 @@ html {
           .freedomnow .clock-module .row .col-1 {
             margin-right: 15px;
             width: 100px; } }
+        .en .freedomnow .clock-module .row .col-1 {
+          margin-right: 16px; }
+          @media only screen and (max-width: 768px) {
+            .en .freedomnow .clock-module .row .col-1 {
+              margin-right: 22.5px;
+              width: 150px; } }
+          @media only screen and (max-width: 480px) {
+            .en .freedomnow .clock-module .row .col-1 {
+              margin-right: 9px;
+              width: 80px; } }
       .freedomnow .clock-module .row p {
         font-size: 60px; }
         @media only screen and (max-width: 768px) {
@@ -181,6 +205,14 @@ html {
         @media only screen and (max-width: 480px) {
           .freedomnow .clock-module .row p {
             font-size: 30px; } }
+        .en .freedomnow .clock-module .row p {
+          font-size: 50px; }
+          @media only screen and (max-width: 768px) {
+            .en .freedomnow .clock-module .row p {
+              font-size: 36px; } }
+          @media only screen and (max-width: 480px) {
+            .en .freedomnow .clock-module .row p {
+              font-size: 24px; } }
     .freedomnow .clock-module .topbox-bot-bar {
       position: relative;
       z-index: 2;
@@ -357,6 +389,15 @@ html {
             margin-left: 20px; }
           .freedomnow .appeal-grid-module .photo-box-submit-cta p {
             line-height: normal; } }
+      .en .freedomnow .appeal-grid-module .photo-box-submit-cta {
+        font-size: 34px; }
+        .en .freedomnow .appeal-grid-module .photo-box-submit-cta p {
+          line-height: 38px; }
+        @media only screen and (max-width: 767px) {
+          .en .freedomnow .appeal-grid-module .photo-box-submit-cta {
+            font-size: 26px; }
+            .en .freedomnow .appeal-grid-module .photo-box-submit-cta p {
+              line-height: 34px; } }
     .freedomnow .appeal-grid-module .general-tile {
       width: 100%;
       height: 100%;
