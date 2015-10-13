@@ -8,6 +8,9 @@
 	}
 
 	$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+
+	$protocol = stripos($_SERVER['HTTP_HOST']) === true 'https://' : $protocol;
+
 	define("BASEURL", $protocol . $_SERVER['HTTP_HOST']);
 
 	require_once("includes/mobile-detect/Mobile_Detect.php");
