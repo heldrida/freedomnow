@@ -158,7 +158,7 @@
 				var to = this.clockModule.offsetHeight;
 				this.scrollTo.call(this, document.body, to, this.scrollToMs);
 
-				ga('send', 'event', { 
+				ga('send', 'event', {
 					eventCategory: 'Arrow down',
 					eventAction: 'The user clicked on the arrow down!',
 					eventLabel: 'click'
@@ -182,7 +182,7 @@
 					this.formFileModule.style.opacity = 1;
 				}.bind(this), this.ctaAppealTransitionMs);
 
-				ga('send', 'event', { 
+				ga('send', 'event', {
 					eventCategory: 'Appeal popup form',
 					eventAction: 'The user click to open the Appeal popup form, to participate',
 					eventLabel: 'click'
@@ -233,7 +233,7 @@
 				var url = this.amnestyInternationalUrl;
 				window.open(url, '_blank', '');
 
-				ga('send', 'event', { 
+				ga('send', 'event', {
 					eventCategory: 'Sign petition',
 					eventAction: 'The user clicked the amnesty international tile, to sign the petition',
 					eventLabel: 'click'
@@ -326,7 +326,7 @@
 						// only validate if 'file' was choosen
 						console.log('this.userPermissions', this.userPermissions);
 						if ((this.userPermissions.facebook === this.userPermissions.email_entities) && errors[0].name !== 'file') {
-							
+
 							if (this.userPermissions.facebook === true && this.userPermissions.email_entities === true) {
 								this.formErrors.style.display = '';
 							}
@@ -385,7 +385,7 @@
 					this.emailPreview.style.opacity = 1;
 				}.bind(this), 20);
 
-				ga('send', 'event', { 
+				ga('send', 'event', {
 					eventCategory: 'Email previewer',
 					eventAction: 'The user opened the email previewer',
 					eventLabel: 'click'
@@ -404,7 +404,7 @@
 				var url = 'https://www.facebook.com/Liberdade-aos-Presos-Pol%C3%ADticos-em-Angola-1606187489646481/timeline/';
 				window.open(url, '_blank');
 
-				ga('send', 'event', { 
+				ga('send', 'event', {
 					eventCategory: 'Facebook visit us tile',
 					eventAction: 'The user clicked the facebook visit us tile',
 					eventLabel: 'click'
@@ -414,7 +414,7 @@
 			}.bind(this));
 
 			for (var i = 0; i < this.languageOptions.length; i++) {
-				
+
 				this.languageOptions[i].addEventListener('click', function (e) {
 
 					var url = e.target.querySelector('a').getAttribute('href');
@@ -558,7 +558,7 @@
 
 				}.bind(this));
 
-				ga('send', 'event', { 
+				ga('send', 'event', {
 					eventCategory: 'Photobox',
 					eventAction: 'Lightbox / Photo popup open',
 					eventLabel: 'click'
@@ -653,7 +653,11 @@
 				file = document.querySelector('input[name="file"]').files[0],
 				fd = new FormData();
 
-			fd.append("file", file);
+
+
+			fd.append("file", file, (Math.random().toString(36).slice(2)) + '_' + file.name);
+
+			console.log('filename: ', (Math.random().toString(36).slice(2)) + file.name);
 
 			var xhr = new XMLHttpRequest();
 
@@ -765,7 +769,7 @@
 				else {
 					console.log('Success - Post ID: ' + response.id);
 
-					ga('send', 'event', { 
+					ga('send', 'event', {
 						eventCategory: 'Facebook share',
 						eventAction: 'Shared from Form permissions',
 						eventLabel: 'click'
@@ -832,7 +836,7 @@
 				this.appealPopupModule.querySelector('.fb-share-btn').setAttribute('data-image', image_src);
 				this.appealPopupModule.setAttribute('data-current-index', nextIndex);
 
-				ga('send', 'event', { 
+				ga('send', 'event', {
 					eventCategory: 'Photobox Next Button',
 					eventAction: 'User clicked on Next button',
 					eventLabel: 'click'
@@ -842,7 +846,7 @@
 
 				this.popupNextBtn.style.display = 'none';
 
-				ga('send', 'event', { 
+				ga('send', 'event', {
 					eventCategory: 'Photobox Next Button',
 					eventAction: 'User reached last available photo in gallery',
 					eventLabel: 'click'
@@ -1046,7 +1050,7 @@
 
 					console.log('readystatechange: todo: show success message');
 
-					ga('send', 'event', { 
+					ga('send', 'event', {
 						eventCategory: 'Email sender',
 						eventAction: 'The email was successfully sent!',
 						eventLabel: 'click'
@@ -1060,7 +1064,7 @@
 
 				console.log('todo: show error message');
 
-				ga('send', 'event', { 
+				ga('send', 'event', {
 					eventCategory: 'Email send',
 					eventAction: 'The email sender failed because of error',
 					eventLabel: 'click'
@@ -1113,7 +1117,7 @@
 			var params = "?filter[posts_per_page]=-1&filter[orderby]=date&filter[order]=ASC";
 
 			xhr.open('GET', this.baseUrl + '/cms/wp-json/pages' + params, true);
-			
+
 			xhr.setRequestHeader("Authorization", "Basic " + btoa("public:Q5MJ7G7MlN&z4bCJEywtxZvW"));
 
 			xhr.send(null);
@@ -1261,7 +1265,7 @@
 				this.whoWeAre.style.opacity = 1;
 			}.bind(this), 20);
 
-			ga('send', 'event', { 
+			ga('send', 'event', {
 				eventCategory: 'Who we are',
 				eventAction: 'User opened who we are module',
 				eventLabel: 'click'
@@ -1381,8 +1385,8 @@
 				console.log('response', response);
 
 				if (response && response.post_id) {
-					
-					ga('send', 'event', { 
+
+					ga('send', 'event', {
 						eventCategory: 'Facebook Photobox share button',
 						eventAction: 'The user shared a photo from the Photobox list, sucessfully',
 						eventLabel: 'async_response'
@@ -1390,7 +1394,7 @@
 
 				} else {
 
-					ga('send', 'event', { 
+					ga('send', 'event', {
 						eventCategory: 'Facebook Photobox share button',
 						eventAction: 'An error occured and the share failed to happen.',
 						eventLabel: 'async_response'
@@ -1423,7 +1427,7 @@
 					var resp = JSON.parse(this.response);
 					console.log(resp);
 
-					ga('send', 'event', { 
+					ga('send', 'event', {
 						eventCategory: 'User data tracker',
 						eventAction: 'The user data was successfully saved',
 						eventLabel: 'async_response'
@@ -1431,11 +1435,11 @@
 
 				} else {
 
-					ga('send', 'event', { 
+					ga('send', 'event', {
 						eventCategory: 'User data tracker',
 						eventAction: 'The user data was not saved.',
 						eventLabel: 'async_response'
-					});					
+					});
 
 				}
 
