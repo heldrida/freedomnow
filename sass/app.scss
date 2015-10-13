@@ -132,7 +132,7 @@ html {
 					font-size: 60px * 0.5;
 				}
 
-				.en & {	
+				.en & {
 					font-size: 50px;
 
 					@media only screen and (max-width: 768px) {
@@ -143,9 +143,7 @@ html {
 						font-size: 60px * 0.4;
 					}
 				}
-
 			}
-
 		}
 
 		.topbox-bot-bar {
@@ -182,11 +180,13 @@ html {
 					-webkit-filter: grayscale(0.75);
 					-moz-filter: grayscale(0.75);
 					-ms-filter: grayscale(0.75);
-					/*
+
 					@media only screen and (max-width: 480px) {
-						display: none;
+						filter: none;
+						-webkit-filter: none;
+						-moz-filter: none;
+						-ms-filter: none;
 					}
-					*/
 				}
 
 				&:hover {
@@ -381,7 +381,6 @@ html {
 					}
 				}
 			}
-
 		}
 
 		.general-tile {
@@ -1062,9 +1061,11 @@ html {
 			}
 		}
 	}
+
 	.underline {
 		text-decoration: underline !important;
 	}
+
 	.note-about-share {
 		font-size: 10px;
 		text-align: left;
@@ -1113,12 +1114,12 @@ html {
 					position: absolute;
 					background-size: 100%;
 				}
-				
+
 				&:nth-child(1) {
 					border-right: 1px solid #fff;
 					padding: 0 8px;
 					margin: 0 8px;
-					
+
 					&:before {
 						background-image: url(../images/flag-angola.png?201510120141);
 						left: 28px;
@@ -1144,7 +1145,6 @@ html {
 				&.active {
 					font-weight: bold;
 				}
-
 			}
 		}
 	}
