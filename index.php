@@ -7,8 +7,7 @@
 		die;
 	}
 
-	$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
-	define("BASEURL", $protocol . $_SERVER['HTTP_HOST']);
+	define("BASEURL", $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
 
 	require_once("includes/mobile-detect/Mobile_Detect.php");
 	require_once("includes/language_package.php");
