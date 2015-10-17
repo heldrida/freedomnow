@@ -154,14 +154,14 @@
 						</div>
 						<!-- end: contact info tile -->
 					</div>
-					<div ng-if="$index == 13">
+					<div ng-if="$index == 11">
 						<!-- start: contact info tile -->
 						<div class="photo-box general-tile amnistia-internacional" data-cta="contact-email">
 							<img src="<?php echo BASEURL; ?>/images/amnesty-international.png?20151008" alt="">
 						</div>
 						<!-- end: contact info tile -->
 					</div>
-					<div ng-if="$index == 16">
+					<div ng-if="$index == 14">
 						<!-- start: privacy policy tile -->
 						<div class="photo-box general-tile visit-us-on-facebook" data-cta="visit-us-on-facebook">
 							<!--
