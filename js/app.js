@@ -852,7 +852,7 @@
 
 			if (name === 'greveFome') {
 
-				start = moment("2015-09-20");
+				start = moment("2015-09-21");
 
 			} else if (name === 'diasPresos') {
 
