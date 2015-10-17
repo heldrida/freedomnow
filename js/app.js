@@ -1,3 +1,94 @@
+
+(function () {
+
+	var app = angular.module('photobox', []);
+
+	app.config(function () {
+		console.log('app config');
+	});
+
+	app.run(function ($rootScope) {
+		console.log('app run');
+	});
+
+	app.controller('mainController', function ($scope, $http) {
+ 		console.log('app mainController');
+
+ 			$scope.posts = [];
+ 			$scope.page = 1;
+ 			$scope.posts_per_page = 30;
+			$scope.post;
+
+			$scope.getPosts = function ($scope, highlights, callback) {
+
+				var url = "/cms/wp-json/posts?filter[posts_per_page]=" + (highlights ? -1 : $scope.posts_per_page) + "&page=" + $scope.page + "&filter[order]=desc&filter[orderby]=post_date" + (highlights ? '&filter[category_name]=destaque' : null);
+
+				$http({
+					method: 'GET',
+					url: url
+				}).then(function (response) {
+					console.log(response.data);
+
+					for (var i = 0; i < response.data.length; i++) {
+						
+						$scope.post = response.data[i];
+
+						$scope.posts.push({
+							ID: $scope.post.ID,
+							name: $scope.post.title,
+							src: window.FreedomNow.extractSrc($scope.post.content)
+						});
+
+					}
+
+					console.log($scope.posts);
+
+					if (typeof callback === "function") {
+						callback($scope, false);
+					}
+
+				});
+
+			}
+			
+			$scope.getPosts($scope, true, $scope.getPosts);
+
+
+	});
+
+	app.directive('photobox', function ($rootScope, $http, $timeout) {
+		return {
+			restrict: 'A',
+			scope: true,
+			link: function (scope, element, attrs) {
+
+			}
+		}
+	});
+
+	app.directive('loadMore', function ($http) {
+		return {
+			restrict: 'A',
+			link: function (scope, element, attrs) {
+
+				window.addEventListener('scroll', function () {
+
+					if ((window.innerHeight + window.scrollY) * 1.05 >= document.querySelector('.freedomnow').scrollHeight) {
+
+						scope.page = scope.page + 1;
+						scope.getPosts(scope);
+
+					}
+
+				});
+
+			}
+		}
+	});
+
+}());
+
+
 (function () {
 
 	function FreedomNow() {
@@ -216,18 +307,22 @@
 				this.formFileClose.call(this);
 			}.bind(this), false);
 
+			/*
 			this.photoBoxSubmitCta.addEventListener('click', function () {
 				this.formFileModule.style.display = 'block';
 				this.formFileModule.style.opacity = 1;
 			}.bind(this));
+			*/
 
+			/*
 			this.whoWeAreTile.addEventListener('click', function () {
 
 				this.openWhoWeAre.call(this);
 
 			}.bind(this));
+			*/
 
-
+			/*
 			this.signPetitionCta.addEventListener('click', function () {
 
 				var url = this.amnestyInternationalUrl;
@@ -240,6 +335,7 @@
 				});
 
 			}.bind(this));
+			*/
 
 			this.popupNextBtn.addEventListener('click', function () {
 				this.nextBtnHandler.call(this);
@@ -362,13 +458,14 @@
 				this.browsePhotoBtn.innerHTML = e.target.files[0].name;
 			}.bind(this));
 
+			/*
 			this.privacyPolicyBoxTile.addEventListener('click', function () {
 
 				var url = 'privacy-policy.php';
 				window.open(url, '_blank', '');
 
 			}.bind(this));
-
+			*/
 
 			this.emailPreview.querySelector('.close').addEventListener('click', function () {
 				this.emailPreview.style.opacity = 0;
@@ -399,6 +496,7 @@
 
 			}.bind(this));
 
+			/*
 			this.visitUsOnFb.addEventListener('click', function () {
 
 				var url = 'https://www.facebook.com/Liberdade-aos-Presos-Pol%C3%ADticos-em-Angola-1606187489646481/timeline/';
@@ -412,6 +510,7 @@
 
 
 			}.bind(this));
+			*/
 
 			for (var i = 0; i < this.languageOptions.length; i++) {
 				
@@ -1321,6 +1420,8 @@
 		},
 
 		imageFit: function (container) {
+			
+			console.log('containre', container);
 
 			var el = container.querySelector('img');
 			var set = function (img) {
@@ -1349,18 +1450,13 @@
 
 			var image = new Image();
 
-			imagesLoaded(image).on('done', function () {
-				set(el);
-			}.bind(this));
-
-			/*
 			image.onload = function () {
 				set(el);
-				console.log(this.src + ' loaded!');
 			};
-			*/
 
-			image.src = el.getAttribute('src');
+			setTimeout(function () {
+				image.src = el.getAttribute('src');
+			}.bind(this), 0);
 
 		},
 

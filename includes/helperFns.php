@@ -84,7 +84,7 @@
 
 	function getPhotosByHighglithFirst($category) {
 		global $detect;
-		
+
 		$cache = phpFastCache();
 
 		if (isset($_GET['clear_cache'])) {
@@ -106,6 +106,8 @@
 
 		if ( $detect->isMobile() ) {
 			$posts = array_chunk($posts, 100)[0];
+			var_dump($posts);
+			die;
 		}
 
 		return $posts;

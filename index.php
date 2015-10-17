@@ -113,91 +113,15 @@
 		<!-- end: clock -->
 
 		<!-- start: appeal grid -->
-		<div class="appeal-grid-module">
+		<div ng-app="photobox">
+			<div class="appeal-grid-module" ng-controller="mainController" load-more>
 
-			<?php $data = getPhotosByHighglithFirst('destaque'); $i = 0; ?>
-
-			<?php foreach ($data As $k => $obj) : ?>
-				<?php $i++; ?>
-				<div class="photo-box anim-hover photo-popup" data-index="<?php echo $i; ?>" data-id="<?php echo $obj['id']; ?>" data-name="<?php echo strtolower($obj['title']); ?>" data-img-lrg="<?php echo $obj['image_large_src']; ?>">
-					<img src="<?php echo $obj['image_src']; ?>" alt="">
-				</div>
-
-				<!-- start: photo submit tile -->
-				<?php if ($i === 4) : ?>
-				<div class="photo-box photo-box-submit-cta anim-hover" data-cta="photo-submit">
-					<p>
-						<?php echo translation($language, 'quero_participar'); ?>
-					</p>
-					<div class="arrow">
-						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+				 
+					<div class="photo-box anim-hover photo-popup" data-index="{{ $index }}" data-id="{{ post.ID }}" data-name="{{ post.title }}" data-img-lrg="{{ post.title }}" ng-repeat="post in posts track by $index">
+						<span style="width: 100%; height: 100%; display: inline-block; background-position: center; background-size: cover; background-image: url({{ post.src }});"></span>
 					</div>
-					<div class="hashtags">
-						<span class="hashtag">#liberdadeja</span>
-						<span class="hashtag">#freedomnow</span>
-					</div>
-				</div>
-				<?php endif; ?>
-				<!-- end: photo submit tile -->
-
-				<!-- start: contact info tile -->
-				<?php if ($i === 9) : ?>
-				<div class="photo-box general-tile who-we-are-tile" data-cta="who-we-area-box">
-					<!--
-					<p>
-						<span>Contacto</span>
-						<span class="group-email-contact"></span>
-					</p>
-					-->
-					<div class="who-we-are-el">
-						<?php echo translation($language, 'ler_quem_somos'); ?>
-					</div>
-					<div class="arrow">
-						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
-					</div>
-				</div>
-				<?php endif; ?>
-				<!-- end: contact info tile -->
-
-				<!-- start: contact info tile -->
-				<?php if ($i === 11) : ?>
-				<div class="photo-box general-tile amnistia-internacional" data-cta="contact-email">
-					<img src="<?php echo BASEURL; ?>/images/amnesty-international.png?20151008" alt="">
-				</div>
-				<?php endif; ?>
-				<!-- end: contact info tile -->
-
-				<!-- start: privacy policy tile -->
-				<?php if ($i === 14) : ?>
-				<div class="photo-box general-tile visit-us-on-facebook" data-cta="visit-us-on-facebook">
-					<!--
-					<div class="fb-icon-wrp">
-						<img src="images/icon-fb.png" alt="">
-					</div>
-					-->
-					<p>
-						<?php echo translation($language, 'visita_nos_facebook'); ?>
-					</p>
-					<div class="arrow">
-						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
-					</div>
-				</div>
-				<?php endif; ?>
-				<!-- end: privacy policy tile -->
-
-			<?php endforeach; ?>
-
-			<!-- start: privacy policy tile -->
-			<div class="photo-box general-tile privacy-policy-box" data-cta="privacy-policy">
-				<p>
-					<?php echo translation($language, 'politica_privacidade'); ?>
-				</p>
-				<div class="arrow">
-					<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
-				</div>
+ 
 			</div>
-			<!-- end: privacy policy tile -->
-
 		</div>
 		<!-- end: appeal grid -->
 
@@ -306,12 +230,12 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
 	<script src="<?php echo BASEURL; ?>/js/vendor/validate.min.js"></script>
 	<script src="<?php echo BASEURL; ?>/js/vendor/console-polyfill.js"></script>
 	<script src="<?php echo BASEURL; ?>/js/vendor/base64.min.js"></script>
 	<script src="<?php echo BASEURL; ?>/js/vendor/json-polyfill.js"></script>
 	<script src="<?php echo BASEURL; ?>/js/vendor/xhr-polyfill.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
 	<script src="<?php echo BASEURL; ?>/js/app.js"></script>
 
 </body>
