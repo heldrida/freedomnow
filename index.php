@@ -57,8 +57,8 @@
 
 		<div class="language-selector">
 			<ul>
-				<li class="<?php echo $language == 'pt' ? 'active' : '' ?>"><a href="<?php echo BASEURL . '/pt' ?>">português</a></li>
-				<li class="<?php echo $language == 'en' ? 'active' : '' ?>"><a href="<?php echo BASEURL . '/en' ?>">english</a></li>
+				<li class="<?php echo $language == 'pt' ? 'active' : '' ?>"><a href="<?php echo '/pt' ?>">português</a></li>
+				<li class="<?php echo $language == 'en' ? 'active' : '' ?>"><a href="<?php echo '/en' ?>">english</a></li>
 			</ul>
 		</div>
 
@@ -100,10 +100,10 @@
 			<div class="topbox-bot-bar">
 
 				<div class="arrow-down animated infinite floating">
-					<img src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+					<img src="/images/icon-arrow-down.svg" alt="">
 				</div>
 
-				<img class="logo-freedomnow npe" src="<?php echo BASEURL; ?>/images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
+				<img class="logo-freedomnow npe" src="/images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
 
 			</div>
 			<!-- topbox bottom bar -->
@@ -127,7 +127,7 @@
 								<?php echo translation($language, 'quero_participar'); ?>
 							</p>
 							<div class="arrow">
-								<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+								<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 							</div>
 							<div class="hashtags">
 								<span class="hashtag">#liberdadeja</span>
@@ -149,7 +149,7 @@
 								<?php echo translation($language, 'ler_quem_somos'); ?>
 							</div>
 							<div class="arrow">
-								<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+								<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 							</div>
 						</div>
 						<!-- end: contact info tile -->
@@ -157,7 +157,7 @@
 					<div ng-if="$index == 10">
 						<!-- start: contact info tile -->
 						<div class="photo-box general-tile amnistia-internacional" data-cta="contact-email">
-							<img src="<?php echo BASEURL; ?>/images/amnesty-international.png?20151008" alt="">
+							<img src="/images/amnesty-international.png?20151008" alt="">
 						</div>
 						<!-- end: contact info tile -->
 					</div>
@@ -173,7 +173,7 @@
 								<?php echo translation($language, 'visita_nos_facebook'); ?>
 							</p>
 							<div class="arrow">
-								<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+								<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 							</div>
 						</div>
 						<!-- end: privacy policy tile -->
@@ -270,7 +270,7 @@
 			<div class="content"></div>
 			<div><?php echo translation($language, 'email_preview_your_name_here'); ?></div>
 			<div class="photo">
-				<img src="<?php echo BASEURL; ?>/images/person-icon.png" alt="">
+				<img src="/images/person-icon.png" alt="">
 				<span><?php echo translation($language, 'email_preview_about_this_photo'); ?></span>
 			</div>
 		</div>
@@ -292,7 +292,7 @@
 						<?php echo translation($language, 'quero_participar'); ?>
 					</p>
 					<div class="arrow">
-						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+						<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 					</div>
 					<div class="hashtags">
 						<span class="hashtag">#liberdadeja</span>
@@ -314,7 +314,7 @@
 						<?php echo translation($language, 'ler_quem_somos'); ?>
 					</div>
 					<div class="arrow">
-						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+						<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 					</div>
 				</div>
 				<!-- end: contact info tile -->
@@ -322,7 +322,7 @@
 
 				<!-- start: contact info tile -->
 				<div class="photo-box general-tile amnistia-internacional" data-cta="contact-email">
-					<img src="<?php echo BASEURL; ?>/images/amnesty-international.png?20151008" alt="">
+					<img src="/images/amnesty-international.png?20151008" alt="">
 				</div>
 				<!-- end: contact info tile -->
 
@@ -337,7 +337,7 @@
 						<?php echo translation($language, 'visita_nos_facebook'); ?>
 					</p>
 					<div class="arrow">
-						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+						<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 					</div>
 				</div>
 				<!-- end: privacy policy tile -->
