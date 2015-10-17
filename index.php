@@ -120,7 +120,7 @@
 					<div photobox class="photo-box anim-hover photo-popup" data-index="{{ $index }}" data-id="{{ post.ID }}" data-name="{{ post.title }}" data-img-lrg="{{ post.src }}">
 						<img src="{{ post.src }}" alt="">
 					</div>
-					<div ng-if="$index == 4">
+					<div ng-if="$index == 3">
 						<!-- start: photo submit tile -->
 						<div class="photo-box photo-box-submit-cta anim-hover" data-cta="photo-submit">
 							<p>
@@ -136,7 +136,7 @@
 						</div>
 						<!-- end: photo submit tile -->
 					</div>
-					<div ng-if="$index == 9">
+					<div ng-if="$index == 8">
 						<!-- start: contact info tile -->
 						<div class="photo-box general-tile who-we-are-tile" data-cta="who-we-area-box">
 							<!--
@@ -154,14 +154,14 @@
 						</div>
 						<!-- end: contact info tile -->
 					</div>
-					<div ng-if="$index == 14">
+					<div ng-if="$index == 13">
 						<!-- start: contact info tile -->
 						<div class="photo-box general-tile amnistia-internacional" data-cta="contact-email">
 							<img src="<?php echo BASEURL; ?>/images/amnesty-international.png?20151008" alt="">
 						</div>
 						<!-- end: contact info tile -->
 					</div>
-					<div ng-if="$index == 18">
+					<div ng-if="$index == 16">
 						<!-- start: privacy policy tile -->
 						<div class="photo-box general-tile visit-us-on-facebook" data-cta="visit-us-on-facebook">
 							<!--
