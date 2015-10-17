@@ -18,6 +18,7 @@
  			$scope.page = 1;
  			$scope.posts_per_page = 30;
 			$scope.post;
+			$scope.imagesLoaded = 0;
 			var extractSrc = function (html) {
 
 				var myRegex = /<img[^>]+src="((http|https):\/\/[^">]+)"/g;
@@ -75,25 +76,12 @@
 
 			});
 
-			$scope.imagesReady;
+			$scope.imagesReady = false;
 			
-
-	});
-
-	app.directive('photobox', function ($rootScope, $http, $timeout) {
-		return {
-			restrict: 'A',
-			link: function (scope, element, attrs) {
-				
-				var w = window.FreedomNow.calcBoxWidth();
-				element[0].style.width = w + 'px';
-				element[0].style.height = w + 'px';
-				window.FreedomNow.imageFit.call(window.FreedomNow, element[0]);
-				window.FreedomNow.setPhotoBoxEvents.call(window.FreedomNow, element[0]);
- 
-				if (scope.$last && !scope.$parent.attachedEvents) {
+			$scope.$watch(function () {
+				if ($scope.imagesLoaded > 20 && !$scope.imagesReady) {
 					
-					scope.$parent.attachedEvents = true;
+					$scope.imagesReady = true;
 
 					window.FreedomNow.contactEmailCta = document.querySelector('.contact-email');
 					window.FreedomNow.photoBoxSubmitCta = document.querySelector('.photo-box-submit-cta');
@@ -172,6 +160,39 @@
 					window.FreedomNow.fbShareBtn.addEventListener('click', window.FreedomNow.boxPhotoShare.bind(window.FreedomNow));
 
 				}
+			});
+	});
+
+	app.directive('photobox', function ($rootScope, $http, $timeout) {
+		return {
+			restrict: 'A',
+			link: function (scope, element, attrs) {
+				
+				var w = window.FreedomNow.calcBoxWidth();
+				element[0].style.width = w + 'px';
+				element[0].style.height = w + 'px';
+				window.FreedomNow.imageFit.call(window.FreedomNow, element[0]);
+				window.FreedomNow.setPhotoBoxEvents.call(window.FreedomNow, element[0]);
+ 
+
+				setTimeout(function () {
+
+					if (!scope.$parent.imagesReady) {
+
+						var image = new Image();
+
+						image.onload = function () {
+							scope.$apply(function () {
+								scope.$parent.imagesLoaded += 1;
+								console.log('scope.$parent.imagesLoaded: ', scope.$parent.imagesLoaded);
+							});
+						};
+
+						image.src = element[0].querySelector('img').getAttribute('src');
+
+					}
+
+				}.bind(window.FreedomNow), 0);
 
 			}
 		}
