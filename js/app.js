@@ -1,4 +1,3 @@
-
 (function () {
 
 	var app = angular.module('photobox', []);
@@ -18,6 +17,13 @@
  			$scope.page = 1;
  			$scope.posts_per_page = 30;
 			$scope.post;
+			var extractSrc = function (html) {
+
+				var myRegex = /<img[^>]+src="((http|https):\/\/[^">]+)"/g;
+
+				return myRegex.exec(html)[1];
+
+			};
 
 			$scope.getPosts = function ($scope, highlights, callback) {
 
@@ -36,7 +42,7 @@
 						$scope.posts.push({
 							ID: $scope.post.ID,
 							name: $scope.post.title,
-							src: window.FreedomNow.extractSrc($scope.post.content)
+							src: extractSrc($scope.post.content)
 						});
 
 					}
@@ -116,6 +122,7 @@
 					window.FreedomNow.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
 					window.FreedomNow.fbShareBtn = document.querySelector('.fb-share-btn');
 					window.FreedomNow.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
+					window.FreedomNow.signPetitionCta = document.querySelector('.amnistia-internacional');
 
 					window.FreedomNow.photoBoxSubmitCta.addEventListener('click', function () {
 						this.formFileModule.style.display = 'block';
@@ -126,7 +133,7 @@
 
 						this.openWhoWeAre.call(this);
 
-					}.bind(this));
+					}.bind(window.FreedomNow));
 
 					window.FreedomNow.whoWeAre.querySelector('.close').addEventListener('click', function () {
 
@@ -148,6 +155,22 @@
 
 					}.bind(window.FreedomNow));
 
+					window.FreedomNow.signPetitionCta.addEventListener('click', function () {
+
+						var url = this.amnestyInternationalUrl;
+						window.open(url, '_blank', '');
+
+						ga('send', 'event', { 
+							eventCategory: 'Sign petition',
+							eventAction: 'The user clicked the amnesty international tile, to sign the petition',
+							eventLabel: 'click'
+						});
+
+					}.bind(window.FreedomNow));
+
+					window.FreedomNow.popupNextBtn.addEventListener('click', function () {
+						this.nextBtnHandler.call(this);
+					}.bind(window.FreedomNow));
 
 				}
 
@@ -223,7 +246,7 @@
 			this.formSuccessMessageStartMs = 800;
 			this.formSuccessMessageEndMs = 5000;
 			//this.contactEmailCta = document.querySelector('.contact-email');
-			this.signPetitionCta = document.querySelector('.amnistia-internacional');
+			//this.signPetitionCta = document.querySelector('.amnistia-internacional');
 			this.popupImgContainer = document.querySelector('.appeal-popup-module .img-container');
 			this.popupNextBtn = document.querySelector('.nav-ctrl .next');
 			this.userPermissions = {
@@ -370,7 +393,7 @@
 
 			}.bind(this));
 
-			this.fbShareBtn.addEventListener('click', this.boxPhotoShare);
+			//this.fbShareBtn.addEventListener('click', this.boxPhotoShare);
 
 			this.formFileModule.addEventListener('click', function (e) {
 
@@ -426,10 +449,12 @@
 			}.bind(this));
 			*/
 
+			/*
 			this.popupNextBtn.addEventListener('click', function () {
 				this.nextBtnHandler.call(this);
 			}.bind(this));
-
+			*/
+			
 			// permission checkboxes
 			for (var i = 0; i < this.permissionCheckboxes.length; i++) {
 
