@@ -13,6 +13,7 @@
 	app.controller('mainController', function ($scope, $http) {
  		console.log('app mainController');
 
+ 			$scope.attachedEvents = false;
  			$scope.posts = [];
  			$scope.page = 1;
  			$scope.posts_per_page = 30;
@@ -82,7 +83,6 @@
 	app.directive('photobox', function ($rootScope, $http, $timeout) {
 		return {
 			restrict: 'A',
-			scope: true,
 			link: function (scope, element, attrs) {
 				
 				var w = window.FreedomNow.calcBoxWidth();
@@ -90,30 +90,11 @@
 				element[0].style.height = w + 'px';
 				window.FreedomNow.imageFit.call(window.FreedomNow, element[0]);
 				window.FreedomNow.setPhotoBoxEvents.call(window.FreedomNow, element[0]);
+ 
+				if (scope.$last && !scope.$parent.attachedEvents) {
+					
+					scope.$parent.attachedEvents = true;
 
-				/*
-				if (scope.$last) {
-
-						var beforeEl = document.querySelectorAll('.photo-box')[3];
-						var newEl = document.querySelector('.photo-box-submit-cta').cloneNode(true);;
-						document.querySelector('.appeal-grid-module').insertBefore(newEl, beforeEl);
-
-						var beforeEl = document.querySelectorAll('.photo-box')[8];
-						var newEl = document.querySelector('.who-we-are-tile').cloneNode(true);;
-						document.querySelector('.appeal-grid-module').insertBefore(newEl, beforeEl);
-
-						var beforeEl = document.querySelectorAll('.photo-box')[10];
-						var newEl = document.querySelector('.amnistia-internacional').cloneNode(true);;
-						document.querySelector('.appeal-grid-module').insertBefore(newEl, beforeEl);
-
-						var beforeEl = document.querySelectorAll('.photo-box')[13];
-						var newEl = document.querySelector('.visit-us-on-facebook').cloneNode(true);
-						document.querySelector('.appeal-grid-module').insertBefore(newEl, beforeEl);
-
-				}
-				*/
-
-				if (scope.$last) {
 					window.FreedomNow.contactEmailCta = document.querySelector('.contact-email');
 					window.FreedomNow.photoBoxSubmitCta = document.querySelector('.photo-box-submit-cta');
 					window.FreedomNow.whoWeAre = document.querySelector('.who-we-are');
@@ -123,7 +104,7 @@
 					window.FreedomNow.fbShareBtn = document.querySelector('.fb-share-btn');
 					window.FreedomNow.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
 					window.FreedomNow.signPetitionCta = document.querySelector('.amnistia-internacional');
-
+					
 					window.FreedomNow.photoBoxSubmitCta.addEventListener('click', function () {
 						this.formFileModule.style.display = 'block';
 						this.formFileModule.style.opacity = 1;
@@ -167,10 +148,10 @@
 						});
 
 					}.bind(window.FreedomNow));
-
-					window.FreedomNow.popupNextBtn.addEventListener('click', function () {
-						this.nextBtnHandler.call(this);
-					}.bind(window.FreedomNow));
+					
+					var handler = window.FreedomNow.nextBtnHandler.bind(window.FreedomNow);
+					window.FreedomNow.popupNextBtn.removeEventListener('click', handler);
+					window.FreedomNow.popupNextBtn.addEventListener('click', handler);
 
 					window.FreedomNow.ctaAppeal.addEventListener('click', function () {
 						this.closePopup.call(this);
@@ -1058,6 +1039,8 @@
 			var currentIndex = this.appealPopupModule.getAttribute('data-current-index'),
 				nextIndex = (parseInt(currentIndex) + 1),
 				image_src = document.querySelectorAll('.photo-popup')[nextIndex] ? document.querySelectorAll('.photo-popup')[nextIndex].querySelector('img').getAttribute('src') : false;
+				
+				console.log('nextIndex', nextIndex);
 
 			if (image_src) {
 
