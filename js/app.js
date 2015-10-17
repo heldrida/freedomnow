@@ -41,8 +41,6 @@
 
 					}
 
-					console.log($scope.posts);
-
 					if (typeof callback === "function") {
 						callback($scope, false);
 					}
@@ -53,6 +51,25 @@
 			
 			$scope.getPosts($scope, true, $scope.getPosts);
 
+			window.addEventListener('resize', function () {
+				
+				/*
+				var photoBoxes = document.querySelectorAll('.photo-box.photo-popup');
+
+				for (var i = 0; i < photoBoxes.length; i++) {
+					var w = window.FreedomNow.calcBoxWidth();
+					photoBoxes[i].style.width = w + 'px';
+					photoBoxes[i].style.height = w + 'px';
+				}
+				*/
+
+				window.FreedomNow.photoBoxes = document.querySelectorAll('.photo-box.photo-popup');
+				window.FreedomNow.setPhotoBoxesSize.call(window.FreedomNow);
+
+			});
+
+			$scope.imagesReady;
+			
 
 	});
 
@@ -61,6 +78,32 @@
 			restrict: 'A',
 			scope: true,
 			link: function (scope, element, attrs) {
+				
+				var w = window.FreedomNow.calcBoxWidth();
+				element[0].style.width = w + 'px';
+				element[0].style.height = w + 'px';
+				window.FreedomNow.imageFit.call(window.FreedomNow, element[0]);
+				window.FreedomNow.setPhotoBoxEvents.call(window.FreedomNow, element[0]);
+
+				if (scope.$last) {
+
+						var beforeEl = document.querySelectorAll('.photo-box')[3];
+						var newEl = document.querySelector('.photo-box-submit-cta').cloneNode(true);;
+						document.querySelector('.appeal-grid-module').insertBefore(newEl, beforeEl);
+
+						var beforeEl = document.querySelectorAll('.photo-box')[8];
+						var newEl = document.querySelector('.who-we-are-tile').cloneNode(true);;
+						document.querySelector('.appeal-grid-module').insertBefore(newEl, beforeEl);
+
+						var beforeEl = document.querySelectorAll('.photo-box')[10];
+						var newEl = document.querySelector('.amnistia-internacional').cloneNode(true);;
+						document.querySelector('.appeal-grid-module').insertBefore(newEl, beforeEl);
+
+						var beforeEl = document.querySelectorAll('.photo-box')[13];
+						var newEl = document.querySelector('.visit-us-on-facebook').cloneNode(true);
+						document.querySelector('.appeal-grid-module').insertBefore(newEl, beforeEl);
+
+				}
 
 			}
 		}

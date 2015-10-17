@@ -117,8 +117,8 @@
 			<div class="appeal-grid-module" ng-controller="mainController" load-more>
 
 				 
-					<div class="photo-box anim-hover photo-popup" data-index="{{ $index }}" data-id="{{ post.ID }}" data-name="{{ post.title }}" data-img-lrg="{{ post.title }}" ng-repeat="post in posts track by $index">
-						<span style="width: 100%; height: 100%; display: inline-block; background-position: center; background-size: cover; background-image: url({{ post.src }});"></span>
+					<div photobox class="photo-box anim-hover photo-popup" data-index="{{ $index }}" data-id="{{ post.ID }}" data-name="{{ post.title }}" data-img-lrg="{{ post.src }}" ng-repeat="post in posts track by $index">
+						<img src="{{ post.src }}" alt="">
 					</div>
  
 			</div>
@@ -224,6 +224,66 @@
 			</div>
 		</div>
 		<!-- end: who are we -->
+
+		<div style="display: none;">
+
+				<!-- start: photo submit tile -->
+				<div class="photo-box photo-box-submit-cta anim-hover" data-cta="photo-submit">
+					<p>
+						<?php echo translation($language, 'quero_participar'); ?>
+					</p>
+					<div class="arrow">
+						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+					</div>
+					<div class="hashtags">
+						<span class="hashtag">#liberdadeja</span>
+						<span class="hashtag">#freedomnow</span>
+					</div>
+				</div>
+				<!-- end: photo submit tile -->
+
+
+				<!-- start: contact info tile -->
+				<div class="photo-box general-tile who-we-are-tile" data-cta="who-we-area-box">
+					<!--
+					<p>
+						<span>Contacto</span>
+						<span class="group-email-contact"></span>
+					</p>
+					-->
+					<div class="who-we-are-el">
+						<?php echo translation($language, 'ler_quem_somos'); ?>
+					</div>
+					<div class="arrow">
+						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+					</div>
+				</div>
+				<!-- end: contact info tile -->
+
+
+				<!-- start: contact info tile -->
+				<div class="photo-box general-tile amnistia-internacional" data-cta="contact-email">
+					<img src="<?php echo BASEURL; ?>/images/amnesty-international.png?20151008" alt="">
+				</div>
+				<!-- end: contact info tile -->
+
+				<!-- start: privacy policy tile -->
+				<div class="photo-box general-tile visit-us-on-facebook" data-cta="visit-us-on-facebook">
+					<!--
+					<div class="fb-icon-wrp">
+						<img src="images/icon-fb.png" alt="">
+					</div>
+					-->
+					<p>
+						<?php echo translation($language, 'visita_nos_facebook'); ?>
+					</p>
+					<div class="arrow">
+						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+					</div>
+				</div>
+				<!-- end: privacy policy tile -->
+
+		</div>
 
 	</div>
 
