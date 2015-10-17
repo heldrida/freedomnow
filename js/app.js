@@ -63,7 +63,7 @@
 				}
 				*/
 
-				window.FreedomNow.photoBoxes = document.querySelectorAll('.photo-box.photo-popup');
+				window.FreedomNow.photoBoxes = document.querySelectorAll('.photo-box');
 				window.FreedomNow.setPhotoBoxesSize.call(window.FreedomNow);
 
 			});
@@ -85,6 +85,7 @@
 				window.FreedomNow.imageFit.call(window.FreedomNow, element[0]);
 				window.FreedomNow.setPhotoBoxEvents.call(window.FreedomNow, element[0]);
 
+				/*
 				if (scope.$last) {
 
 						var beforeEl = document.querySelectorAll('.photo-box')[3];
@@ -102,6 +103,51 @@
 						var beforeEl = document.querySelectorAll('.photo-box')[13];
 						var newEl = document.querySelector('.visit-us-on-facebook').cloneNode(true);
 						document.querySelector('.appeal-grid-module').insertBefore(newEl, beforeEl);
+
+				}
+				*/
+
+				if (scope.$last) {
+					window.FreedomNow.contactEmailCta = document.querySelector('.contact-email');
+					window.FreedomNow.photoBoxSubmitCta = document.querySelector('.photo-box-submit-cta');
+					window.FreedomNow.whoWeAre = document.querySelector('.who-we-are');
+					window.FreedomNow.whoWeAreTile = document.querySelector('.who-we-are-tile');
+					window.FreedomNow.getWhoWeAre.call(window.FreedomNow);
+					window.FreedomNow.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
+					window.FreedomNow.fbShareBtn = document.querySelector('.fb-share-btn');
+					window.FreedomNow.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
+
+					window.FreedomNow.photoBoxSubmitCta.addEventListener('click', function () {
+						this.formFileModule.style.display = 'block';
+						this.formFileModule.style.opacity = 1;
+					}.bind(window.FreedomNow));
+					
+					window.FreedomNow.whoWeAreTile.addEventListener('click', function () {
+
+						this.openWhoWeAre.call(this);
+
+					}.bind(this));
+
+					window.FreedomNow.whoWeAre.querySelector('.close').addEventListener('click', function () {
+
+						this.closeWhoWeAre.call(this);
+
+					}.bind(window.FreedomNow));
+
+					window.FreedomNow.visitUsOnFb.addEventListener('click', function () {
+
+						var url = 'https://www.facebook.com/Liberdade-aos-Presos-Pol%C3%ADticos-em-Angola-1606187489646481/timeline/';
+						window.open(url, '_blank');
+
+						ga('send', 'event', { 
+							eventCategory: 'Facebook visit us tile',
+							eventAction: 'The user clicked the facebook visit us tile',
+							eventLabel: 'click'
+						});
+
+
+					}.bind(window.FreedomNow));
+
 
 				}
 
@@ -220,16 +266,16 @@
 
 			this.emailPreviewOpenBtn = document.querySelector('.click-email-preview-wrp');
 
-			this.whoWeAre = document.querySelector('.who-we-are');
-			this.whoWeAreTile = document.querySelector('.who-we-are-tile');
+			//this.whoWeAre = document.querySelector('.who-we-are');
+			//this.whoWeAreTile = document.querySelector('.who-we-are-tile');
 
-			this.getWhoWeAre.call(this);
+			//this.getWhoWeAre.call(this);
 
 			this.amnestyInternationalUrl = 'http://www.amnistia-internacional.pt/index.php?option=com_wrapper&view=wrapper&Itemid=40&sf_pid=a077000000TgvwwAAB';
 
-			this.fbShareBtn = document.querySelector('.fb-share-btn');
+			//this.fbShareBtn = document.querySelector('.fb-share-btn');
 
-			this.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
+			//this.visitUsOnFb = document.querySelector('.visit-us-on-facebook');
 
 			this.languageOptions = document.querySelectorAll('.language-selector ul li');
 
@@ -533,13 +579,13 @@
 
 			}.bind(this));
 
+			/*
 			this.whoWeAre.querySelector('.close').addEventListener('click', function () {
 
 				this.closeWhoWeAre.call(this);
 
 			}.bind(this));
 
-			/*
 			this.visitUsOnFb.addEventListener('click', function () {
 
 				var url = 'https://www.facebook.com/Liberdade-aos-Presos-Pol%C3%ADticos-em-Angola-1606187489646481/timeline/';
