@@ -350,12 +350,12 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/validate.min.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/console-polyfill.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/base64.min.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/json-polyfill.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/xhr-polyfill.min.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/app.js"></script>
+	<script src="/js/vendor/validate.min.js"></script>
+	<script src="/js/vendor/console-polyfill.js"></script>
+	<script src="/js/vendor/base64.min.js"></script>
+	<script src="/js/vendor/json-polyfill.js"></script>
+	<script src="/js/vendor/xhr-polyfill.min.js"></script>
+	<script src="/js/app.js"></script>
 
 </body>
 </html>
