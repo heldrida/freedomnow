@@ -37,7 +37,7 @@
 	<title><?php echo translation($language, 'site_long_title'); ?></title>
 
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-	<link rel="stylesheet" href="<?php echo BASEURL; ?>/css/app.css">
+	<link rel="stylesheet" href="/css/app.css">
 
 </head>
 <body data-lang="en">
