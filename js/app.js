@@ -172,6 +172,24 @@
 						this.nextBtnHandler.call(this);
 					}.bind(window.FreedomNow));
 
+					window.FreedomNow.ctaAppeal.addEventListener('click', function () {
+						this.closePopup.call(this);
+
+						setTimeout(function () {
+							this.formFileModule.style.display = 'block';
+							this.formFileModule.style.opacity = 1;
+						}.bind(this), this.ctaAppealTransitionMs);
+
+						ga('send', 'event', { 
+							eventCategory: 'Appeal popup form',
+							eventAction: 'The user click to open the Appeal popup form, to participate',
+							eventLabel: 'click'
+						});
+
+					}.bind(window.FreedomNow));
+
+					window.FreedomNow.fbShareBtn.addEventListener('click', window.FreedomNow.boxPhotoShare.bind(window.FreedomNow));
+
 				}
 
 			}
@@ -368,7 +386,7 @@
 				});
 
 			}.bind(this));
-
+ 
 			this.appealPopupModule.addEventListener('click', function (e) {
 
 				if (e.target.className.indexOf('appeal-popup-module') > -1) {
@@ -376,7 +394,8 @@
 				}
 
 			}.bind(this));
-
+ 
+			/*
 			this.ctaAppeal.addEventListener('click', function () {
 				this.closePopup.call(this);
 
@@ -392,6 +411,7 @@
 				});
 
 			}.bind(this));
+			*/
 
 			//this.fbShareBtn.addEventListener('click', this.boxPhotoShare);
 
