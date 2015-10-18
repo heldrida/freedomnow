@@ -183,11 +183,14 @@ html {
 					-webkit-filter: grayscale(0.75);
 					-moz-filter: grayscale(0.75);
 					-ms-filter: grayscale(0.75);
-					/*
+
 					@media only screen and (max-width: 480px) {
-						display: none;
+						filter: grayscale(0);
+						-webkit-filter: grayscale(0);
+						-moz-filter: grayscale(0);
+						-ms-filter: grayscale(0);
 					}
-					*/
+
 
 					&.loading {
 						width: 50px;

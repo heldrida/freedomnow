@@ -246,12 +246,13 @@ html {
           filter: grayscale(0.9);
           -webkit-filter: grayscale(0.75);
           -moz-filter: grayscale(0.75);
-          -ms-filter: grayscale(0.75);
-          /*
-					@media only screen and (max-width: 480px) {
-						display: none;
-					}
-					*/ }
+          -ms-filter: grayscale(0.75); }
+          @media only screen and (max-width: 480px) {
+            .freedomnow .appeal-grid-module .photo-box.photo-popup img {
+              filter: grayscale(0);
+              -webkit-filter: grayscale(0);
+              -moz-filter: grayscale(0);
+              -ms-filter: grayscale(0); } }
           .freedomnow .appeal-grid-module .photo-box.photo-popup img.loading {
             width: 50px;
             height: 50px;
