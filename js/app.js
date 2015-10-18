@@ -100,6 +100,9 @@
 			this.languageOptions = document.querySelectorAll('.language-selector ul li');
 
 			this.imgLazyLoadThrottleMs = 800;
+
+			this.initialPhotoboxImagesToLoad = 18;
+			
 		},
 
 		calcBoxWidth: function () {
@@ -426,6 +429,9 @@
 			}
 
 			window.addEventListener('scroll', _.throttle(this.imageLazyLoaderHandler.bind(this), this.imgLazyLoadThrottleMs));
+
+			// load first images
+			this.initialPhotoboxImagesLoad();
 
 		},
 
@@ -1462,6 +1468,18 @@
 					}
 
 				} 
+
+			}
+
+		},
+
+		initialPhotoboxImagesLoad: function () {
+
+			for (var i = 0; i < this.initialPhotoboxImagesToLoad; i++) {
+
+				if (this.photoBoxes[i].getAttribute('class').indexOf('photo-popup') > -1) {
+					this.imageFit.call(this, this.photoBoxes[i]);
+				}
 
 			}
 
