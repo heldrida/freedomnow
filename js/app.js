@@ -99,6 +99,7 @@
 
 			this.languageOptions = document.querySelectorAll('.language-selector ul li');
 
+			this.imgLazyLoadThrottleMs = 800;
 		},
 
 		calcBoxWidth: function () {
@@ -424,23 +425,7 @@
 
 			}
 
-			// image lazy load
-			window.addEventListener('scroll', function () {
-
-				for (var i = 0; i < this.photoBoxes.length; i++) {
-
-					if (this.photoBoxes[i].offsetTop * 0.9 < window.scrollY) {
-						
-						if (this.photoBoxes[i].getAttribute('class').indexOf('photo-popup') > -1) {
-							this.imageFit.call(this, this.photoBoxes[i]);
-						}
-
-					} 
-
-				}
-
-
-			}.bind(this));
+			window.addEventListener('scroll', _.throttle(this.imageLazyLoaderHandler.bind(this), this.imgLazyLoadThrottleMs));
 
 		},
 
@@ -1464,6 +1449,22 @@
 			});
 
 			xhr.send(params);
+		},
+
+		imageLazyLoaderHandler: function () {
+			
+			for (var i = 0; i < this.photoBoxes.length; i++) {
+
+				if (this.photoBoxes[i].offsetTop * 0.9 < window.scrollY) {
+					
+					if (this.photoBoxes[i].getAttribute('class').indexOf('photo-popup') > -1) {
+						this.imageFit.call(this, this.photoBoxes[i]);
+					}
+
+				} 
+
+			}
+
 		}
 
 	};
