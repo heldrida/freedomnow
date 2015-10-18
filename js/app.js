@@ -1350,7 +1350,11 @@
 			var image = new Image();
 
 			imagesLoaded(image).on('done', function () {
-				set(el);
+				el.src = image.src;
+				el.classList.remove('loading');
+				setTimeout(function () {
+					set(el);
+				}, 100);
 			}.bind(this));
 
 			/*
@@ -1360,7 +1364,7 @@
 			};
 			*/
 
-			image.src = el.getAttribute('src');
+			image.src = el.getAttribute('data-src');
 
 		},
 

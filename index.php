@@ -37,7 +37,7 @@
 	<title><?php echo translation($language, 'site_long_title'); ?></title>
 
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-	<link rel="stylesheet" href="<?php echo BASEURL; ?>/css/app.css">
+	<link rel="stylesheet" href="/css/app.css">
 
 </head>
 <body data-lang="en">
@@ -57,8 +57,8 @@
 
 		<div class="language-selector">
 			<ul>
-				<li class="<?php echo $language == 'pt' ? 'active' : '' ?>"><a href="<?php echo BASEURL . '/pt' ?>">português</a></li>
-				<li class="<?php echo $language == 'en' ? 'active' : '' ?>"><a href="<?php echo BASEURL . '/en' ?>">english</a></li>
+				<li class="<?php echo $language == 'pt' ? 'active' : '' ?>"><a href="<?php echo '/pt' ?>">português</a></li>
+				<li class="<?php echo $language == 'en' ? 'active' : '' ?>"><a href="<?php echo '/en' ?>">english</a></li>
 			</ul>
 		</div>
 
@@ -100,10 +100,10 @@
 			<div class="topbox-bot-bar">
 
 				<div class="arrow-down animated infinite floating">
-					<img src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+					<img src="/images/icon-arrow-down.svg" alt="">
 				</div>
 
-				<img class="logo-freedomnow npe" src="<?php echo BASEURL; ?>/images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
+				<img class="logo-freedomnow npe" src="/images/logo-freedomnow.jpg?201509300133" alt="Liberdade ja! Freedom Now!">
 
 			</div>
 			<!-- topbox bottom bar -->
@@ -120,7 +120,7 @@
 			<?php foreach ($data As $k => $obj) : ?>
 				<?php $i++; ?>
 				<div class="photo-box anim-hover photo-popup" data-index="<?php echo $i; ?>" data-id="<?php echo $obj['id']; ?>" data-name="<?php echo strtolower($obj['title']); ?>" data-img-lrg="<?php echo $obj['image_large_src']; ?>">
-					<img src="<?php echo $obj['image_src']; ?>" alt="">
+					<img class="loading" src="/images/loading.gif?201510182041" data-src="<?php echo $obj['image_src']; ?>" alt="">
 				</div>
 
 				<!-- start: photo submit tile -->
@@ -130,7 +130,7 @@
 						<?php echo translation($language, 'quero_participar'); ?>
 					</p>
 					<div class="arrow">
-						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+						<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 					</div>
 					<div class="hashtags">
 						<span class="hashtag">#liberdadeja</span>
@@ -153,7 +153,7 @@
 						<?php echo translation($language, 'ler_quem_somos'); ?>
 					</div>
 					<div class="arrow">
-						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+						<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 					</div>
 				</div>
 				<?php endif; ?>
@@ -162,7 +162,7 @@
 				<!-- start: contact info tile -->
 				<?php if ($i === 11) : ?>
 				<div class="photo-box general-tile amnistia-internacional" data-cta="contact-email">
-					<img src="<?php echo BASEURL; ?>/images/amnesty-international.png?20151008" alt="">
+					<img src="/images/amnesty-international.png?20151008" alt="">
 				</div>
 				<?php endif; ?>
 				<!-- end: contact info tile -->
@@ -179,7 +179,7 @@
 						<?php echo translation($language, 'visita_nos_facebook'); ?>
 					</p>
 					<div class="arrow">
-						<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+						<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 					</div>
 				</div>
 				<?php endif; ?>
@@ -193,7 +193,7 @@
 					<?php echo translation($language, 'politica_privacidade'); ?>
 				</p>
 				<div class="arrow">
-					<img class="animated infinite floating" src="<?php echo BASEURL; ?>/images/icon-arrow-down.svg" alt="">
+					<img class="animated infinite floating" src="/images/icon-arrow-down.svg" alt="">
 				</div>
 			</div>
 			<!-- end: privacy policy tile -->
@@ -287,7 +287,7 @@
 			<div class="content"></div>
 			<div><?php echo translation($language, 'email_preview_your_name_here'); ?></div>
 			<div class="photo">
-				<img src="<?php echo BASEURL; ?>/images/person-icon.png" alt="">
+				<img src="/images/person-icon.png" alt="">
 				<span><?php echo translation($language, 'email_preview_about_this_photo'); ?></span>
 			</div>
 		</div>
@@ -306,13 +306,13 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/validate.min.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/console-polyfill.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/base64.min.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/json-polyfill.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/vendor/xhr-polyfill.min.js"></script>
+	<script src="/js/vendor/validate.min.js"></script>
+	<script src="/js/vendor/console-polyfill.js"></script>
+	<script src="/js/vendor/base64.min.js"></script>
+	<script src="/js/vendor/json-polyfill.js"></script>
+	<script src="/js/vendor/xhr-polyfill.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.min.js"></script>
-	<script src="<?php echo BASEURL; ?>/js/app.js"></script>
+	<script src="/js/app.js"></script>
 
 </body>
 </html>

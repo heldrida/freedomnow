@@ -226,7 +226,8 @@ html {
       width: 10vw;
       overflow: hidden;
       cursor: pointer;
-      position: relative; }
+      position: relative;
+      background-color: #000; }
       .freedomnow .appeal-grid-module .photo-box.photo-popup {
         background-size: cover;
         background-position: center center;
@@ -251,6 +252,17 @@ html {
 						display: none;
 					}
 					*/ }
+          .freedomnow .appeal-grid-module .photo-box.photo-popup img.loading {
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translateY(-50%) translateX(-50%);
+            -khtml-transform: translateY(-50%) translateX(-50%);
+            -moz-transform: translateY(-50%) translateX(-50%);
+            -ms-transform: translateY(-50%) translateX(-50%);
+            -o-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%); }
         .freedomnow .appeal-grid-module .photo-box.photo-popup:hover img {
           filter: grayscale(0);
           -webkit-filter: grayscale(0);
