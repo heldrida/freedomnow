@@ -10,7 +10,6 @@
 	$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
 	define("BASEURL", $protocol . $_SERVER['HTTP_HOST']);
 
-	require_once("includes/mobile-detect/Mobile_Detect.php");
 	require_once("includes/language_package.php");
 	require_once("includes/phpfastcache/phpfastcache.php");
 	include_once('includes/helperFns.php');
