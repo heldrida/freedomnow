@@ -1,7 +1,5 @@
 <?php
 	
-	$detect = new Mobile_Detect;
-
 	global $detect, $wp, $wp_query, $wp_the_query, $wp_rewrite, $wp_did_header;
 	require( 'cms/wp-load.php');
 	include('./includes/httpful.phar');
@@ -101,11 +99,6 @@
 			// cache for an hour
 			$cache->set("posts", $posts, 3000);
 
-		}
-
-
-		if ( $detect->isMobile() ) {
-			$posts = array_chunk($posts, 100)[0];
 		}
 
 		return $posts;
